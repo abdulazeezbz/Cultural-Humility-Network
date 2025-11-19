@@ -193,7 +193,7 @@ A world where cultural humility is standard in health and education—reducing d
     <div className="a"> 
      <h2>Frequently Asked Questions</h2>
 <br />
-     <details className='faq'>
+     <details className='faq' open>
         <summary>Is my contribution required to access CHH?</summary>
 
         <p>No. Core modules and community areas remain free for everyone. Donations are optional.</p>
