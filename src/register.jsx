@@ -4,10 +4,9 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 import AppLogo from './assets/logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
+import Login from './login'
 
-import Register from './register'
-
-function Login() {
+function Register() {
    const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -19,11 +18,9 @@ function Login() {
   return (
     <>
 
-
     <div className="AuthPage">
-
-      <div className="cont b">
-        <center>
+        <div className="cont b">
+<center>
 <img src={AppLogo} width={100} /></center>
 <h3>Your hub for equitable practice</h3>
 <p>Learn, reflect, and apply cultural humility with structured modules and a supportive community.</p>
@@ -35,17 +32,20 @@ function Login() {
     <li>Downloadable certificate on completion</li>
 </ul>
         </div>
-
-
       <div className="cont">
-        <h2>Login</h2>
-        <p>Welcome Back Enter Your Details and Login To your Account</p>
+        <h2>Register</h2>
+        <p>Enter the Required Details To Create your Account</p>
 
 
-         <form action="">
+         <form action="" method='get'>
               <div className="inputGroup">
-                <input type="text" placeholder='Enter your Email Address'/>
+                <input type="text" placeholder='Enter your Full Name'/>
               </div>
+
+                <div className="inputGroup">
+                <input type="text" placeholder='Enter your Password'/>
+              </div>
+
 
                 <div className="inputGroup">
                 <input type="text" placeholder='Enter your Password'/>
@@ -54,10 +54,10 @@ function Login() {
 
               
 
-              <button className="cta">Login</button>
+              <button className="cta">Register</button>
 
               <br />
-              <p>Don't have an account?  <a href="" onClick={()=> navigate("/register")}>Register Here</a></p>
+              <p>Already have an account?  <a href="#" onClick={()=> navigate("/login")}>Login Here</a></p>
             </form>
       </div>
     </div>
@@ -65,4 +65,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Register

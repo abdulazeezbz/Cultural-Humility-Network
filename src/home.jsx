@@ -60,7 +60,7 @@ function Home() {
     
 
      <li>
-      <button className="cta outlines create"  onClick={()=> navigate("/login")}>Create Account</button>
+      <button className="cta outlines create"  onClick={()=> navigate("/register")}>Create Account</button>
     </li>
 
   
