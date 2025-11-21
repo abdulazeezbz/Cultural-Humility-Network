@@ -50,7 +50,21 @@ html{
 .topNav .bb ul li{
   list-style: none;
   margin: 0px 10px;
+  padding: 10px;
+  cursor: pointer;
 }
+
+.founder.b.ann{
+  padding: 20px;
+  width: 70%;
+}
+
+.founder.b.ann img{
+  width: 200px;
+  margin: 20px;
+  border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+}
+
 .topNav .aa{
    display: flex;
   align-items: center;
@@ -74,6 +88,15 @@ html{
 }
 
 
+.topNav .bb ul li.active{
+  background: var(--brand-2);
+  padding:  10px 20px;
+  border-radius: 10px;
+}
+
+.topNav .bb ul li.active a{
+  color: white;
+}
 
 .hero{
   width: 100%;
@@ -113,6 +136,12 @@ html{
 .hero .main .content.b{
   padding-top: 30px;
 }
+
+.heroB .main .content.b{
+  padding-top: 30px;
+  width: 95%;
+  background-color: transparent;
+}
 .hero .main .content{
   padding-top: 100px;
   width: 70%;
@@ -122,6 +151,10 @@ html{
   font-size: 4rem;
   line-height: 70px;
   color: white;
+}
+
+.heroB .main .content h2{
+  color: black;
 }
 .hero .main .content p{
   font-size: 20px;
@@ -147,7 +180,7 @@ html{
 .cta{
   padding: 15px 40px;
   margin-top: 20px;
-  background: var(--accent);
+  background: var(--brand-1);
   color: white;
 }
 button{
@@ -156,8 +189,8 @@ button{
 
 .cta.outlines{
   background: transparent;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid var(--brand-1);
+  color: var(--brand-1);
 }
 
 
@@ -209,6 +242,9 @@ form{
 .inputGroup{
   width: 100%;
   display: flex;
+
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   margin-bottom: 20px;
 }
@@ -216,15 +252,19 @@ form{
 .faq{
   width: 400px;
   padding: 20px;
+  border: 1px solid var(--border);
   /* margin-top: 30px; */
-  box-shadow: 0px 0px 10px -6px var(--accent);
 }
+
 
 .faq:first-of-type{
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-
+.why.b{
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+}
 .faq:last-of-type{
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -232,11 +272,21 @@ form{
 
 .faq p{
   max-width: 400px;
+  text-align: left;
+  font-size: 10px;
 }
 
 .inputGroup input, .inputGroup textarea{
   padding: 10px 30px;
   width: 100%;
+}
+
+
+
+.inputGroup.b input{
+  height: 30px;
+  width: 94%;
+  margin: auto;
 }
 
 .AuthPage{
@@ -263,7 +313,6 @@ form{
   font-size: 13px;
   text-align: center;
 }
-
 
 
 
@@ -316,7 +365,6 @@ form{
 }
 
 .AuthPage .cont.b{
-  /* background: var(--accent); */
   color: white;
 }
 
@@ -329,8 +377,29 @@ form{
   gap: 10px;
   row-gap: 10px;
   grid-auto-rows: 1fr;
-  background: black;
   margin: auto;
+}
+.layout.nn{
+  grid-template-columns: repeat(2, 1fr);
+  
+}
+
+.layout.nn p{
+  text-align: left;
+}
+
+.layout.nn .child{
+  background: var(--bg);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.layout.c{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(1, 1fr); /* 3 columns for desktop */
+  background: var(--trans-bg);
+  border-radius: 10px;
 }
 
 
@@ -346,7 +415,7 @@ form{
 .layout.b .badges p{
   padding: 6px 15px;
   font-size: 13px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--brand-1);
   width: fit-content;
   border-radius: 20px;
   margin-right: 10px;
@@ -367,6 +436,7 @@ form{
   border-top: none;
   border-bottom: none;
   text-align: left;
+  padding-top: 20px;
   /* padding-left: 10px; */
 }
 
@@ -385,20 +455,34 @@ form{
 
 .layout .child .slide .cc{
   margin-top: 30px;
-  background: var(--accent);
+  background: var(--brand-1);
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   width: 100%;        /* fills the slide parent */
   height: 100%;       /* optional, fills height too */
   display: block;     /* block is better than inline-block here */
   flex-shrink: 0;     /* prevents it from shrinking inside flex */
   transition: transform 0.3s ease; /* optional smooth movement */
   animation: sliderr infinite 10s;
-  padding: 10px 0px;
+  padding: 20px 0px;
+  color: white;
 }
 
+.layout .child .slide .cc h2{
+  color: white;
+}
 
 .content.modules{
   margin-top: 150px;
   padding: 20px;
+}
+
+.content.modules.about{
+  margin-top: 150px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--border);
 }
 
 .progress{
@@ -426,7 +510,7 @@ form{
 .slid .Scont{
   height: 100%;
   width: 30%;
-  background-color: var(--accent);
+  background-color: var(--brand-1);
   border-radius: 12px;
   animation: slid infinite 2s;
 }
@@ -446,6 +530,31 @@ form{
   padding: 10px 20px;
 }
 
+.heroB .main{
+  background: white;
+  color: black;
+}
+.heroB .main .content{
+  background: white;
+  color: black;
+}
+
+
+.why{
+  /* background: var(--trans-bg); */
+  padding: 10px;
+  border-radius: 10px;
+  /* margin: auto; */
+
+}
+.founder.sii .a{
+  margin: auto;
+  width: 45%;
+  background: var(--bg);
+  height: 300px;
+  padding: 10px;
+  border-radius: 10px;
+}
 @keyframes slid {
   0%{
     border-top-right-radius: 20px;
@@ -484,6 +593,13 @@ form{
 
 @media screen and (max-width:800px) {
 
+  .founder.sii .a{
+  margin: auto;
+  width: 90%;
+  height: fit-content;
+  margin-bottom: 15px;
+}
+
   .content.cert{
   display: flex;
   justify-content: space-around;
@@ -492,6 +608,10 @@ form{
   margin: auto;
   flex-direction: column;
   gap: 30px;
+}
+
+.why.b.a{
+  margin-left: 10px;
 }
 
 .layout {
@@ -504,6 +624,17 @@ form{
     border-right: 0;
   }
 
+  .inputGroup.b .cta.b{
+    width: 100%;
+    margin: auto;
+    margin-left: 30px;
+  }
+  .layout.nn {
+    width: 92%;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    grid-template-rows: auto;   /* rows auto-adjust */
+  }
+
   .AuthPage{
     flex-direction: column;
   }
@@ -511,13 +642,13 @@ form{
   width: 89%;
   padding: 20px;
   /* margin-top: 30px; */
-  box-shadow: 0px 0px 10px -6px var(--accent);
+  border: 1px solid var(--border);
   
 }
 
 .faq p{
   text-align: justify;
-  max-width: 70%;
+  max-width: 90%;
   margin-left: 20px;
   margin-top: 20px;
 }
@@ -526,7 +657,7 @@ form{
   /* padding: 8px 8px; */
   margin-top: 20px;
   /* width: 100%; */
-  background: var(--accent);
+  background: var(--brand-1);
   color: white;
 }
 
@@ -582,13 +713,16 @@ margin-left: 20px;
 }
 
 
+.hero .main .content.b {
+  width: 95%;
+}
+
 
   .hero .main .content{
-  width: 96%;
+  width: 95%;
   padding-top: 200px;
   padding-bottom: 50px;
   margin-left: 10px;
-  color: white;
 }
 .hero .main .content.b{
   margin-left: -10px;
@@ -646,11 +780,38 @@ width: 70%;
 .topNav .bb ul li{
   margin: 10px 0px;
 }
+
+
     
   .topNav{
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
   }
+
+  
+.founder.b.ann{
+  padding: 20px;
+  width: 90%;
+}
+
+#formH{
+  max-width: 100%;
+}
+
+.founder.b.input{
+  padding: 20px 0px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.founder.b.input .inputGroup{
+  margin: auto;
+  width: 85%;
+  
+}
+.founder.b.ann img{
+  width: 70%;
+}
 
 }

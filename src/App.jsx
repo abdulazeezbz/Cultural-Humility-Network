@@ -9,6 +9,8 @@ import Login from './login';
 import Home from './home';
 import Register from './register';
 import Modules from './modules';
+import About from './about';
+import Community from './community';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -31,6 +33,8 @@ function App() {
   <Route path="/modules" element={<Modules />} />  
   <Route path="/login" element={<Login />} />  
   <Route path="/register" element={<Register />} />  
+  <Route path="/about" element={<About />} />  
+  <Route path="/community" element={<Community />} />  
 
 </Routes>
 

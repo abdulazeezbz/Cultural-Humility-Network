@@ -6,6 +6,7 @@ import AppLogo from './assets/logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
+import TopNav from './topnava';
 
 function Modules() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -23,69 +24,14 @@ function Modules() {
   return (
     <>
 
-    
-     <div className="topNav" data-aos="fade-down" data-aos-duration="1000">
-      <div className="aa">
-        <div className="anoth" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
-        <img src={AppLogo} alt="" />
-        <div className="">
-          <h3>Cultural Humility Network</h3>
-          <p>Fostering Inclusive, Reflective, and Culturally Aware Practice</p>
-        </div></div>
-
-        <div className="mobile" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
-          {menuOpen ? (
-    <ion-icon style={{ fontSize: 28 }} name="close-outline"></ion-icon>
-  ) : (
-    <ion-icon style={{ fontSize: 28 }} name="menu-outline"></ion-icon>
-  )}
-        </div>
-      </div>
-     <div className={`bb ${menuOpen ? "block" : "hidden"} md:flex`}>
-  <ul>
-    <li>
-      <a href="/" onClick={toggleMenu}>Home</a>
-    </li>
-    <li>
-      <a href="/#about" onClick={()=> navigate("/#about")}>About</a>
-    </li>
-    
-
-    <li>
-      <a href="#" onClick={toggleMenu}>Modules</a>
-    </li>
-
-     <li>
-      <a href="#about" onClick={toggleMenu}>Community</a>
-    </li>
-    
-        <li>
-      <a href="#support" onClick={()=> navigate("/#support")}>Support</a>
-    </li>
-    
-    <li>
-      <a href="#contact" onClick={()=> navigate("/#contact")}>Contact</a>
-    </li>
-    
-
-    
-    
-
-     <li>
-      <button className="cta outlines create"  onClick={()=> navigate("/register")}>Create Account</button>
-    </li>
-
-  
-  </ul>
-</div>   
-      
+    <TopNav />
 
    
 
 
 
      
-     </div>
+    
 
 
 
