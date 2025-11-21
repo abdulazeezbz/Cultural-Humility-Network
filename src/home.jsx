@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, useNavigate } from "react-router-dom";
 import './App.css'
 
-import AppLogo from './assets/logo.png'
+import AppLogo from './assets/new logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
