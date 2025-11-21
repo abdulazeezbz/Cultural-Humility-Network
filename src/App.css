@@ -180,7 +180,7 @@ html{
 .cta{
   padding: 15px 40px;
   margin-top: 20px;
-  background: var(--brand-1);
+  background: var(--accent);
   color: white;
 }
 button{
@@ -189,8 +189,8 @@ button{
 
 .cta.outlines{
   background: transparent;
-  border: 1px solid var(--brand-1);
-  color: var(--brand-1);
+  border: 1px solid var(--accent);
+  color: var(--accent);
 }
 
 
@@ -460,7 +460,7 @@ form{
 .layout.b .badges p{
   padding: 6px 15px;
   font-size: 13px;
-  border: 1px solid var(--brand-1);
+  border: 1px solid var(--accent);
   width: fit-content;
   border-radius: 20px;
   margin-right: 10px;
@@ -500,7 +500,7 @@ form{
 
 .layout .child .slide .cc{
   margin-top: 30px;
-  background: var(--brand-1);
+  background: var(--accent);
   border-radius: 10px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
@@ -555,7 +555,7 @@ form{
 .slid .Scont{
   height: 100%;
   width: 30%;
-  background-color: var(--brand-1);
+  background-color: var(--accent);
   border-radius: 12px;
   animation: slid infinite 2s;
 }
@@ -715,7 +715,7 @@ form{
   /* padding: 8px 8px; */
   margin-top: 20px;
   /* width: 100%; */
-  background: var(--brand-1);
+  background: var(--accent);
   color: white;
 }
 

@@ -244,16 +244,16 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 </div>
 
   <div className="why b a" style={{textAlign:'left'}}>
-          <h2  style={{textAlign:'left'}}>Latest Announcements</h2>
-          <p id="ABZZ" className='b' >Stay updated with news, events, and meeting dates.</p>
+          <h2  style={{textAlign:'left', lineHeight:1}}>Latest Announcements</h2>
+          <p id="ABZZ" className='b' style={{marginLeft:-6, textAlign:'left'}}>Stay updated with news, events, and meeting dates.</p>
 
           No announcements yet. Check back soon!
 </div>
 <br />
 
   <div className="why b a" style={{textAlign:'left'}}>
-          <h2  style={{textAlign:'left'}}>Get Involved</h2>
-          <p id="ABZZ" className='b' >Subscribe for updates, webinars, and events. Join our movement!</p>
+          <h2  style={{textAlign:'left',lineHeight:1}}>Get Involved</h2>
+          <p id="ABZZ" className='b' style={{marginLeft:-6, textAlign:'left'}}>Subscribe for updates, webinars, and events. Join our movement!</p>
 <br />
           <div className="inputGroup b">
             <input  type="email" required placeholder='Enter your Email Here!' />
