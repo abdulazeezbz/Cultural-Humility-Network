@@ -543,10 +543,14 @@ form{
   animation: sliderr infinite 60s;
   padding: 20px 0px;
   color: white;
-  
+
     /* flex: 0 0 80%; */
   scroll-snap-align: start;
   scroll-snap-stop: always; /* ALWAYS snap exactly */
+}
+
+.layout .child .slide .cc:hover {
+  scale: 1.01;
 }
 
 
