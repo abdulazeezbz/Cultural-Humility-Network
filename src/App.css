@@ -520,9 +520,13 @@ form{
 .layout .child .slide{
   width: 100%;
   display: flex;
-  overflow: hidden; /* ensures content doesn’t overflow while translating */
+  overflow: scroll; /* ensures content doesn’t overflow while translating */
   position: relative; /* for positioning if needed */
   padding: 0px;
+  scroll-snap-type: x mandatory; /* direction + mandatory */
+  scroll-behavior: smooth;       /* smooth when clicking dots */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* hide scrollbar Firefox */
 }
 
 .layout .child .slide .cc{
@@ -539,6 +543,10 @@ form{
   animation: sliderr infinite 60s;
   padding: 20px 0px;
   color: white;
+  
+    /* flex: 0 0 80%; */
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* ALWAYS snap exactly */
 }
 
 
