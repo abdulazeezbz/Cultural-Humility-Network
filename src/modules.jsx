@@ -89,7 +89,7 @@ function Modules() {
 
 
 
-        <div className="content modules"  data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+        <div className="content modules"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <h2>Interactive Learning Modules</h2>
           <p>Comprehensive, evidence-based training in cultural humility. Work at your pace with interactive scenarios, quizzes, and reflections. Complete a module at ≥80% to unlock its certificate; finish all five for the overall certificate.
           </p>
@@ -107,7 +107,7 @@ function Modules() {
 
       <div className="content">
         <div className="layout b">
-           <div className="child">
+           <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -133,7 +133,7 @@ function Modules() {
 
 
 
-            <div className="child">
+            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -157,7 +157,7 @@ function Modules() {
                 
             </div>
 
-            <div className="child">
+            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -181,7 +181,7 @@ function Modules() {
                 
             </div>
 
-            <div className="child">
+            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -205,7 +205,7 @@ function Modules() {
                 
             </div>
 
-            <div className="child">
+            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -229,7 +229,7 @@ function Modules() {
                 
             </div>
 
-            <div className="child">
+            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -257,7 +257,7 @@ function Modules() {
         </div>
       </div>
 
-        <div className="content cert"  data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+        <div className="content cert" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <div className="">
           <h2>Certificates</h2>
           <p><b>Per-module certificates:</b> Available as soon as each module is completed. Use the button on each card.</p>
