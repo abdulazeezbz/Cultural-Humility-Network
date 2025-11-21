@@ -52,6 +52,7 @@ const About = () => {
 
                   <div className="a"> 
                     <h2>Our Mission & Vision</h2>
+                    <br />
                             <p id="ABZZ">Equip health and education professionals with the knowledge, skills, and mindset to practise cultural humility, creating equitable, inclusive environments that honour diverse experiences.
 
                 A world where cultural humility is standard in health and education—reducing disparities and empowering individuals through respectful, collaborative practice.
@@ -62,6 +63,7 @@ const About = () => {
 
                   {/* <div className="ourvalues" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500"> */}
 <h2 style={{textAlign:'left'}} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">Our Values</h2>
+<br />
 <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
                   <p><b>Respect & Empathy</b> <br />  Honouring each person’s story and experience</p>
                   <p><b>Lifelong Learning</b> <br />  
