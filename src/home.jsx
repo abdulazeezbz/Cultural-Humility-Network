@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from "react-router-dom";
 import './App.css'
 
@@ -11,8 +11,13 @@ import TopNav from './topnava';
 function Home() {
   
 
+  const [activeDot, setActiveDot] = useState(0);
   const navigate = useNavigate();   // <-- HERE
   
+  useEffect(() => {
+  const slider = document.querySelector(".cc");
+  slider.style.transform = `translateX(-${activeDot * 100}%)`;
+}, [activeDot]);
 
   return (
     <>
@@ -59,84 +64,87 @@ function Home() {
       <p style={{fontSize:15, textAlign:'left'}}>The UK is increasingly diverse — but equity has not kept pace.</p>
 
 
-      <div className="slide">
+      <div className="slide"
+      
+      >
+       
           <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Ethnic diversity</h2>
-            <h3 style={{textAlign:'center'}}>Around 1 in 5</h3>
-            <p style={{fontSize:18}}>Population identifying with an ethnic minority group in England & Wales (2021 Census).</p>
-            <p>The UK’s population is becoming more ethnically diverse, especially in cities such as London, Birmingham and Manchester.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Ethnic diversity</h2>
+            <p style={{fontSize:20}}>Population identifying with an ethnic minority group in England & Wales (2021 Census).</p>
+            <p style={{fontSize:16}}>The UK’s population is becoming more ethnically diverse, especially in cities such as London, Birmingham and Manchester.</p>
           </div>
 
 
           <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>International students</h2>
-            <h3 style={{textAlign:'center'}}>About 1 in 4</h3>
-            <p style={{fontSize:18}}>UK university students are from outside the UK.</p>
-            <p>Classrooms, placements and supervision spaces now routinely bring together people with very different cultural, faith and migration backgrounds</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>International students</h2>
+            <p style={{fontSize:20}}>UK university students are from outside the UK.</p>
+            <p style={{fontSize:16}}>Classrooms, placements and supervision spaces now routinely bring together people with very different cultural, faith and migration backgrounds</p>
           </div>
 
           <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Maternal mortality gap</h2>
-            <h3 style={{textAlign:'center'}}><ion-icon name="trending-up-outline"></ion-icon> 2× higher risk  </h3>
-            <p style={{fontSize:18}}>Black women in the UK face more than double the risk of maternal death compared with White women.</p>
-            <p>Racialised inequities in care, bias and structural disadvantage all contribute to this gap.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Maternal mortality gap</h2>
+            <p style={{fontSize:20}}>Black women in the UK face more than double the risk of maternal death compared with White women.</p>
+            <p style={{fontSize:16}}>Racialised inequities in care, bias and structural disadvantage all contribute to this gap.</p>
           </div>
 
           <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Deprivation and safety</h2>
-            <h3 style={{textAlign:'center'}}>Nearly 2× <ion-icon name="trending-up-outline"></ion-icon> </h3>
-            <p style={{fontSize:18}}>Higher maternal mortality for women in the most deprived areas versus the least deprived.</p>
-            <p>Inequity is not only about identity; where you live and the resources around you also shape risk and outcomes.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Deprivation and safety</h2>
+            <p style={{fontSize:20}}>Higher maternal mortality for women in the most deprived areas versus the least deprived.</p>
+            <p style={{fontSize:16}}>Inequity is not only about identity; where you live and the resources around you also shape risk and outcomes.</p>
           </div>
 
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Diversity in cities</h2>
-            <h3 style={{textAlign:'center'}}>Almost half</h3>
-            <p style={{fontSize:18}}>Of London residents identify as Asian, Black, Mixed or from another minority ethnic background.</p>
-            <p>Many services are still designed around a default ‘norm’ that doesn’t match the realities of the communities they serve.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Diversity in cities</h2>
+            <p style={{fontSize:20}}>Of London residents identify as Asian, Black, Mixed or from another minority ethnic background.</p>
+            <p style={{fontSize:16}}>Many services are still designed around a default ‘norm’ that doesn’t match the realities of the communities they serve.</p>
           </div>
 
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>A multilingual UK</h2>
-            <h3 style={{textAlign:'center'}}>Hundreds of languages</h3>
-            <p style={{fontSize:18}}>Spoken in homes, communities and services across the UK.</p>
-            <p>Language, interpretation and communication support are central to safe, person-centred care – yet they are often treated as an optional extra.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>A multilingual UK</h2>
+            <p style={{fontSize:20}}>Spoken in homes, communities and services across the UK.</p>
+            <p style={{fontSize:16}}>Language, interpretation and communication support are central to safe, person-centred care – yet they are often treated as an optional extra.</p>
           </div>
 
 
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Experiences of care</h2>
-            <h3 style={{textAlign:'center'}}>Not everyone feels heard</h3>
-            <p style={{fontSize:18}}>Surveys show that people from some ethnic minority groups report lower satisfaction and trust in services and higher rates of feeling disrespected or ignored.</p>
-            <p>Cultural humility asks: whose voice is missing here, and how do we make it easier – and safer – for them to be heard?</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Experiences of care</h2>
+            <p style={{fontSize:20}}>Surveys show that people from some ethnic minority groups report lower satisfaction and trust in services and higher rates of feeling disrespected or ignored.</p>
+            <p style={{fontSize:16}}>Cultural humility asks: whose voice is missing here, and how do we make it easier – and safer – for them to be heard?</p>
           </div>
 
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Workforce diversity</h2>
-            <h3 style={{textAlign:'center'}}>Global workforce</h3>
-            <p style={{fontSize:18}}>Health, care and education workforces in the UK include large numbers of staff who trained overseas or come from minority ethnic backgrounds</p>
-            <p>Supporting staff to bring their full selves to work – and tackling racism and discrimination – is part of cultural humility in organisations</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Workforce diversity</h2>
+            <p style={{fontSize:20}}>Health, care and education workforces in the UK include large numbers of staff who trained overseas or come from minority ethnic backgrounds</p>
+            <p style={{fontSize:16}}>Supporting staff to bring their full selves to work – and tackling racism and discrimination – is part of cultural humility in organisations</p>
           </div>
            
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Cultural humility in one line</h2>
-            <h3 style={{textAlign:'center'}}>Not a checklist</h3>
-            <p style={{fontSize:18}}>Cultural humility is a lifelong practice, not a competency you ‘tick off’.</p>
-            <p>It is about self-reflection, addressing power imbalances and building accountable partnerships with the communities we serve.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Cultural humility in one lin3</h2>
+            <p style={{fontSize:20}}>Cultural humility is a lifelong practice, not a competency you ‘tick off’.</p>
+            <p style={{fontSize:16}}>It is about self-reflection, addressing power imbalances and building accountable partnerships with the communities we serve.</p>
           </div>
 
            <div className="cc">
-            <h2 style={{lineHeight:1, marginTop:20}}>Why this hub exists</h2>
-            <h3 style={{textAlign:'center'}}>From awareness to action</h3>
-            <p style={{fontSize:18}}>This hub supports you to move beyond one-off training towards everyday practice change.</p>
-            <p>Short modules, reflection prompts and action plans help you translate insight into concrete, accountable steps in your own context.</p>
+            <h2 style={{lineHeight:1, marginTop:20, textAlign:'center'}}>Why this hub exists</h2>
+            <p style={{fontSize:20}}>This hub supports you to move beyond one-off training towards everyday practice change.</p>
+            <p style={{fontSize:16}}>Short modules, reflection prompts and action plans help you translate insight into concrete, accountable steps in your own context.</p>
           </div>
+
+          
 
           
 
        
       </div>
-      
+      {/* <div className="dot">
+        {Array.from({ length: 10 }).map((_, i) => (
+    <div
+      key={i}
+      className={`dots ${activeDot === i ? "active" : ""}`}
+      onClick={() => setActiveDot(i)}
+    />
+  ))}
+      </div> */}
   </div>
 </div>
 
