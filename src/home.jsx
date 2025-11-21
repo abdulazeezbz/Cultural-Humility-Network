@@ -11,6 +11,7 @@ import TopNav from './topnava';
 function Home() {
   
 
+  const navigate = useNavigate();   // <-- HERE
   
 
   return (
@@ -29,8 +30,8 @@ function Home() {
           <p>We believe cultural humility is the cornerstone of equitable practice in health and education. Explore immersive learning, evidence-based modules, and a supportive community that centres respect, reflection, and inclusion.</p>
 
         <div id="about" className="" style={{display:'flex'}}>
-          <button className="cta outlines"  onClick={()=> navigate("/login")}>Explore Modules</button>
-          <button className="cta" onClick={()=> navigate("/login")}>Login</button>
+          <button className="cta"  onClick={()=> navigate("/modules")}>Explore Modules</button>
+          <button className="cta outlines" onClick={()=> navigate("/community")}>Visit Community</button>
         </div>
         
       
@@ -89,8 +90,8 @@ function Home() {
       <br />- Anti-Racism in Practice
       <br />
       <div id="about" className="" style={{display:'flex'}}>
-          <button className="cta mini" onClick={()=> navigate("/login")}>Start learning</button>
-          <button className="cta outlines mini" onClick={()=> navigate("/login")}>View Certificate</button>
+          <button className="cta mini" onClick={()=> navigate("/modules")}>Start learning</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/moules")}>View Certificate</button>
         </div>
     </ul>
   </div>
@@ -102,8 +103,8 @@ function Home() {
     <p style={{fontSize:13, textAlign:'left'}}>Join forums for peer discussions, case studies, AMAs, and networking. Share your journey and learn with others.</p>
 
      <div id="about" className="" style={{display:'flex'}}>
-          <button className="cta mini"  onClick={()=> navigate("/login")}>Join The Conversation</button>
-          <button className="cta outlines mini" onClick={()=> navigate("/login")}>Browse Blogs</button>
+          <button className="cta mini"  onClick={()=> navigate("/community")}>Join The Conversation</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/community")}>Browse Blogs</button>
         </div>
   </div>
 
