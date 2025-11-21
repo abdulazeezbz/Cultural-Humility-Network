@@ -45,23 +45,23 @@ function Home() {
         <div className="content b">
 
 <div className="why">
-          <h2 style={{lineHeight:1}}>Why Cultural Humility Matters</h2>
-          <p id="ABZZ" className='b' style={{textAlign:'center'}}>Cultural humility is a lifelong practice of self-reflection, accountability, and challenging assumptions. Across healthcare and education, inequalities persist. Humility moves beyond awareness to listening deeply, engaging respectfully, and acting for equity.</p>
+          <h2 style={{lineHeight:1, textAlign:'left'}}>Why Cultural Humility Matters</h2>
+          <p id="ABZZ" className='b' style={{textAlign:'left'}}>Cultural humility is a lifelong practice of self-reflection, accountability, and challenging assumptions. Across healthcare and education, inequalities persist. Humility moves beyond awareness to listening deeply, engaging respectfully, and acting for equity.</p>
 </div>
 
 <br /><br />
   
 <div className="layout c">
   <div className='child'>
-  <h3 style={{textAlign:'center',}}>
+  <h3 style={{textAlign:'left', marginLeft:20}}>
       What the Data Says
       </h3 >
-      <p style={{fontSize:15, textAlign:'center'}}>The UK is increasingly diverse — but equity has not kept pace.</p>
+      <p style={{fontSize:15, textAlign:'left'}}>The UK is increasingly diverse — but equity has not kept pace.</p>
 
 
       <div className="slide">
           <div className="cc">
-            <h2>Ethnic diversity</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Ethnic diversity</h2>
             <h3 style={{textAlign:'center'}}>Around 1 in 5</h3>
             <p style={{fontSize:18}}>Population identifying with an ethnic minority group in England & Wales (2021 Census).</p>
             <p>The UK’s population is becoming more ethnically diverse, especially in cities such as London, Birmingham and Manchester.</p>
@@ -69,35 +69,35 @@ function Home() {
 
 
           <div className="cc">
-            <h2>International students</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>International students</h2>
             <h3 style={{textAlign:'center'}}>About 1 in 4</h3>
             <p style={{fontSize:18}}>UK university students are from outside the UK.</p>
             <p>Classrooms, placements and supervision spaces now routinely bring together people with very different cultural, faith and migration backgrounds</p>
           </div>
 
           <div className="cc">
-            <h2>Maternal mortality gap</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Maternal mortality gap</h2>
             <h3 style={{textAlign:'center'}}><ion-icon name="trending-up-outline"></ion-icon> 2× higher risk  </h3>
             <p style={{fontSize:18}}>Black women in the UK face more than double the risk of maternal death compared with White women.</p>
             <p>Racialised inequities in care, bias and structural disadvantage all contribute to this gap.</p>
           </div>
 
           <div className="cc">
-            <h2>Deprivation and safety</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Deprivation and safety</h2>
             <h3 style={{textAlign:'center'}}>Nearly 2× <ion-icon name="trending-up-outline"></ion-icon> </h3>
             <p style={{fontSize:18}}>Higher maternal mortality for women in the most deprived areas versus the least deprived.</p>
             <p>Inequity is not only about identity; where you live and the resources around you also shape risk and outcomes.</p>
           </div>
 
            <div className="cc">
-            <h2>Diversity in cities</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Diversity in cities</h2>
             <h3 style={{textAlign:'center'}}>Almost half</h3>
             <p style={{fontSize:18}}>Of London residents identify as Asian, Black, Mixed or from another minority ethnic background.</p>
             <p>Many services are still designed around a default ‘norm’ that doesn’t match the realities of the communities they serve.</p>
           </div>
 
            <div className="cc">
-            <h2>A multilingual UK</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>A multilingual UK</h2>
             <h3 style={{textAlign:'center'}}>Hundreds of languages</h3>
             <p style={{fontSize:18}}>Spoken in homes, communities and services across the UK.</p>
             <p>Language, interpretation and communication support are central to safe, person-centred care – yet they are often treated as an optional extra.</p>
@@ -105,28 +105,28 @@ function Home() {
 
 
            <div className="cc">
-            <h2>Experiences of care</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Experiences of care</h2>
             <h3 style={{textAlign:'center'}}>Not everyone feels heard</h3>
             <p style={{fontSize:18}}>Surveys show that people from some ethnic minority groups report lower satisfaction and trust in services and higher rates of feeling disrespected or ignored.</p>
             <p>Cultural humility asks: whose voice is missing here, and how do we make it easier – and safer – for them to be heard?</p>
           </div>
 
            <div className="cc">
-            <h2>Workforce diversity</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Workforce diversity</h2>
             <h3 style={{textAlign:'center'}}>Global workforce</h3>
             <p style={{fontSize:18}}>Health, care and education workforces in the UK include large numbers of staff who trained overseas or come from minority ethnic backgrounds</p>
             <p>Supporting staff to bring their full selves to work – and tackling racism and discrimination – is part of cultural humility in organisations</p>
           </div>
            
            <div className="cc">
-            <h2>Cultural humility in one line</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Cultural humility in one line</h2>
             <h3 style={{textAlign:'center'}}>Not a checklist</h3>
             <p style={{fontSize:18}}>Cultural humility is a lifelong practice, not a competency you ‘tick off’.</p>
             <p>It is about self-reflection, addressing power imbalances and building accountable partnerships with the communities we serve.</p>
           </div>
 
            <div className="cc">
-            <h2>Why this hub exists</h2>
+            <h2 style={{lineHeight:1, marginTop:20}}>Why this hub exists</h2>
             <h3 style={{textAlign:'center'}}>From awareness to action</h3>
             <p style={{fontSize:18}}>This hub supports you to move beyond one-off training towards everyday practice change.</p>
             <p>Short modules, reflection prompts and action plans help you translate insight into concrete, accountable steps in your own context.</p>
@@ -183,14 +183,14 @@ function Home() {
 <br /><br />
 
   <div className="why">
-          <h2 style={{lineHeight:1}}>Looking Ahead: Our Collaborations</h2>
-          <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'center'}} className='b' >We believe lasting change is built through collaboration. We aim to work with the NHS, the British Educational Research Association, Health Education England, and universities across the UK and beyond to embed cultural humility into policy, training, and practice.
+          <h2 style={{lineHeight:1, textAlign:'left'}}>Looking Ahead: Our Collaborations</h2>
+          <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >We believe lasting change is built through collaboration. We aim to work with the NHS, the British Educational Research Association, Health Education England, and universities across the UK and beyond to embed cultural humility into policy, training, and practice.
 
 We also welcome collaboration with international bodies such as WHO, UNESCO, and UNICEF to expand access to culturally humble education and centre dignity, diversity, and justice worldwide.</p>
 </div>
 <div className="founder">
  <div className="a"> 
-     <h2 style={{lineHeight:1}}>Frequently Asked Questions</h2>
+     <h2 style={{lineHeight:1, textAlign:'left', marginLeft:10,}}>Frequently Asked Questions</h2>
 <br />
      <details className='faq' open>
         <summary>Is there a cost to use this platform?</summary>
@@ -245,7 +245,7 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 
   <div className="why b a" style={{textAlign:'left'}}>
           <h2  style={{textAlign:'left', lineHeight:1}}>Latest Announcements</h2>
-          <p id="ABZZ" className='b' style={{marginLeft:-6, textAlign:'left'}}>Stay updated with news, events, and meeting dates.</p>
+          <p id="ABZZ" className='b' style={{marginLeft:0, textAlign:'left'}}>Stay updated with news, events, and meeting dates.</p>
 
           No announcements yet. Check back soon!
 </div>
@@ -253,7 +253,7 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 
   <div className="why b a" style={{textAlign:'left'}}>
           <h2  style={{textAlign:'left',lineHeight:1}}>Get Involved</h2>
-          <p id="ABZZ" className='b' style={{marginLeft:-6, textAlign:'left'}}>Subscribe for updates, webinars, and events. Join our movement!</p>
+          <p id="ABZZ" className='b' style={{marginLeft:0, textAlign:'left'}}>Subscribe for updates, webinars, and events. Join our movement!</p>
 <br />
           <div className="inputGroup b">
             <input  type="email" required placeholder='Enter your Email Here!' />
