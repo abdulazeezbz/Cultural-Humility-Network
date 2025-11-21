@@ -17,6 +17,8 @@
   --color:"black";
    --back: black;
    --bg:rgba(0, 0, 0, 0.548);
+
+   --border: rgba(255, 255, 255, 0.212);
   
 
   margin: 0;
@@ -70,12 +72,17 @@ button:focus-visible {
   :root {
     color: #213547;
     background-color: #ffffff;
-    --trans-bg: rgba(255, 255, 255, 0.644);
+    --trans-bg: rgba(124, 124, 124, 0.116);
+    --trans-bgb: rgba(255, 255, 255, 0.644);
     --color:"white";
 --accent:#0f766e; 
     --back: rgb(255, 255, 255);
     --bg:rgba(0, 0, 0, 0.068);
+
+    --border: rgba(0, 0, 0, 0.199);
   }
+
+  
   a:hover {
     color: #747bff;
   }

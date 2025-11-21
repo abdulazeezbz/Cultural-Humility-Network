@@ -20,7 +20,7 @@ html{
 
 
 .topNav{
-  background: var(--trans-bg);
+  background: var(--trans-bgb);
   width: 100%;
   margin: auto;
   margin-top: 30px;
@@ -316,9 +316,165 @@ form{
 }
 
 .AuthPage .cont.b{
-  background: var(--accent);
+  /* background: var(--accent); */
   color: white;
 }
+
+.layout {
+  border-radius: 10px;
+  width: 95%;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 10px;
+  row-gap: 10px;
+  grid-auto-rows: 1fr;
+  background: black;
+  margin: auto;
+}
+
+
+.layout.b .badges{
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.cta.lear{
+  padding: 10px 20px;
+}
+.layout.b .badges p{
+  padding: 6px 15px;
+  font-size: 13px;
+  border: 1px solid var(--accent);
+  width: fit-content;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+.layout.b{
+  background: transparent;
+}
+
+.layout.b .child{
+  background: var(--trans-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.layout .child{
+  border: 1px solid rgba(255, 255, 255, 0.158);
+  border-top: none;
+  border-bottom: none;
+  text-align: left;
+  /* padding-left: 10px; */
+}
+
+
+.cta.mini{
+  padding: 10px;
+}
+
+.layout .child .slide{
+  width: 100%;
+  display: flex;
+  overflow: hidden; /* ensures content doesn’t overflow while translating */
+  position: relative; /* for positioning if needed */
+  padding: 0px;
+}
+
+.layout .child .slide .cc{
+  margin-top: 30px;
+  background: var(--accent);
+  width: 100%;        /* fills the slide parent */
+  height: 100%;       /* optional, fills height too */
+  display: block;     /* block is better than inline-block here */
+  flex-shrink: 0;     /* prevents it from shrinking inside flex */
+  transition: transform 0.3s ease; /* optional smooth movement */
+  animation: sliderr infinite 10s;
+  padding: 10px 0px;
+}
+
+
+.content.modules{
+  margin-top: 150px;
+  padding: 20px;
+}
+
+.progress{
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+
+.progress .to{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slid{
+  width: 100%;
+  height: 20px;
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid var(--border);
+  margin: 6px 0px;
+}
+
+.slid .Scont{
+  height: 100%;
+  width: 30%;
+  background-color: var(--accent);
+  border-radius: 12px;
+  animation: slid infinite 2s;
+}
+
+.content.cert{
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.cta.cerr{
+  padding: 10px 20px;
+}
+
+@keyframes slid {
+  0%{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 25px;
+  }
+}
+
+
+@keyframes sliderr {
+  0%{
+    transform: translateX(0%);
+  }
+  31%{
+    transform: translateX(0%);
+  }
+  33%{
+    transform: translateX(-100%);
+  }
+  64%{
+    transform: translateX(-100%);
+  }
+  66%{
+    transform: translateX(-200%);
+  }
+  98%{
+    transform: translateX(-200%);
+  }
+}
+
 @media (min-width: 768px) {
   .bb {
     display: flex !important; /* always show on desktop */
@@ -328,6 +484,25 @@ form{
 
 @media screen and (max-width:800px) {
 
+  .content.cert{
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.layout {
+  width: 92%;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    grid-template-rows: auto;   /* rows auto-adjust */
+  }
+
+  .layout .child{
+    border-right: 0;
+  }
 
   .AuthPage{
     flex-direction: column;

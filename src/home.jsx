@@ -47,16 +47,29 @@ function Home() {
       <a href="#" onClick={toggleMenu}>Home</a>
     </li>
     <li>
-      <a href="#about" onClick={toggleMenu}>About-us</a>
+      <a href="#about" onClick={toggleMenu}>About</a>
     </li>
     
+
+    <li>
+      <a href="" onClick={()=> navigate("/modules")}>Modules</a>
+    </li>
+
+     <li>
+      <a href="../#about" onClick={toggleMenu}>Community</a>
+    </li>
+ 
     <li>
       <a href="#support" onClick={toggleMenu}>Support</a>
     </li>
     
+       
     <li>
-      <a href="#contact" onClick={toggleMenu}>Contact-us</a>
+      <a href="#contact" onClick={toggleMenu}>Contact</a>
     </li>
+    
+    
+    
     
 
      <li>
@@ -95,7 +108,68 @@ function Home() {
           <h2>About CHH</h2>
           <p id="ABZZ" className='b' >Discover the story behind the Cultural Humility Hub — advancing cultural humility in health and education by blending implementation science with practical tools for lasting change.</p>
 
+<br /><br /><br />
+<h2>Why Cultural Humility Matters</h2>
+          <p id="ABZZ" className='b' >Cultural humility is a lifelong practice of self-reflection, accountability, and challenging assumptions. Across healthcare and education, inequalities persist. Humility moves beyond awareness to listening deeply, engaging respectfully, and acting for equity.</p>
 
+
+
+
+<section class="layout">
+  <div className='child'>
+    <h3 style={{textAlign:'center'}}>
+      Learning Modules
+    </h3>
+    <p style={{fontSize:13}}>
+      Short, interactive modules on power, bias, and anti-racism with UK case studies and self-assessments. Free and self-paced; earn a certificate.
+      </p>
+      <br /><br />
+
+
+    <ul>
+      - Understanding Power, Privilege & Bias
+      <br />- Reflective Practice
+      <br />- Working Across Cultural Boundaries
+      <br />- Trauma-Informed Care
+      <br />- Anti-Racism in Practice
+      <br />
+      <div id="about" className="" style={{display:'flex'}}>
+          <button className="cta" onClick={()=> navigate("/login")}>Start learning</button>
+        </div>
+    </ul>
+  </div>
+  <div className='child'>
+    <h3 style={{textAlign:'center'}}>
+      What the Data Says
+      </h3 >
+      <p style={{fontSize:13}}>The UK is increasingly diverse — but equity has not kept pace.</p>
+
+
+      <div className="slide">
+        <div className="cc"><h2>
+          14%</h2>
+          <p>Population identifying as non-White British (Census 2021)</p></div>
+        <div className="cc"><h2>20%</h2>
+        <p>UK university students are international (HESA 2022/23)</p>
+        </div>
+        <div className="cc"><h2>4×</h2>
+        <p>Higher maternal mortality for Black women vs White women (UK)</p>
+        </div>
+      </div>
+  </div>
+  <div className='child'>
+    <h3 style={{textAlign:'center'}}>
+      Our Community
+    </h3>
+    <p style={{fontSize:13}}>Join forums for peer discussions, case studies, AMAs, and networking. Share your journey and learn with others.</p>
+
+     <div id="about" className="" style={{display:'flex'}}>
+          <button className="cta mini"  onClick={()=> navigate("/login")}>Join The Conversation</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/login")}>Browse Blogs</button>
+        </div>
+  </div>
+  
+</section>
 
 <div className="founder b" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
 
@@ -120,6 +194,14 @@ CHH grew from first-hand experience: disparities in patient outcomes and student
             <p id="ABZZ">Equip health and education professionals with the knowledge, skills, and mindset to practise cultural humility, creating equitable, inclusive environments that honour diverse experiences.
 
 A world where cultural humility is standard in health and education—reducing disparities and empowering individuals through respectful, collaborative practice.
+</p></div>
+
+
+ <div className="a"> 
+     <h2>Looking Ahead: Our Collaborations</h2>
+            <p id="ABZZ">We believe lasting change is built through collaboration. We aim to work with the NHS, the British Educational Research Association, Health Education England, and universities across the UK and beyond to embed cultural humility into policy, training, and practice.
+
+We also welcome collaboration with international bodies such as WHO, UNESCO, and UNICEF to expand access to culturally humble education and centre dignity, diversity, and justice worldwide.
 </p></div>
      </div>
         </div>

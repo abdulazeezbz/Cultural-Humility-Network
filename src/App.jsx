@@ -8,6 +8,7 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 import Login from './login';
 import Home from './home';
 import Register from './register';
+import Modules from './modules';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ function App() {
 
     <Routes>
   <Route path="/" element={<Home />} />
+  <Route path="/modules" element={<Modules />} />  
   <Route path="/login" element={<Login />} />  
   <Route path="/register" element={<Register />} />  
 
