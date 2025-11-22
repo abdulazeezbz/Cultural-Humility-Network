@@ -7,8 +7,13 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
 import TopNav from './topnava';
+import Footer from './footer';
 
 const About = () => {
+
+
+    const navigate = useNavigate();   // <-- HERE
+    
   return (
     <>
       <TopNav/>
@@ -20,10 +25,10 @@ const About = () => {
           </p>
 
 <div className="">
-<button className="cta"> Explore Modules</button>
-<button className="cta outlines"> Meet the Community</button>
-
+<button className="cta"  onClick={()=> navigate("/modules")}>Explore Modules</button>
+          <button className="cta outlines" onClick={()=> navigate("/community")}>Meet The Community</button>
 </div>
+
         
       </div>
 
@@ -36,7 +41,7 @@ const About = () => {
                             <img src={FounderIcon} alt='' />
                 </div>
                           <div className="b">
-                                      <p id="ABZZ" style={{textAlign:'justify'}}>Dr. Jesse Enebi Usman is a lecturer, social care nurse, and public health practitioner with over ten years of experience across Africa and the UK. With advanced degrees in nursing, public health, and implementation science, his work bridges gaps in healthcare and education for diverse populations and appears in international journals.
+                                      <p id="ABZZ" style={{textAlign:'left'}}>Dr. Jesse Enebi Usman is a lecturer, social care nurse, and public health practitioner with over ten years of experience across Africa and the UK. With advanced degrees in nursing, public health, and implementation science, his work bridges gaps in healthcare and education for diverse populations and appears in international journals.
 
                 Passionate about implementation science (the study of how to embed evidence into routine practice), Jesse founded CHN to translate cultural humility principles into actionable tools. Moving beyond “cultural sensitivity” workshops, CHN emphasises lifelong self-reflection, power balance, and intersectionality to address systemic inequities.
 
@@ -122,6 +127,9 @@ const About = () => {
                 </p></div> */}
 
      
+
+     
+     <Footer />
     </>
   )
 }

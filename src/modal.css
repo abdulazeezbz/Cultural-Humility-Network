@@ -1,0 +1,111 @@
+
+
+/* normal modal overlay remains unchanged for other pages */
+.modal-overlay {
+  position: fixed;
+  bottom: -0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 999999999999999;
+}
+
+
+.home-modal .modal-overlay {
+  /* position: fixed; */
+  
+  bottom: -2400px;  /* slides from bottom if you want */
+
+    position: fixed;
+  /* bottom: -2000px; */
+  left: 0;
+  width: 98.9vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 999999999999999;
+}
+
+
+
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-height: 80vh;
+  min-width: 600px;
+  overflow: auto;
+  max-width: 400px;
+  margin: auto;
+}
+@media screen and ( max-width:800px) {
+  .home-modal .modal-overlay{
+      bottom: -3933px; 
+      height: 110vh;
+      width: 100%;
+      overflow: hidden;
+  }
+
+  .modal-content {
+    width: 90%;
+    min-width: 60%;
+}
+}
+
+.modal {
+  margin: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  bottom: 100px;
+  width: 90vw;
+  height: 104vh;
+  z-index: 99999999;
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/* Slide-up animation when opening */
+.modal-content.open {
+  animation: slideUp 0.35s ease forwards;
+}
+
+/* Slide-down animation when closing */
+.modal-content.close {
+  animation: slideDown 0.35s ease forwards;
+}
+
+
+/* Keyframes */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

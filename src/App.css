@@ -8,6 +8,7 @@
   padding: 2em;
 }
 
+
 html{
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
@@ -20,6 +21,8 @@ html{
 
 
 .topNav{
+  /* color: var(--accent); */
+  box-shadow: 0px 0px 10px -8px;
   background: var(--trans-bgb);
   width: 100%;
   margin: auto;
@@ -242,10 +245,9 @@ form{
 .inputGroup{
   width: 100%;
   display: flex;
-
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -281,6 +283,10 @@ form{
   width: 100%;
 }
 
+.inputGroup select{
+  padding: 10px 30px;
+  width: 20%;
+}
 
 
 .inputGroup.b input{
@@ -459,6 +465,12 @@ form{
   border-radius: 12px;
 }
 
+
+.layout.b.modules .child{
+  width: 90%;
+}
+
+
 /* Tablet (≥ 600px) */
 @media (min-width: 600px) {
   .slide {
@@ -549,9 +561,6 @@ form{
   scroll-snap-stop: always; /* ALWAYS snap exactly */
 }
 
-.layout .child .slide .cc:hover {
-  scale: 1.01;
-}
 
 
 
@@ -642,6 +651,171 @@ form{
   padding: 10px;
   border-radius: 10px;
 }
+
+
+.founder.sup{
+  margin-top:150px;
+  border: 1px solid var(--border);
+  padding: 10px;
+  width: 95%;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.founder.sup.an{
+  margin-top: 10px;
+}
+
+.noList li{
+  list-style: none;
+}
+
+
+.cols{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  padding: 30px 0px;
+}
+.cols h4{
+  font-weight: 600;
+}
+.cols .A{
+  color: var(--accent);
+  font-size: 19px;
+}
+
+input, select, textarea{
+  background: white;
+  outline: none;
+  color: black;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+
+.content.community .t{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.inputGroup.commu .aa{
+  display: flex;
+}
+
+.inputGroup.commu input{
+  width: 75%;
+}
+.inputGroup.commu select, .inputGroup.commu button{
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.content.community{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.separate{
+  width: 83%;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.separate .left{
+  width: 79%;
+}
+
+.separate .right{
+  width: 35%;
+}
+.card{
+  border-radius: 10px;
+  padding: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  margin-bottom: 15px;
+}
+
+
+.card button{
+  width: 30%;
+  margin-top: -7px;
+}
+
+.postCard .card .poster{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.postCard .card img{
+  width: 60px;
+}
+
+
+.postCard .controls{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: -15px;
+  gap: 10px;
+}
+
+.postCard .controls button{
+  width: fit-content;
+  margin: auto 10px;
+}
+
+
+.footer{
+  position: absolute;
+  z-index: 1000;
+
+  width: 100%;
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  color: white;
+}
+
+.footer .options{
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  padding: 20px 0px;
+  justify-content: center;
+}
+
+.footer a{
+  border-right: 1px solid ;
+  padding-right: 15px;
+  color: white;
+  cursor: pointer;
+  
+}
+
+.mainn{
+  position: relative;
+}
+
+
 @keyframes slid {
   0%{
     border-top-right-radius: 20px;
@@ -692,8 +866,37 @@ form{
 
 
 @media screen and (max-width:800px) {
+.content.community .t{
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 
+.footer .options{
+  flex-direction: column;
+  padding: 20px;
+  width: 80%;
+}
+
+.footer a{
+  border-right: 1px solid ;
+  padding-right: 15px;
+  color: white;
+  
+}
+
+.content.community .t .fle{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  
+}
+
+.content.community .t .fle button{
+  width: 100%;
+}
   .layout .child .slide .cc{
     width: 80%;
     padding: 10px;
@@ -702,6 +905,21 @@ form{
     margin-right: 10px;
     border-radius: 5% 50% 5% 50% / 50% 5% 50% 5%;
   }
+
+  .inputGroup.commu{
+    width: 86%;
+    margin: auto;
+  }
+  .inputGroup.commu .aa{
+  width: 105%;
+  margin: auto;
+}
+
+  .inputGroup.commu select, .inputGroup.commu button{
+    width: 70%;
+  }
+
+
   .founder.sii .a{
   margin: auto;
   width: 90%;
@@ -733,7 +951,32 @@ form{
     border-right: 0;
   }
 
- 
+
+  .separate{
+  width: 94%;
+  flex-direction: column;
+}
+.separate .left{
+  width: 100%;
+}
+
+.separate .right{
+  width: 100%;
+}
+ .layout.ab .child{
+  width: 88%;
+  margin: 0px;
+  padding: 20px;
+}
+  
+.cols{
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 0px;
+  gap: 20px;
+  padding: 20px;
+}
 
   .inputGroup.b .cta.b{
     width: 100%;
@@ -774,6 +1017,13 @@ form{
 
 .cta.create{
   display: flex;
+}
+
+.tribtn{
+  flex-direction: column;
+}
+.tribtn button{
+  width: 95%;
 }
   .inputGroup{
     width: 80%;
@@ -925,5 +1175,29 @@ width: 70%;
   width: 70%;
 }
 
+.founder.sup{
+  width: 90%;
+}
 
+
+.content.community{
+  width: 84%;
+}
+
+
+.card .inputGroup{
+  margin-left: 20px;
+}
+
+.postCard .controls button{
+  width: fit-content;
+  margin: auto;
+}
+
+.footer{
+  position: absolute;
+  z-index: 1000;
+padding: 15px;
+  width: fit-content;
+}
 }

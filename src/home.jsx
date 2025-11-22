@@ -7,17 +7,18 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
 import TopNav from './topnava';
+import Footer from './footer';
+
 
 function Home() {
+
+  
   
 
   const [activeDot, setActiveDot] = useState(0);
   const navigate = useNavigate();   // <-- HERE
   
-  useEffect(() => {
-  const slider = document.querySelector(".cc");
-  slider.style.transform = `translateX(-${activeDot * 100}%)`;
-}, [activeDot]);
+
 
   return (
     <>
@@ -148,8 +149,8 @@ function Home() {
   </div>
 </div>
 
-<section className="layout nn">
-  <div className='child'>
+<section className="layout nn" >
+  <div className='child' data-aos-delay="500" data-aos-duration="500">
     <h3 style={{textAlign:'left'}}>
       Learning Modules
     </h3>
@@ -168,12 +169,12 @@ function Home() {
       <br />
       <div id="about" className="" style={{display:'flex'}}>
           <button className="cta mini" onClick={()=> navigate("/modules")}>Start learning</button>
-          <button className="cta outlines mini" onClick={()=> navigate("/moules")}>View Certificate</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/modules")}>View Certificate</button>
         </div>
     </ul>
   </div>
 
-  <div className='child'>
+  <div className='child' data-aos-delay="500" data-aos-duration="500">
     <h3 style={{textAlign:'left'}}>
       Our Community
     </h3>
@@ -203,44 +204,44 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
      <details className='faq' open>
         <summary>Is there a cost to use this platform?</summary>
 
-        <p style={{textAlign:'left'}}>No.  Core modules, forums, and key resources are free. Optional certificates and expert-led workshops may carry a small fee.</p>
+        <p style={{textAlign:'left', fontSize:14}}>No.  Core modules, forums, and key resources are free. Optional certificates and expert-led workshops may carry a small fee.</p>
      </details>
 
       <details className='faq'>
         <summary>Who is this platform for?</summary>
 
-        <p style={{textAlign:'left'}}>Healthcare professionals, educators, students, administrators, policymakers, and advocates — anyone committed to equity and inclusion.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Healthcare professionals, educators, students, administrators, policymakers, and advocates — anyone committed to equity and inclusion.</p>
      </details>
 
 
       <details className='faq'>
         <summary>Do I need an account for modules?</summary>
 
-        <p style={{textAlign:'left'}}>Yes. Logging in lets you track progress, earn certificates, and manage your learning. We collect basic details only and follow GDPR.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Yes. Logging in lets you track progress, earn certificates, and manage your learning. We collect basic details only and follow GDPR.</p>
      </details>
 
 
      <details className='faq'  id='contact'>
         <summary>How long does each module take?</summary>
 
-        <p style={{textAlign:'left'}}>Between 1 and 1.5 hours. It’s self-paced and your progress is saved.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Between 1 and 1.5 hours. It’s self-paced and your progress is saved.</p>
      </details>
 
       <details className='faq'  id='contact'>
         <summary>Will I receive a certificate?</summary>
 
-        <p style={{textAlign:'left'}}>Yes — complete all five modules to unlock a personalised certificate.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Yes — complete all five modules to unlock a personalised certificate.</p>
      </details>
       <details className='faq'  id='contact'>
         <summary>Is it relevant outside the UK?</summary>
 
-        <p style={{textAlign:'left'}}>Absolutely. While UK systems are highlighted, the approaches are globally applicable.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Absolutely. While UK systems are highlighted, the approaches are globally applicable.</p>
      </details>
 
       <details className='faq'  id='contact'>
         <summary>How do you protect my data?</summary>
 
-        <p style={{textAlign:'left'}}>Your data is securely stored, used only for service delivery/analytics, and never sold. We are fully GDPR-compliant.</p>
+        <p style={{textAlign:'left', fontSize:14}}>Your data is securely stored, used only for service delivery/analytics, and never sold. We are fully GDPR-compliant.</p>
      </details>
 
 
@@ -267,74 +268,25 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
             <input  type="email" required placeholder='Enter your Email Here!' />
             <button className='cta mini b'>Subscribe</button>
           </div>
+          
+          
 </div>
 
 
         </div>
+
+
       </div>
+
+
      </div>
+<br /><br /><br />  
 
-                              {/* 
-                              
-              </div>  
-
-
-
-
-
-        <div className="founder b"  data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
-
-          <div className="a"> 
-            <h2>Support CHN</h2>
-                    <p style={{textAlign:'center', maxWidth:'90%', marginLeft:'20px', marginTop:10,}}>CHN is free and self-funded so anyone can learn. If our work helps you or your organisation, a voluntary contribution keeps the lights on and the work growing.</p>
-                    
-
-                  
-
-                      <a href="https://paypal.me/JESSEUSMAN" target='_blank'><button className="cta">Support with PayPal</button></a>
-                      <button className="cta outlines">Join The Community</button>
-                    
-                    </div>
-            </div>
-
-
-        <div className="founder b" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
-
-          <div className="a"> 
-            <h2>Why your support matters</h2>
-                    <p>Contributions cover essentials and help us expand access, quality, and impact:</p>
-                    
-
-                  
-        <ul style={{textAlign:'left', maxWidth:'90%', marginLeft:'auto', marginTop:10,}}>
-            <li>Hosting & infrastructure to keep the site fast, secure, and accessible.</li>
-            <li>Regular content updates across modules and resources.</li>
-            <li>New tools and features driven by user feedback.</li>
-            <li>Community events, moderation, and learner support.</li>
-            <li>Accessibility improvements and mobile optimisation.</li>
-        </ul>
-                    </div>
-            </div>
-
-
-        <div className="founder b" data-aos="fade-up" data-aos-delay="500" data-aos-duration="500">
-          
-            </div>
-
-
-
-
-
-        
-
-
- */}
-
-
+<Footer />
+     </div>
 
      
-     </div>
-
+{/* <div className="mainn"></div> */}
     </>
   )
 }

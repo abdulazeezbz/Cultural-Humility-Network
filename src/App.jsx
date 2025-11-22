@@ -11,6 +11,8 @@ import Register from './register';
 import Modules from './modules';
 import About from './about';
 import Community from './community';
+import Support from './support';
+import Modal from "./modal";
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -35,6 +37,7 @@ function App() {
   <Route path="/register" element={<Register />} />  
   <Route path="/about" element={<About />} />  
   <Route path="/community" element={<Community />} />  
+  <Route path="/support" element={<Support />} />  
 
 </Routes>
 

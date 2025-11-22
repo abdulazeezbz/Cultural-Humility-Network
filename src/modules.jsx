@@ -7,6 +7,7 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
 import TopNav from './topnava';
+import Footer from './footer';
 
 function Modules() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -52,33 +53,7 @@ function Modules() {
       </div>
 
       <div className="content">
-        <div className="layout b">
-           <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
-
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
-                    </div>
-
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>4/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"80%"}}></div>
-            </div>
-
-          </div>
-                    <button className='cta lear'>Contineu Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
-                
-            </div>
-
-
-
+        <div className="layout b modules">
             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
@@ -90,20 +65,16 @@ function Modules() {
                     <p>Est. 1.5 hours</p>
                     </div>
 
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>2/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"40%"}}></div>
-            </div>
-
-          </div>
-                    <button className='cta lear'>Contineu Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
+           
+                    <div className="" style={{display:'flex', marginLeft:-14}}>
+                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
+                    </div>
                 
             </div>
 
-            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+
+             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -114,20 +85,15 @@ function Modules() {
                     <p>Est. 1.5 hours</p>
                     </div>
 
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>0/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"0%"}}></div>
-            </div>
-
-          </div>
-                    <button className='cta lear'>Start Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
+           
+                    <div className="" style={{display:'flex', marginLeft:-14}}>
+                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
+                    </div>
                 
             </div>
 
-            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
 
@@ -138,68 +104,19 @@ function Modules() {
                     <p>Est. 1.5 hours</p>
                     </div>
 
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>4/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"80%"}}></div>
-            </div>
-
-          </div>
-                    <button className='cta lear'>Contineu Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
-                
-            </div>
-
-            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
-
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
+           
+                    <div className="" style={{display:'flex', marginLeft:-14}}>
+                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
                     </div>
-
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>4/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"80%"}}></div>
-            </div>
-
-          </div>
-                    <button className='cta lear'>Contineu Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
                 
             </div>
 
-            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
+           
 
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
-                    </div>
 
-  <div className="progress">
-            <div className="to"><h4>Your progress</h4> <p>4/5 completed</p></div>
-            
-            <div className="slid">
-                <div className="Scont" style={{width:"80%"}}></div>
-            </div>
 
-          </div>
-                    <button className='cta lear'>Contineu Learning</button>
-                    <button disabled className='cta lear outlines'>Get Certificate</button>
-                
-            </div>
-
-            
+                        
         </div>
       </div>
 
@@ -231,6 +148,7 @@ function Modules() {
 
 
       
+      <Footer />
 
     </>
   )
