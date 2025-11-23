@@ -13,6 +13,7 @@ import About from './about';
 import Community from './community';
 import Support from './support';
 import Modal from "./modal";
+import TrainingsLanding from './trainingPage';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +39,9 @@ function App() {
   <Route path="/about" element={<About />} />  
   <Route path="/community" element={<Community />} />  
   <Route path="/support" element={<Support />} />  
-
+  <Route path="/training" element={<TrainingsLanding />} />  
+  
+  
 </Routes>
 
   

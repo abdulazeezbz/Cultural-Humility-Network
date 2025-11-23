@@ -172,10 +172,9 @@ function Home() {
           <button className="cta outlines mini" onClick={()=> navigate("/modules")}>View Certificate</button>
         </div>
     </ul>
-  </div>
 
-  <div className='child' data-aos-delay="500" data-aos-duration="500">
-    <h3 style={{textAlign:'left'}}>
+<br /><br />
+        <h3 style={{textAlign:'left'}}>
       Our Community
     </h3>
     <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>Join forums for peer discussions, case studies, AMAs, and networking. Share your journey and learn with others.</p>
@@ -185,6 +184,33 @@ function Home() {
           <button className="cta outlines mini" onClick={()=> navigate("/community")}>Browse Blogs</button>
         </div>
   </div>
+
+  <div className='child' data-aos-delay="500" data-aos-duration="500">
+
+<br />
+
+         <h3 style={{textAlign:'left'}}>
+     We Offer Training
+    </h3>
+    <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>
+
+      We Offer Online and in-person trainings that center african, Black and other minortised communities. our session blend
+      cultural humility, anti-racism and community-based practice to help individualz, teams and organizations build safer, more equitable enviroments
+    </p><br /><br />
+
+<ion-icon name="checkmark-done-circle-outline"></ion-icon> For Indivisuals, Teams and organizations <br /> <br />
+<ion-icon name="checkmark-done-circle-outline"></ion-icon> Online or in-person tailored to your context <br /> <br />
+<ion-icon name="checkmark-done-circle-outline"></ion-icon> Grounded in lived experience, research and practice <br /> <br />
+
+
+     <div id="about" className="" style={{display:'flex'}}>
+          <button className="cta mini"  onClick={()=> navigate("/training")}>Explore Trainings</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/training")}>Register For Training</button>
+        </div>
+  </div>
+
+
+  
 
 
   
