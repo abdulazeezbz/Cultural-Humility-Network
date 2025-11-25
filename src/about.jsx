@@ -17,8 +17,7 @@ const About = () => {
   return (
     <>
       <TopNav/>
-<br /><br /><br />
-      
+
         <div className="content modules about"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <h2>About CHN</h2>
           <p>The Cultural Humility Network (CHN) brings together education, practice and research to

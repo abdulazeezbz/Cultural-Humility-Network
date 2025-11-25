@@ -14,6 +14,7 @@
     width: 260px;
     height: 100vh;
     position: fixed;
+    top: 0px;
     overflow: auto;
     grid-area: sidebar;
     background-color: var(--accent);

@@ -13,12 +13,179 @@ import Footer from './footer';
 
 const Community = () => {
     const navigate = useNavigate();   // <-- HERE
+    const [open, setOpen] = useState(false);
   return (
     <>
       <TopNav/>
+
+            
+        <div className="content modules about"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+          <h2>Join Our Global Community</h2>
+          <p>Connect with practitioners, students, educators and community 
+            members from around the world. <br />Share experiences of cultural humility, ask questions, 
+            and learn from real stories from health, care and education
+          </p>
+          
+
+<div className="">
+<button className="cta"  onClick={()=> location.href='#forum'}>Browse Forum</button>
+          <button className="cta outlines" onClick={()=> location.href='#blog'}>Read blog posts</button>
+</div>
+<p>
+            This community space is moderated. Posts may be reviewed to ensure they align with our values of respect, safety and inclusion
+          </p>
+
+</div>
+
+
+      <div className="card comm">
+        <h2>
+            About this community
+        </h2>
+        <p>
+            This space is designed to help people learn about cultural humility through real
+             experiences, questions and discussions. It sits alongside the learning modules and 
+             offers a place to think aloud, ask for help and share what is working (and what is not)
+              in everyday practice
+        </p>
+
+        <br />
+        <p>In the community hub you can:</p>
+        <ul>
+            <li>Start forum threads to explore real scenarios and invite others to reflect with you.</li>
+            <li>Comment on and react to other people’s posts in a thoughtful, respectful way.</li>
+            <li>Submit longer blog posts sharing your learning, case studies and reflections.</li>
+            <li>Browse highlighted threads and themes, including health, education, community work and more.</li>
+            <li>Suggest topics for future discussion, events or learning resources.</li>
+        </ul>
+<br /><hr /><br />
+        <p>The right-hand column contains community guidelines, safety information and ways to stay connected.</p>
+      
+
+  <div>
+      <button
+        onClick={() => setOpen(!open)}
+        className="cta outlines mini"
+        style={{ marginTop: 10, width: "auto" }}
+      >
+        How to use this space
+      </button>
+
+      {open && (
+        <div style={{ marginTop: 10 }}>
+          <p className="meta">A gentle way to get started is:</p>
+
+          <ul className="overview-list">
+            <li>Complete one or two modules on the Learn page or reflect on your own experience.</li>
+            <li>Bring a real situation you are thinking about and start a short thread describing it.</li>
+            <li>Read how others respond, noticing where you feel challenged, affirmed or surprised.</li>
+            <li>Share a small next step you plan to try in your own work, study or community.</li>
+          </ul>
+
+          <p className="meta">
+            You do not need to be an expert. Cultural humility is about staying open, curious, and willing to learn.
+          </p>
+        </div>
+      )}
+    </div>
+
+
+      </div>
+
+
+
+       <div className="card comm">
+        <h2>
+            Join our Cultural Humility Research & Practice Group
+        </h2>
+        <p>
+           We are building a small research and practice group focused on cultural humility, 
+           implementation science and equity in health and education. We welcome practitioners,
+            students, educators, community members and researchers who are interested in 
+           collaborating on studies, co-producing resources, and shaping future teaching and events.
+        </p>
+
+        <br />
+        <ul>
+            <li>Be kept informed about research projects, studies and calls for participants.</li>
+            <li>Shape teaching, conferences and culture days centred on cultural humility.</li>
+            <li>Co-develop resources, case studies and practice tools used in the Learn and Community spaces.</li>
+            <li>Partner on implementation projects in healthcare, education or community settings.</li>
+            <li>If you are interested in joining or hearing more, share a few details below. This is not a commitment – it simply helps us understand who 
+                is interested and how we might work together:</li>
+        </ul>
+<br />
+
+<div className="inputGroup">
+    <div className="">
+        <label htmlFor="">Your role / background</label>
+        <input type="text" placeholder='e.g. student nurse, lecturer, mental health practitioner, community worker' />
+    </div>
+
+     <div className="">
+        <label htmlFor="">Areas of interest</label>
+        <input type="text" placeholder='e.g. mental health, education, implementation, Black health, placements' />
+    </div>
+</div>
+
+
+<div className="inputGroup">
+   
+     <div className="">
+        <label htmlFor="">Anything you would like us to know</label>
+        <textarea rows={7} placeholder='Optional – share ideas, questions, or the kinds of projects you might want to be involved in.'> </textarea>
+    </div>
+</div>
+
+<p><input type="checkbox" /> I am happy for the team to contact me about research and related activities.</p>
+
+<button className='cta mini' style={{width:'auto', marginTop:10}}>Submit Your Intrest</button>
 <br /><br />
       
+      </div>
+
+
+<hr />
+<br />
+
+
+<section class="section glanc">
+  <div className="">
+  <h2>
+    Your community snapshot
+  </h2>
+  <p>This is a light-touch way of noticing how you might engage with the community. In a live version, these numbers can update based on your activity</p>
+<center>
+<div class="glance new" aria-label="Cultural Humility Hub at a glance">
+   
+      <div class="glance-item">
+        <div class="glance-label">Threads started</div>
+        <div class="glance-value">37</div>
+        <p class="glance-text">Once you post your first thread, this number begins to grow.</p>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Comments posted</div>
+        <div class="glance-value">34</div>
+        <p class="glance-text">Thoughtful comments help build shared learning and support.</p>
+      </div>
+      <div class="glance-item">
+        <div class="glance-label">Blog posts submitted</div>
+        <div class="glance-value">344</div>
+        <p class="glance-text">Longer reflections can be shared as blog posts once you feel ready.</p>
+      </div>
+    </div>
+</center>
+
+
+</div>
+
+
+
+  </section>
         <div className="content modules community"  id='newthread'  data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+            
+
+            
             <div className="t">
                 <h2>Community Hub</h2>
                 <div className="fle" style={{display:'flex'}}>
@@ -250,19 +417,69 @@ const Community = () => {
          {/* Start Discution */}
             <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
                 <h3>Community Guidelines</h3>
-               <p>Be respectful and open to learning.
-                Avoid identifiers in sensitive case studies.
-                Use content warnings where appropriate.
-                Cite resources when sharing materials.</p>
+               <p>This space is for learning together. We expect kindness, curiosity and care when discussing culture, identity, power and inequality.</p>
+               <br />
+               <p>Be respectful and open to learning from others’ experiences.</p>
+               <br />
+               <p>Avoid using names, locations or details that could identify individuals or services.</p>
+               <br />
+
+                <p>Use content warnings for posts that mention trauma, self-harm, abuse or discrimination.</p>
+
+<br />
+<p>Challenge ideas, not people. No harassment, hate speech or personal attacks.</p>
+<br />
+<p>Remember this is a learning space, not a place for clinical or legal advice.</p>
+
+
+
                 <br />
                 <hr />
                 <br />
                 <h3>Why we collect optional details</h3>
-                <p>To understand participation worldwide and improve inclusivity. Data is stored securely and never shared without consent (GDPR-aligned).</p>
+                <p>We may ask optional questions (such as country, role or sector) so we can understand who is taking part and improve inclusivity. Any data we collect is stored securely and handled in line with data protection law, including GDPR. We will never share identifiable information without your clear consent.</p>
 
 
             </div>
             {/* ENDStart Discution */}
+
+
+
+
+  <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+                <h3>Sharing safely</h3>
+               <p>Many people use this community to talk about difficult experiences, including racism, exclusion and unequal treatment. When you post:</p>
+               <br />
+               <p>Change or remove details that could identify real people or organisations.</p>
+               <br />
+               <p>Focus on what happened, how it felt, and what might need to change.</p>
+               <br />
+
+               <p>If you feel distressed while posting, take a break and reach out for support locally.</p>
+               <br />
+
+               <p>If you see something that worries you, you can let the team know via the support or contact page.</p>
+               <br />
+               
+               
+    </div>
+
+
+    
+
+  <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
+                <h3>Quick links</h3>
+             <br />
+
+<a href="">Join the research & practice group</a><br /><br />
+<a href="">Start a new thread</a><br /><br />
+<a href="">Browse forum threads</a><br /><br />
+<a href="">Read approved blogs</a><br /><br />
+<a href="">View pinned threads</a><br /><br />
+<a href="">Back to community hub</a><br /><br />
+               
+               
+    </div>
 
 
             {/* Start Discution */}

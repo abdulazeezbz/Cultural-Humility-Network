@@ -580,7 +580,10 @@ form{
 
 .content.modules.about{
   margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 20px;
+  width: 98%;
   text-align: center;
   border: 1px solid var(--border);
 }
@@ -719,11 +722,18 @@ input, select, textarea{
   height: 40px;
   margin-top: 10px;
 }
+.card.comm{
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+  margin-bottom: 20px;
+}
 
 .content.community{
-  width: 80%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0px;
   border-radius: 10px;
   background: var(--bg);
   border: 1px solid var(--border);
@@ -818,6 +828,15 @@ input, select, textarea{
 .mainn{
   position: relative;
 }
+
+.card.comm {
+  padding-left: 30px;
+}
+
+.card.comm ul{
+  padding-left: 45px;
+}
+
 
 
 
@@ -1186,7 +1205,8 @@ width: 70%;
 
 
 .content.community{
-  width: 84%;
+  width: 95%;
+  margin-top: 180px;
 }
 
 
@@ -1204,6 +1224,34 @@ width: 70%;
   z-index: 1000;
 padding: 15px;
   width: fit-content;
+}
+
+
+
+.card.comm{
+  margin: auto;
+  /* margin-top: 250px; */
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.content.community{
+  margin-top: 10px;
+}
+
+.content.modules.about{
+  margin-top: 240px;
+
+}
+
+.card.comm .inputGroup{
+  width: 100%;
+  margin: auto;
+}
+
+.card.comm .inputGroup input, .card.comm .inputGroup textarea{
+  width: 100%;
+  margin: auto;
 }
 }
 
@@ -1338,7 +1386,21 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
 
 
 .glance{display:grid;gap:10px}
-  @media (min-width:720px){.glance{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+
+  @media (min-width:720px){
+    .glance{
+      grid-template-columns:repeat(4,minmax(0,1fr))
+    }
+
+    .glance.new{
+      grid-template-columns:repeat(3,minmax(0,1fr))
+    }
+  
+  }
+
+
+    
   .glance-item{border-radius:12px;border:1px dashed var(--border);padding:10px 12px;background:var(--surface-alt, #f7faf9)}
   .glance-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:2px}
   .glance-value{font-weight:800;color:var(--ink)}
