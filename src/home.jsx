@@ -32,7 +32,7 @@ function Home() {
      <div className="hero" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
       <div className="main">
         <div className="content">
-          <h2 >Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
+          <h2>Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
           <p>We believe cultural humility is the cornerstone of equitable practice in health and education. Explore immersive learning, evidence-based modules, and a supportive community that centres respect, reflection, and inclusion.</p>
 
         <div id="about" className="" style={{display:'flex'}}>
@@ -45,10 +45,68 @@ function Home() {
       </div>
       </div>
       
+<br /><br />
+     
       
       <div className="heroB" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
       <div className="main">
         <div className="content b">
+
+           <div className="card" style={{textAlign:'left'}}>
+  <h2 style={{textAlign:'left', lineHeight:1}}>What is cultural humility?</h2>
+  <p style={{textAlign:'left'}}>Cultural humility is a way of approaching other people and communities that begins with respect and a recognition that we do not know everything about someone else’s life. Instead of assuming we are “the expert” on a person or group, we see them as the experts on their own experiences. Our role is to listen, to reflect, and to work with them.</p>
+
+
+  <br />
+  <p style={{textAlign:'left'}}>
+​Instead of a one-off "competence" you can tick off, cultural humility is a lifelong practice of: paying attention to yourself, sharing power where you can, and working with people and communities rather than doing things to or for them.
+</p>
+
+
+<div className="badges">
+  <span><ion-icon name="barbell-outline"></ion-icon> Lifelong Learning</span>
+  <span><ion-icon name="analytics-outline"></ion-icon> Power-aware practice</span>
+  <span><ion-icon name="business-outline"></ion-icon> Community Partnership</span>
+</div>
+<br />
+  <p style={{textAlign:'left'}}>
+Want a bit more detail? Open the short sections below. You can revisit them at any point.</p>
+<br />
+
+<div className="">
+  <div className="faq">
+    <details>
+      <summary>​Origins and why the language shifted</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Humility vs "cultural competence"</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Power, privilege and fairness</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Putting this into everyday practice</summary>
+      <p></p>
+    </details>
+  </div>
+
+ 
+
+
+</div>
+</div>
 
 <div className="why">
           <h2 style={{lineHeight:1, textAlign:'left'}}>Why Cultural Humility Matters</h2>
@@ -152,7 +210,7 @@ function Home() {
 
 <section className="layout nn" >
   <div className='child' data-aos-delay="500" data-aos-duration="500">
-    <h2 style={{textAlign:'left'}}>
+    <h2 style={{textAlign:'left', lineHeight:1}}>
       See Our Learning Opportunities
     </h2>
     <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>
@@ -244,61 +302,7 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 </div>
 <br /><br /><hr /><br />
 
-<div className="card" style={{textAlign:'left'}}>
-  <h2 style={{textAlign:'left', lineHeight:1}}>​What do we mean by cultural humility?</h2>
-  <p style={{textAlign:'left'}}>​Cultural humility focuses on "othering" and "our people" – being open, reflective and willing to learn, rather than assuming we already know what someone's life, culture or beliefs are like. It asks us to notice our own assumptions, reflect on the power we hold in professional roles, and build relationships that are equal and collaborative as possible</p>
 
-
-  <br />
-  <p style={{textAlign:'left'}}>
-​Instead of a one-off "competence" you can tick off, cultural humility is a lifelong practice of: paying attention to yourself, sharing power where you can, and working with people and communities rather than doing things to or for them.
-</p>
-
-
-<div className="badges">
-  <span><ion-icon name="barbell-outline"></ion-icon> Lifelong Learning</span>
-  <span><ion-icon name="analytics-outline"></ion-icon> Power-aware practice</span>
-  <span><ion-icon name="business-outline"></ion-icon> Community Partnership</span>
-</div>
-<br />
-  <p style={{textAlign:'left'}}>
-Want a bit more detail? Open the short sections below. You can revisit them at any point.</p>
-<br />
-
-<div className="">
-  <div className="faq">
-    <details>
-      <summary>​Origins and why the language shifted</summary>
-      <p></p>
-    </details>
-  </div>
-
-  <div className="faq">
-    <details>
-      <summary>​Humility vs "cultural competence"</summary>
-      <p></p>
-    </details>
-  </div>
-
-  <div className="faq">
-    <details>
-      <summary>​Power, privilege and fairness</summary>
-      <p></p>
-    </details>
-  </div>
-
-  <div className="faq">
-    <details>
-      <summary>​Putting this into everyday practice</summary>
-      <p></p>
-    </details>
-  </div>
-
- 
-
-
-</div>
-</div>
   <div className="why b a" style={{textAlign:'left'}}>
           <h2  style={{textAlign:'left', lineHeight:1}}>Latest Announcements</h2>
           <p id="ABZZ" className='b' style={{marginLeft:0, textAlign:'left'}}>Stay updated with news, events, and meeting dates.</p>
