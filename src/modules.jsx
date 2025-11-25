@@ -37,6 +37,15 @@ function Modules() {
 
 
         <div className="content modules"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+           <div className="why card">
+          <h2 style={{lineHeight:1, textAlign:'left'}}> Cultural Humility in Practice</h2>
+          <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >This hub offers self-guided learning on cultural humility in health, social care, education and community settings. Work through core modules, explore specialist topics, and collect certificates you can use for CPD or portfolio evidence.</p>
+</div>
+<br /><br /><hr /><br />
+
+
+
+          
           <h2>Interactive Learning Modules</h2>
           <p>Comprehensive, evidence-based training in cultural humility. Work at your pace with interactive scenarios, quizzes, and reflections. Complete a module at ≥80% to unlock its certificate; finish all five for the overall certificate.
           </p>

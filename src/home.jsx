@@ -296,11 +296,6 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 </div>
 <br /><br /><hr /><br />
 
- <div className="why">
-          <h2 style={{lineHeight:1, textAlign:'left'}}> Cultural Humility in Practice</h2>
-          <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >This hub offers self-guided learning on cultural humility in UK health, social care, education and community settings. Work through core modules, explore specialist topics, and collect certificates you can use for CPD or portfolio evidence.</p>
-</div>
-<br /><br /><hr /><br />
 
 
   <div className="why b a" style={{textAlign:'left'}}>
