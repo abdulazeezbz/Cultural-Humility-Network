@@ -53,7 +53,7 @@ function Modules() {
       </div>
 
       <div className="content">
-        <div className="layout b modules">
+        <div className="layout b modules aa">
             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Module 1: Foundations of Cultural Humility</h3>
                 <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
@@ -67,7 +67,7 @@ function Modules() {
 
            
                     <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button className='cta lear mini' onClick={()=> navigate("/learning") }>Start Learning</button>
                     <button disabled className='cta lear outlines mini'>Get Certificate</button>
                     </div>
                 
@@ -87,7 +87,7 @@ function Modules() {
 
            
                     <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button className='cta lear mini' onClick={()=> navigate("/learning")}>Contineu Learning</button>
                     <button disabled className='cta lear outlines mini'>Get Certificate</button>
                     </div>
                 
@@ -106,7 +106,7 @@ function Modules() {
 
            
                     <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini'>Contineu Learning</button>
+                    <button className='cta lear mini' onClick={()=> navigate("/learning")}>Contineu Learning</button>
                     <button disabled className='cta lear outlines mini'>Get Certificate</button>
                     </div>
                 

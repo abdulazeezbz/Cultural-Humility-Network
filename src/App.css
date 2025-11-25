@@ -816,6 +816,7 @@ input, select, textarea{
 }
 
 
+
 @keyframes slid {
   0%{
     border-top-right-radius: 20px;
@@ -1326,3 +1327,5 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
     transform: rotate(360deg);
   }
 }
+
+
