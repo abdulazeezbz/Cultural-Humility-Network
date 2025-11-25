@@ -238,6 +238,67 @@ We also welcome collaboration with international bodies such as WHO, UNESCO, and
 </div>
 <br /><br /><hr /><br />
 
+ <div className="why">
+          <h2 style={{lineHeight:1, textAlign:'left'}}> Cultural Humility in Practice</h2>
+          <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >This hub offers self-guided learning on cultural humility in UK health, social care, education and community settings. Work through core modules, explore specialist topics, and collect certificates you can use for CPD or portfolio evidence.</p>
+</div>
+<br /><br /><hr /><br />
+
+<div className="card" style={{textAlign:'left'}}>
+  <h2 style={{textAlign:'left', lineHeight:1}}>​What do we mean by cultural humility?</h2>
+  <p style={{textAlign:'left'}}>​Cultural humility focuses on "othering" and "our people" – being open, reflective and willing to learn, rather than assuming we already know what someone's life, culture or beliefs are like. It asks us to notice our own assumptions, reflect on the power we hold in professional roles, and build relationships that are equal and collaborative as possible</p>
+
+
+  <br />
+  <p style={{textAlign:'left'}}>
+​Instead of a one-off "competence" you can tick off, cultural humility is a lifelong practice of: paying attention to yourself, sharing power where you can, and working with people and communities rather than doing things to or for them.
+</p>
+
+
+<div className="badges">
+  <span><ion-icon name="barbell-outline"></ion-icon> Lifelong Learning</span>
+  <span><ion-icon name="analytics-outline"></ion-icon> Power-aware practice</span>
+  <span><ion-icon name="business-outline"></ion-icon> Community Partnership</span>
+</div>
+<br />
+  <p style={{textAlign:'left'}}>
+Want a bit more detail? Open the short sections below. You can revisit them at any point.</p>
+<br />
+
+<div className="">
+  <div className="faq">
+    <details>
+      <summary>​Origins and why the language shifted</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Humility vs "cultural competence"</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Power, privilege and fairness</summary>
+      <p></p>
+    </details>
+  </div>
+
+  <div className="faq">
+    <details>
+      <summary>​Putting this into everyday practice</summary>
+      <p></p>
+    </details>
+  </div>
+
+ 
+
+
+</div>
+</div>
   <div className="why b a" style={{textAlign:'left'}}>
           <h2  style={{textAlign:'left', lineHeight:1}}>Latest Announcements</h2>
           <p id="ABZZ" className='b' style={{marginLeft:0, textAlign:'left'}}>Stay updated with news, events, and meeting dates.</p>
