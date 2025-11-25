@@ -32,11 +32,11 @@ function Home() {
      <div className="hero" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
       <div className="main">
         <div className="content">
-          <h2>Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
+          <h2 >Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
           <p>We believe cultural humility is the cornerstone of equitable practice in health and education. Explore immersive learning, evidence-based modules, and a supportive community that centres respect, reflection, and inclusion.</p>
 
         <div id="about" className="" style={{display:'flex'}}>
-          <button className="cta"  onClick={()=> navigate("/modules")}>Explore Modules</button>
+          <button className="cta"  onClick={()=> navigate("/modules")}>Start Learning</button>
           <button className="cta outlines" onClick={()=> navigate("/community")}>Visit Community</button>
         </div>
         
@@ -52,16 +52,17 @@ function Home() {
 
 <div className="why">
           <h2 style={{lineHeight:1, textAlign:'left'}}>Why Cultural Humility Matters</h2>
-          <p id="ABZZ" className='b' style={{textAlign:'left'}}>Cultural humility is a lifelong practice of self-reflection, accountability, and challenging assumptions. Across healthcare and education, inequalities persist. Humility moves beyond awareness to listening deeply, engaging respectfully, and acting for equity.</p>
+          <p id="ABZZ" className='b' style={{textAlign:'left'}}>
+            Cultural humility is a lifelong practice of self-reflection, accountability, and challenging assumptions. Across healthcare and education, inequalities persist. Humility moves beyond awareness to listening deeply, engaging respectfully, and acting for equity.</p>
 </div>
 
 <br /><br />
   
 <div className="layout c">
   <div className='child'>
-  <h3 style={{textAlign:'left', marginLeft:20}}>
+  <h2 style={{textAlign:'left', marginLeft:20}}>
       What the Data Says
-      </h3 >
+      </h2 >
       <p style={{fontSize:15, textAlign:'left'}}>The UK is increasingly diverse — but equity has not kept pace.</p>
 
 
@@ -151,9 +152,9 @@ function Home() {
 
 <section className="layout nn" >
   <div className='child' data-aos-delay="500" data-aos-duration="500">
-    <h3 style={{textAlign:'left'}}>
-      Learning Modules
-    </h3>
+    <h2 style={{textAlign:'left'}}>
+      See Our Learning Opportunities
+    </h2>
     <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>
       Short, interactive modules on power, bias, and anti-racism with UK case studies and self-assessments. Free and self-paced; earn a certificate.
       </p>
@@ -174,24 +175,17 @@ function Home() {
     </ul>
 
 <br /><br />
-        <h3 style={{textAlign:'left'}}>
-      Our Community
-    </h3>
-    <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>Join forums for peer discussions, case studies, AMAs, and networking. Share your journey and learn with others.</p>
-
-     <div id="about" className="" style={{display:'flex'}}>
-          <button className="cta mini"  onClick={()=> navigate("/community")}>Join The Conversation</button>
-          <button className="cta outlines mini" onClick={()=> navigate("/community")}>Browse Blogs</button>
-        </div>
+ 
   </div>
+
+
 
   <div className='child' data-aos-delay="500" data-aos-duration="500">
 
-<br />
 
-         <h3 style={{textAlign:'left'}}>
+         <h2 style={{textAlign:'left'}}>
      We Offer Training
-    </h3>
+    </h2>
     <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>
 
       We Offer Online and in-person trainings that center african, Black and other minortised communities. our session blend
@@ -210,73 +204,39 @@ function Home() {
   </div>
 
 
+
+
   
 
 
   
 </section>
-<br /><br />
+<br />
+<hr />
+<div className="" style={{paddingLeft:15}}>
+       <h2 style={{textAlign:'left'}}>
+      Our Community
+    </h2>
+    <p style={{fontSize:16, marginLeft:0, textAlign:'left'}}>
+      Connect with others through discussions, real-life case examples, Q&A sessions and supportive conversations. Share your experiences, learn from others, and take part in research and projects that help improve care, education and community services for everyone.
+    </p>
+
+     <div id="about" className="" style={{display:'flex'}}>
+          <button className="cta mini"  onClick={()=> navigate("/community")}>Join Our Community</button>
+          <button className="cta outlines mini" onClick={()=> navigate("/community")}>Browse Blogs</button>
+        </div>  
+        </div>
+<br />
+<hr /><br />
+
 
   <div className="why">
-          <h2 style={{lineHeight:1, textAlign:'left'}}>Looking Ahead: Our Collaborations</h2>
+          <h2 style={{lineHeight:1, textAlign:'left'}}> Our Collaborations</h2>
           <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >We believe lasting change is built through collaboration. We aim to work with the NHS, the British Educational Research Association, Health Education England, and universities across the UK and beyond to embed cultural humility into policy, training, and practice.
 
 We also welcome collaboration with international bodies such as WHO, UNESCO, and UNICEF to expand access to culturally humble education and centre dignity, diversity, and justice worldwide.</p>
 </div>
-<div className="founder">
- <div className="a"> 
-     <h2 style={{lineHeight:1, textAlign:'left', marginLeft:10,}}>Frequently Asked Questions</h2>
-<br />
-     <details className='faq' open>
-        <summary>Is there a cost to use this platform?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>No.  Core modules, forums, and key resources are free. Optional certificates and expert-led workshops may carry a small fee.</p>
-     </details>
-
-      <details className='faq'>
-        <summary>Who is this platform for?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Healthcare professionals, educators, students, administrators, policymakers, and advocates — anyone committed to equity and inclusion.</p>
-     </details>
-
-
-      <details className='faq'>
-        <summary>Do I need an account for modules?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Yes. Logging in lets you track progress, earn certificates, and manage your learning. We collect basic details only and follow GDPR.</p>
-     </details>
-
-
-     <details className='faq'  id='contact'>
-        <summary>How long does each module take?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Between 1 and 1.5 hours. It’s self-paced and your progress is saved.</p>
-     </details>
-
-      <details className='faq'  id='contact'>
-        <summary>Will I receive a certificate?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Yes — complete all five modules to unlock a personalised certificate.</p>
-     </details>
-      <details className='faq'  id='contact'>
-        <summary>Is it relevant outside the UK?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Absolutely. While UK systems are highlighted, the approaches are globally applicable.</p>
-     </details>
-
-      <details className='faq'  id='contact'>
-        <summary>How do you protect my data?</summary>
-
-        <p style={{textAlign:'left', fontSize:14}}>Your data is securely stored, used only for service delivery/analytics, and never sold. We are fully GDPR-compliant.</p>
-     </details>
-
-
-
-    </div>
-
-    
- 
-</div>
+<br /><br /><hr /><br />
 
   <div className="why b a" style={{textAlign:'left'}}>
           <h2  style={{textAlign:'left', lineHeight:1}}>Latest Announcements</h2>

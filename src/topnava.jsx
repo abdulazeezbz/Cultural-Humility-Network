@@ -31,7 +31,7 @@ const TopNav = () => {
         <div className="anoth" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
         <img src={AppLogo} alt="" />
         <div className="">
-          <h3>Cultural Humility Network</h3>
+          <h3 style={{fontSize:25}}>Cultural Humility Network</h3>
           <p>Fostering Inclusive, Reflective, and Culturally Aware Practice</p>
         </div></div>
 
@@ -54,15 +54,19 @@ const TopNav = () => {
   </li>
 
   <li className={activeTab === "/modules" ? "active" : ""}>
-    <a onClick={() => navigate("/modules")}>Modules</a>
+    <a onClick={() => navigate("/modules")}>Learn</a>
   </li>
 
   <li className={activeTab === "/community" ? "active" : ""}>
     <a onClick={() => navigate("/community")}>Community</a>
   </li>
 
-  <li className={activeTab === "/support" ? "active" : ""}>
-    <a onClick={() => navigate("/support")}>Support</a>
+  <li className={activeTab === "/training" ? "active" : ""}>
+    <a onClick={() => navigate("/training")}>Training</a>
+  </li>
+
+  <li className={activeTab === "/login" ? "active" : ""}>
+    <a onClick={() => navigate("/login")}>Login</a>
   </li>
 
 

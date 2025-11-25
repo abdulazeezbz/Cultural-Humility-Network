@@ -19,7 +19,7 @@ function Register() {
     <>
 
     <div className="AuthPage">
-        <div className="cont b">
+        <div className="cont b her">
 <center>
 <img src={AppLogo} width={100} /></center>
 <h3>Your hub for equitable practice</h3>
@@ -58,9 +58,11 @@ function Register() {
 
               <br />
               <p>Already have an account?  <a href="#" onClick={()=> navigate("/login")}>Login Here</a></p>
+            <br /><br />
             </form>
       </div>
     </div>
+    <br />
     </>
   )
 }

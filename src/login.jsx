@@ -20,9 +20,9 @@ function Login() {
     <>
 
 
-    <div className="AuthPage">
+    <div className="AuthPage login">
 
-      <div className="cont b">
+      <div className="cont b her">
         <center>
 <img src={AppLogo} width={100} /></center>
 <h3>Your hub for equitable practice</h3>
@@ -58,9 +58,10 @@ function Login() {
 
               <br />
               <p>Don't have an account?  <a href="" onClick={()=> navigate("/register")}>Register Here</a></p>
+              <br /><br />
             </form>
       </div>
-    </div>
+    </div><br />
     </>
   )
 }
