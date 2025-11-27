@@ -1441,7 +1441,50 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
   background: var(--accent);
 }
 
+
+.content.molu{
+  padding: 10px;
+  width: 95%;
+  margin: auto;
+}
+.card.module{
+  border-left: 6px solid;
+  border-color: var(--accent);
+  padding: 20px 20px;
+}
+
+.card.module.danger{
+  border-left: 6px solid;
+  border-color: var(--warning);
+  padding: 20px 20px;
+}
+
+.card.module .courseD{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.card.module .Desc{
+ padding: 5px 20px;
+ margin-top: 10px;
+}
+
+.card.module .Desc li{
+  margin-left: 12px;
+  list-style: circle;
+}
+
+.card.module .Desc button{
+  width: auto;
+}
+
 @media screen and (max-width:800px) {
+
+  .card.module .Desc{
+ padding: 5px 10px;
+}
 
   .AuthPage{
 justify-content: flex-start;
@@ -1478,3 +1521,29 @@ line-height: 30px;
   background: white;
 }
 
+
+
+
+
+details summary {
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 25px;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
