@@ -76,29 +76,217 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
 <div className="">
   <div className="faq">
     <details>
-      <summary>​Origins and why the language shifted</summary>
-      <p></p>
+      <summary>Origins and background</summary>
+      <p>
+        <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>Cultural humility emerged in the United States in the 1990s, particularly within medical and nursing education. Melanie Tervalon and Jann Murray-García were teaching clinicians who were expected to be “culturally competent” when working with diverse communities. They noticed that this language could give the impression that culture was a checklist you could master with enough facts.
+          <br />Instead, they proposed cultural humility as a more honest and ethical approach. It recognises that no professional can ever be fully “competent” in someone else’s culture, history and daily reality. What we can do is commit to:
+          <br />
+        </p>
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>ongoing self-evaluation and self-critique,</li>
+        <li>being alert to power imbalances in professional relationships, and</li>
+        <li>building partnerships with communities that are genuinely collaborative.</li>
+      </ul>
+<br />
+
+<p  style={{textAlign:'left', marginLeft:0, fontSize:16}}>Since then, cultural humility has been developed further in areas such as social work, mental health, community development and education. In the UK, the idea has been used to support anti-racist practice, patient and public involvement, trauma-informed care and work that centres lived experience. You might see it alongside related ideas such as cultural safety, structural competence and intersectionality.
+
+  <br />
+
+  For example: Tervalon M & Murray-García J (1998); Yeager KA & Bauer-Wu S (2013); work on cultural humility in UK social work and nursing; and resources from professional bodies and community organisations.
+</p>
+
+
+      </p>
     </details>
   </div>
 
   <div className="faq">
     <details>
-      <summary>​Humility vs "cultural competence"</summary>
-      <p></p>
+      <summary>How is cultural humility different from cultural competence?</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+        Many training programmes talk about “cultural competence”. This can be helpful if it encourages people to learn about different communities and to build communication skills. However, the language of competence can also suggest that there is an end point: that we can eventually know enough to be “done” <br />
+
+        Cultural humility starts from a different place. Instead of asking “How do I become competent in this other culture?”, it asks: “How can I stay open, reflective and ready to learn from each person and community I meet?”
+        <br />
+        Some key differences are:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li><b>Focus:</b> competence often focuses on gaining knowledge about “others”; humility focuses on understanding ourselves and the relationship we build with others.</li>
+        <li><b>End point vs journey: </b> competence can sound like a target; humility is explicitly a lifelong process.</li>
+        <li><b>Power:</b> competence can unintentionally place professionals as experts on people’s cultures; humility emphasises shared power and the person’s own expertise.</li>
+      </ul>
+
+      <br />
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+        In practice, cultural humility does not reject knowledge or skills. It simply places them in a wider frame that includes self-awareness, reflexivity and attention to power. You can still learn about communities and histories – you just do so in a way that recognises the limits of your own perspective.
+      </p>
     </details>
   </div>
 
-  <div className="faq">
-    <details>
-      <summary>​Power, privilege and fairness</summary>
-      <p></p>
-    </details>
-  </div>
+ 
 
   <div className="faq">
     <details>
-      <summary>​Putting this into everyday practice</summary>
-      <p></p>
+      <summary>Lifelong learning and self-reflection</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+        Cultural humility treats learning as something that never stops. Our communities, services and policies keep changing. So do we. New situations will always raise new questions. Rather than seeing this as a problem, cultural humility treats it as normal and expected.
+      <br />
+
+      Self-reflection is at the heart of this. It can be as simple as asking yourself:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>What assumptions did I bring into that conversation?</li>
+        <li>How might my background, training or role have shaped the way I responded?</li>
+        <li>Did I really listen, or was I rushing to fix or explain?</li>
+      </ul>
+
+      <br />
+     <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>Over time, reflection can become part of daily practice. Some people use short reflective notes, supervision, peer discussion or journalling. Others build it into team meetings by asking “Whose voices were missing?” or “What might we have misunderstood?” The important thing is to keep coming back to these questions gently and honestly, without harsh self-judgement but with a willingness to grow.</p>
+    </details>
+  </div>
+
+
+   <div className="faq">
+    <details>
+      <summary>Power, privilege and fairness</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+
+        Cultural humility asks us to pay attention to power. In many settings – clinics, schools, mental health services, social care – professionals hold power through their role, information, access to records or ability to make decisions that affect people’s lives.
+        <br />
+        On top of this, some of us benefit from wider social privileges linked to race, class, language, citizenship, gender, sexuality, disability or other aspects of identity. These can affect how we are heard, how safe we feel to speak up, and how we are treated by institutions.
+        <br />
+        Practising cultural humility means asking:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        
+      </ul>
+    </details>
+  </div>
+
+
+   <div className="faq">
+    <details>
+      <summary>Lifelong learning and self-reflection</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+
+        Cultural humility asks us to pay attention to power. In many settings – clinics, schools, mental health services, social care – professionals hold power through their role, information, access to records or ability to make decisions that affect people’s lives.
+        <br />
+        On top of this, some of us benefit from wider social privileges linked to race, class, language, citizenship, gender, sexuality, disability or other aspects of identity. These can affect how we are heard, how safe we feel to speak up, and how we are treated by institutions.
+        <br />
+        Practising cultural humility means asking:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>Who has the final say in this situation, and how might that feel for the other person?</li>
+        <li>Whose stories and needs are shaping our policies and procedures?</li>
+        <li>Are some groups experiencing poorer outcomes, and if so, why?</li>
+      </ul>
+      <br />
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+        We cannot remove all power differences, but we can be transparent, offer meaningful choices, make information clear, and invite feedback. Small shifts can make services feel more respectful and less intimidating.
+      </p>
+    </details>
+  </div>
+
+
+   <div className="faq">
+    <details>
+      <summary>Working with people and communities</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+
+       Cultural humility places relationships at the centre of practice. Instead of seeing people mainly as “service users”, “patients” or “students”, we remember that they are individuals with their own histories, cultures, families, beliefs and strengths.
+
+In practice, this can mean:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>
+          asking open questions about what matters most to the person right now,
+        </li>
+        <li>avoiding assumptions based on labels or group membership,</li>
+        <li>checking how someone would like to be addressed and how they understand their situation,</li>
+        <li>inviting community members to help design, deliver and evaluate services and training.</li>
+      </ul>
+
+      <br />
+
+     <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>It also means recognising diversity within communities. No single person can represent a whole group. Being curious and respectful, rather than relying on stereotypes, helps build trust and avoid harm.</p>
+    </details>
+  </div>
+
+
+  
+   <div className="faq">
+    <details>
+      <summary>Cultural humility in organisations and systems</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+Cultural humility is not only about individual attitudes. Organisations and systems also need to reflect on how their structures may help or harm different groups. Even when individual staff are caring and committed, policies and procedures can still create unequal outcomes.
+
+Organisations that take cultural humility seriously might:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>review policies, forms and pathways to see where they may disadvantage certain groups,</li>
+        <li>use data and lived experience to identify gaps in access, experience and outcomes,</li>
+        <li>ensure meaningful community participation in decision-making, not just one-off consultation,</li>
+        <li>offer ongoing learning and reflective spaces, rather than one-off “awareness days”.</li>
+      </ul>
+
+      
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>This can be slow and sometimes uncomfortable work, but it is essential for creating services that are genuinely responsive and fair.</p>
+    </details>
+  </div>
+
+
+  
+   <div className="faq">
+    <details>
+      <summary>Putting cultural humility into everyday practice</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+
+       Cultural humility is shown in small, everyday actions as much as in big strategies. You do not need to be perfect to begin. You simply need to be willing to notice, to listen and to adjust.
+
+<br />
+       Helpful everyday practices include:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>using simple, respectful language and checking understanding,</li>
+        <li>being honest when you do not know something and offering to find out,</li>
+        <li>inviting feedback with questions such as “Is there anything I have missed or misunderstood?”,</li>
+        <li>being open to being corrected without becoming defensive,</li>
+        <li>making space for people to bring their own beliefs, values and priorities into the conversation.</li>
+      </ul>
+<p style={{textAlign:'left', marginLeft:0, fontSize:16}}>These actions may seem small, but they can make a significant difference to how safe, heard and respected people feel in your care, classroom, organisation or community space.</p>
+
+    </details>
+  </div>
+
+  
+   <div className="faq">
+    <details>
+      <summary>Looking after yourself while you learn</summary>
+      <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
+
+     Learning about cultural humility can sometimes feel challenging. You may notice discomfort, guilt, sadness, anger or confusion, especially if you reflect on times when you did not get things right or when you have been hurt by systems yourself.
+
+This emotional response is understandable. It does not mean you are failing. It simply shows that you are taking the learning seriously. It can help to: <br />
+        Practising cultural humility means asking:
+      </p>
+
+      <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
+        <li>take breaks from learning activities when you need to,</li>
+        <li>talk with trusted colleagues, friends or supervisors about what you are noticing,</li>
+        <li>seek support if the material connects with trauma or difficult experiences,</li>
+        <li>approach yourself with compassion, remembering that everyone is learning.</li>
+       
+      </ul>
+
+    <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>Cultural humility includes humility towards ourselves: recognising that we are human, that we will make mistakes, and that what matters is how we respond and continue to grow.</p>
     </details>
   </div>
 
