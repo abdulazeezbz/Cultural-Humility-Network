@@ -194,8 +194,8 @@ You can use the
                   <p>Est. 1.5 hours · Quiz included</p>  
                 </div>
                 <div className="">
-                  <p>Not started</p>
-                  <p>Access: free</p>
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
                 </div>
                 
               </summary>
@@ -218,6 +218,430 @@ You can use the
            </div>
 
                 {/* Lecture End */}
+
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 4: Culturally Safe Spaces</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Deepen your understanding of cultural safety, where service users define what feels safe and respectful.</p>
+                <li>Explain cultural safety and who defines it</li>
+                <li>Apply practical steps to make spaces feel safer and more respectful</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 5: Sustaining Humility & Advocacy</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>eople, families and communities.</p>
+                <li>Describe features of culturally humble communities</li>
+                <li>Outline realistic community-level actions you can support</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 6: Culturally Humble Communication and Restorative Approaches in Healthcare</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Practise culturally humble communication, including repair, apology and restorative approaches in healthcare.</p>
+                  <li>Use communication skills that centre listening and repair</li>
+                <li>Practise restorative responses when relationships feel strained</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 7: Trauma-Informed Care and Cultural Humility</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Explore trauma-informed principles through a cultural humility lens, with attention to adversity and safety.</p>
+                <li>Link trauma-informed principles to cultural humility</li>
+                <li>Identify small changes that increase safety and choice</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 8: Cultural Humility in Mental Health Practice</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+              <p> Apply cultural humility to mental health practice, including engagement, diagnosis, stigma and racial trauma.
+</p> 
+
+                <li>Recognise how culture and power shape mental health care</li>
+                <li>Adapt your practice to support trust and engagement</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 9: Co-production, Power-Sharing and Cultural Humility</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Learn how co-production and power-sharing with people with lived experience can reshape services and curricula.</p>
+                <li>Explain what co-production and power-sharing involve</li>
+                <li>Plan ways to involve lived experience meaningfully</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 10: Language Justice and Working with Interpreters</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Develop skills in language justice and working effectively and ethically with interpreters and translated materials.</p>
+                <li>Understand key ideas in language justice</li>
+                <li>Work more effectively with interpreters and multilingual resources</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 11: Spirituality, Faith and Cultural Humility in Healing and Care</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Consider spirituality and faith as dimensions of identity, meaning and care in culturally humble practice.</p>
+                <li>Acknowledge spirituality and faith as sources of meaning</li>
+                <li>Hold respectful, curious conversations about beliefs</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 12: Anti-Racism in Practice</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Explore anti-racism as a practical, accountable approach to equity improvement across systems and teams.</p>
+                <li>Describe core elements of anti-racist practice</li>
+                <li>Identify steps for making your setting more equitable</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 13: Working with People of African Descent: Historical Trauma, Strength, Identity and Health</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Focus on people of African descent, including historical trauma, identity, strength, trust and health.</p>
+                <li>Name historical factors affecting people of African descent</li>
+                <li>Recognise strengths, identity and healing resources</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 14: Digital Inclusion, AI Ethics and Cultural Safety</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Examine digital inclusion, AI ethics and cultural safety in an increasingly digital health and education landscape.</p>
+                <li>Spot digital and AI-related risks to equity</li>
+                <li>Advocate for inclusive, culturally safe digital practice</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
+                                  {/* Lecture Start */}
+           <div className="card module danger"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <details>
+              <summary className='courseD'>
+                <div className="">
+                  <h3>Module 15: Embedding Cultural Humility in Teams and Systems</h3>
+                  <p>Est. 1.5 hours · Quiz included</p>  
+                </div>
+                <div className="">
+                  <p>Locked <ion-icon name="lock-closed-outline"></ion-icon></p>
+                  <p style={{fontSize:14,}}>Access: Contribution (min £5)</p>
+                </div>
+                
+              </summary>
+
+              <div className="Desc">
+                <p>Details for this module will be added soon.</p>
+                <li>Learning outcomes for this module will be added soon.</li>
+                <br />
+               <b> This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
+            
+</b>
+
+<br /><br />
+                <button className='cta mini' >Start Learning</button>
+                <button className='cta mini outlines' >View Outline</button>
+                <button className='cta mini outlines' >Generate certificate</button>
+              </div>
+            </details>
+           </div>
+
+                {/* Lecture End */}
+
+
 
 
 
