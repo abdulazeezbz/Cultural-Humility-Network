@@ -77,11 +77,11 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
   <div className="faq">
     <details>
       <summary>Origins and background</summary>
-      <p>
+     
         <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>Cultural humility emerged in the United States in the 1990s, particularly within medical and nursing education. Melanie Tervalon and Jann Murray-García were teaching clinicians who were expected to be “culturally competent” when working with diverse communities. They noticed that this language could give the impression that culture was a checklist you could master with enough facts.
           <br />Instead, they proposed cultural humility as a more honest and ethical approach. It recognises that no professional can ever be fully “competent” in someone else’s culture, history and daily reality. What we can do is commit to:
           <br />
-        </p>
+        
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
         <li>ongoing self-evaluation and self-critique,</li>
         <li>being alert to power imbalances in professional relationships, and</li>

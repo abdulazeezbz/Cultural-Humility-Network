@@ -31,6 +31,7 @@ function Modules() {
 
 
 
+
      <br /><br />
     
 
@@ -41,86 +42,69 @@ function Modules() {
           <h2 style={{lineHeight:1, textAlign:'left'}}> Cultural Humility in Practice</h2>
           <p id="ABZZ" style={{fontSize:16, marginLeft:0, textAlign:'left'}} className='b' >This hub offers self-guided learning on cultural humility in health, social care, education and community settings. Work through core modules, explore specialist topics, and collect certificates you can use for CPD or portfolio evidence.</p>
 </div>
-<br /><br /><hr /><br />
+<br /><hr /><br />
 
 
 
           
-          <h2>Interactive Learning Modules</h2>
+
+             <div className="content b">
+
+           <div className="card" style={{textAlign:'left'}}>
+  <h2 style={{textAlign:'left', lineHeight:1}}>Access, contributions and how this hub is funded</h2><br />
+  <p style={{textAlign:'left'}}> This learning space is a small, independent project. It is <b>not run as a business</b> and is <b>not a registered charity or NGO</b>. Any money given simply helps with hosting, maintenance and ongoing development of the webapp and resources.</p>
+
+
+  <br />
+<div className="card">
+  <li>Modules 1 and 2 are free for anyone to access.</li>
+  <li>Modules 3–15 are contribution-supported: a minimum contribution of £5 is requested for access, and any amount above that is welcome.</li>
+  <li>Contributions are voluntary and go towards running costs only. They should not be treated as charitable donations for tax or gift-aid purposes, and they do not purchase personalised clinical, legal or financial advice.</li>
+  <li>If a financial contribution is difficult or you would prefer to support in another way, please log in and contact us so we can discuss options such as free access, collaboration or sharing resources.</li>
+  </div>
+  
+
+
+<div className="badges">
+  <span><ion-icon name="barbell-outline"></ion-icon> Free access: Modules 1–2</span>
+  <span><ion-icon name="analytics-outline"></ion-icon> Contribution-supported: Modules 3–15 (min £5)</span>
+  <span><ion-icon name="business-outline"></ion-icon> Core pathway: Modules 1–5</span>
+</div>
+<br />
+  <p style={{textAlign:'left'}}>
+You can use the 
+<a href="/about#contact">{" "}contact form </a>to ask for payment details (for example PayPal or bank transfer) or to offer other kinds of support.</p>
+<br />
+</div>
+</div>
+
+
+
+
+
+
+
+          {/* <h2>Interactive Learning Modules</h2>
           <p>Comprehensive, evidence-based training in cultural humility. Work at your pace with interactive scenarios, quizzes, and reflections. Complete a module at ≥80% to unlock its certificate; finish all five for the overall certificate.
-          </p>
+          </p> */}
 
           <div className="progress">
-            <div className="to"><h2>Your progress</h2> <p>2/5 completed</p></div>
+            <div className="to"><h2>Core pathway progress</h2> <p>0/5 completed</p></div>
+            <p>Modules 1–5 make up the core pathway. Advanced and specialist modules (6–15) can be taken in any order.</p>
             
             <div className="slid">
                 <div className="Scont"></div>
             </div>
 
-            <p>Certificates are available per module when completed.</p>
+            <p>Complete each core module to unlock certificates..</p>
           </div>
       </div>
 
       <div className="content">
         <div className="layout b modules aa">
-            <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
-
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
-                    </div>
-
            
-                    <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini' onClick={()=> navigate("/learning") }>Start Learning</button>
-                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
-                    </div>
-                
-            </div>
 
-
-             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
-
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
-                    </div>
-
-           
-                    <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini' onClick={()=> navigate("/learning")}>Contineu Learning</button>
-                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
-                    </div>
-                
-            </div>
-
-             <div className="child" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                <h3>Module 1: Foundations of Cultural Humility</h3>
-                <p>Explore the foundations of cultural humility and its relevance in UK health and education. Learn key concepts and their application.</p>
-
-<br /><br />
-                <b style={{fontSize:13}}>Duration: 1.5 hours.</b>
-                <div className="badges">
-                    <p>Not Started</p>
-                    <p>Est. 1.5 hours</p>
-                    </div>
-
-           
-                    <div className="" style={{display:'flex', marginLeft:-14}}>
-                    <button className='cta lear mini' onClick={()=> navigate("/learning")}>Contineu Learning</button>
-                    <button disabled className='cta lear outlines mini'>Get Certificate</button>
-                    </div>
-                
-            </div>
-
+         
            
 
 

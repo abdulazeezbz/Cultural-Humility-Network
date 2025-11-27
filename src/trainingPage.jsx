@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { db, ref, push } from "./firebase";
+import TopNav from "./topnava";
 // TrainingsLanding.jsx
 // Drop this file in src/pages or src/components for a Vite + React project.
 // CSS is provided at the bottom of this file — paste it into src/styles/trainings.css
@@ -116,20 +117,24 @@ export default function TrainingsLanding() {
 
   return (
     <div className="trainings-root">
+      
       <header className="site-header">
-        <div className="container header-inner">
+        {/* <div className="container header-inner">
           <a className="brand" href="#">Cultural Humility Network</a>
           <nav className="nav">
             <a href="#training-catalogue">Trainings</a>
             <a href="#training-registration-options"  className="cta mini" style={{color:'white'}}>Register</a>
           </nav>
-        </div>
+        </div> */}
+
+        <TopNav/>
       </header>
 
       <main id="trainings-page">
         <section className="training-hero">
           <div className="container hero-grid">
             <div className="hero-copy">
+              <br /><br /><br /><br /><br />
               <h1>Trainings for Equity, Justice & cultural humility</h1>
               <p className="lead">
                 Our trainings centre African, Black and other minoritised communities, grounded in
@@ -146,6 +151,7 @@ export default function TrainingsLanding() {
             </div>
 
             <div className="hero-card">
+              <br /><br /><br /><br /><br />
               <div className="mini-card">
                 <h4>Quick facts</h4>
                 <ul>

@@ -169,7 +169,7 @@ const About = () => {
     What we offer
   </h2>
 
-<div class="glance new" aria-label="Cultural Humility Hub at a glance">
+<div class="glance" aria-label="Cultural Humility Hub at a glance">
       <div class="glance-item">
         <div class="glance-value">Learn</div>
         <div class="glance-text">Self-paced online modules on cultural humility, with interactive activities, reflections and certificates.</div>
