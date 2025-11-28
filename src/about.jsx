@@ -38,9 +38,9 @@ const About = () => {
 <section class="section glanc">
   <div className="">
   <h2>
-    CHN at a glance
+    CHN at a Glance
   </h2>
-  <p>grew from frontline practice and academic research, responding to persistent inequities in health and education.</p>
+
   <p>The hub sits at the intersection of cultural humility, implementation science and community partnership.</p>  
 
 <div class="glance" aria-label="Cultural Humility Hub at a glance">
@@ -150,11 +150,11 @@ const About = () => {
     Who is this for?
   </h2>
  <ul>
-  <li>Health, social care and mental health professionals seeking to practise in more culturally humble, anti-racist ways.</li>
-<li>Educators, lecturers and supervisors who want to create more inclusive learning environments.</li>
-<li>Students and early-career practitioners who want a framework for reflecting on culture, power and identity.</li>
-<li>Leaders and organisations working to reduce inequities and embed cultural humility into policies and pathways.</li>
-<li>Community partners and lived-experience experts interested in co-producing training, resources or research.</li>
+  <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Health, social care and mental health professionals seeking to practise in more culturally humble, anti-racist ways.</li>
+<li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Educators, lecturers and supervisors who want to create more inclusive learning environments.</li>
+<li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Students and early-career practitioners who want a framework for reflecting on culture, power and identity.</li>
+<li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Leaders and organisations working to reduce inequities and embed cultural humility into policies and pathways.</li>
+<li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Community partners and lived-experience experts interested in co-producing training, resources or research.</li>
 
  </ul>
  

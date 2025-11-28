@@ -83,9 +83,9 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
           <br />
         
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>ongoing self-evaluation and self-critique,</li>
-        <li>being alert to power imbalances in professional relationships, and</li>
-        <li>building partnerships with communities that are genuinely collaborative.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> ongoing self-evaluation and self-critique,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> being alert to power imbalances in professional relationships, and</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> building partnerships with communities that are genuinely collaborative.</li>
       </ul>
 <br />
 
@@ -113,9 +113,9 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li><b>Focus:</b> competence often focuses on gaining knowledge about “others”; humility focuses on understanding ourselves and the relationship we build with others.</li>
-        <li><b>End point vs journey: </b> competence can sound like a target; humility is explicitly a lifelong process.</li>
-        <li><b>Power:</b> competence can unintentionally place professionals as experts on people’s cultures; humility emphasises shared power and the person’s own expertise.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <b>Focus:</b> competence often focuses on gaining knowledge about “others”; humility focuses on understanding ourselves and the relationship we build with others.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <b>End point vs journey: </b> competence can sound like a target; humility is explicitly a lifelong process.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <b>Power:</b> competence can unintentionally place professionals as experts on people’s cultures; humility emphasises shared power and the person’s own expertise.</li>
       </ul>
 
       <br />
@@ -138,9 +138,9 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>What assumptions did I bring into that conversation?</li>
-        <li>How might my background, training or role have shaped the way I responded?</li>
-        <li>Did I really listen, or was I rushing to fix or explain?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> What assumptions did I bring into that conversation?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> How might my background, training or role have shaped the way I responded?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Did I really listen, or was I rushing to fix or explain?</li>
       </ul>
 
       <br />
@@ -181,9 +181,9 @@ Want a bit more detail? Open the short sections below. You can revisit them at a
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>Who has the final say in this situation, and how might that feel for the other person?</li>
-        <li>Whose stories and needs are shaping our policies and procedures?</li>
-        <li>Are some groups experiencing poorer outcomes, and if so, why?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Who has the final say in this situation, and how might that feel for the other person?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Whose stories and needs are shaping our policies and procedures?</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Are some groups experiencing poorer outcomes, and if so, why?</li>
       </ul>
       <br />
       <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>
@@ -204,12 +204,12 @@ In practice, this can mean:
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> 
           asking open questions about what matters most to the person right now,
         </li>
-        <li>avoiding assumptions based on labels or group membership,</li>
-        <li>checking how someone would like to be addressed and how they understand their situation,</li>
-        <li>inviting community members to help design, deliver and evaluate services and training.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> avoiding assumptions based on labels or group membership,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> checking how someone would like to be addressed and how they understand their situation,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> inviting community members to help design, deliver and evaluate services and training.</li>
       </ul>
 
       <br />
@@ -230,10 +230,10 @@ Organisations that take cultural humility seriously might:
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>review policies, forms and pathways to see where they may disadvantage certain groups,</li>
-        <li>use data and lived experience to identify gaps in access, experience and outcomes,</li>
-        <li>ensure meaningful community participation in decision-making, not just one-off consultation,</li>
-        <li>offer ongoing learning and reflective spaces, rather than one-off “awareness days”.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> review policies, forms and pathways to see where they may disadvantage certain groups,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> use data and lived experience to identify gaps in access, experience and outcomes,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> ensure meaningful community participation in decision-making, not just one-off consultation,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> offer ongoing learning and reflective spaces, rather than one-off “awareness days”.</li>
       </ul>
 
       
@@ -255,11 +255,11 @@ Organisations that take cultural humility seriously might:
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>using simple, respectful language and checking understanding,</li>
-        <li>being honest when you do not know something and offering to find out,</li>
-        <li>inviting feedback with questions such as “Is there anything I have missed or misunderstood?”,</li>
-        <li>being open to being corrected without becoming defensive,</li>
-        <li>making space for people to bring their own beliefs, values and priorities into the conversation.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> using simple, respectful language and checking understanding,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> being honest when you do not know something and offering to find out,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> inviting feedback with questions such as “Is there anything I have missed or misunderstood?”,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> being open to being corrected without becoming defensive,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> making space for people to bring their own beliefs, values and priorities into the conversation.</li>
       </ul>
 <p style={{textAlign:'left', marginLeft:0, fontSize:16}}>These actions may seem small, but they can make a significant difference to how safe, heard and respected people feel in your care, classroom, organisation or community space.</p>
 
@@ -279,10 +279,10 @@ This emotional response is understandable. It does not mean you are failing. It 
       </p>
 
       <ul style={{textAlign:'left', marginLeft:10, fontSize:17, marginTop:10}}>
-        <li>take breaks from learning activities when you need to,</li>
-        <li>talk with trusted colleagues, friends or supervisors about what you are noticing,</li>
-        <li>seek support if the material connects with trauma or difficult experiences,</li>
-        <li>approach yourself with compassion, remembering that everyone is learning.</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> take breaks from learning activities when you need to,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> talk with trusted colleagues, friends or supervisors about what you are noticing,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> seek support if the material connects with trauma or difficult experiences,</li>
+        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> approach yourself with compassion, remembering that everyone is learning.</li>
        
       </ul>
 

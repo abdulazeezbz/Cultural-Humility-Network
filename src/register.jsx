@@ -26,10 +26,10 @@ function Register() {
 <p>Learn, reflect, and apply cultural humility with structured modules and a supportive community.</p>
 <br /><br />
 <ul>
-    <li>Evidence-based, UK-focused learning</li>
-    <li>Short, self-paced modules with quizzes</li>
-    <li>Community discussion & peer support</li>
-    <li>Downloadable certificate on completion</li>
+    <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Evidence-based, UK-focused learning</li>
+    <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Short, self-paced modules with quizzes</li>
+    <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Community discussion & peer support</li>
+    <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Downloadable certificate on completion</li>
 </ul>
         </div>
       <div className="cont">

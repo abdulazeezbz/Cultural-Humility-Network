@@ -85,11 +85,11 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure recusandae blandit
         
         
        <ol>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
+        <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
+        <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
+        <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
+        <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
+        <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem numquam soluta rerum, consectetur, illum nemo cupiditate voluptates corporis, voluptatum obcaecati laudantium. Consectetur architecto ex consequuntur perferendis iure! Velit, deleniti quisquam.</li>
         
         </ol> 
         

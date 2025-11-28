@@ -1434,7 +1434,9 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
 
 
 
-
+ul li, li{
+  list-style: none;
+}
 
 
 .cont.b.her{

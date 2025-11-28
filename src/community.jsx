@@ -52,11 +52,11 @@ const Community = () => {
         <br />
         <p>In the community hub you can:</p>
         <ul>
-            <li>Start forum threads to explore real scenarios and invite others to reflect with you.</li>
-            <li>Comment on and react to other people’s posts in a thoughtful, respectful way.</li>
-            <li>Submit longer blog posts sharing your learning, case studies and reflections.</li>
-            <li>Browse highlighted threads and themes, including health, education, community work and more.</li>
-            <li>Suggest topics for future discussion, events or learning resources.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon>  Start forum threads to explore real scenarios and invite others to reflect with you.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon>  Comment on and react to other people’s posts in a thoughtful, respectful way.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon>  Submit longer blog posts sharing your learning, case studies and reflections.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon>  Browse highlighted threads and themes, including health, education, community work and more.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon>  Suggest topics for future discussion, events or learning resources.</li>
         </ul>
 <br /><hr /><br />
         <p>The right-hand column contains community guidelines, safety information and ways to stay connected.</p>
@@ -76,10 +76,10 @@ const Community = () => {
           <p className="meta">A gentle way to get started is:</p>
 
           <ul className="overview-list">
-            <li>Complete one or two modules on the Learn page or reflect on your own experience.</li>
-            <li>Bring a real situation you are thinking about and start a short thread describing it.</li>
-            <li>Read how others respond, noticing where you feel challenged, affirmed or surprised.</li>
-            <li>Share a small next step you plan to try in your own work, study or community.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Complete one or two modules on the Learn page or reflect on your own experience.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bring a real situation you are thinking about and start a short thread describing it.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Read how others respond, noticing where you feel challenged, affirmed or surprised.</li>
+            <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Share a small next step you plan to try in your own work, study or community.</li>
           </ul>
 
           <p className="meta">
@@ -107,11 +107,11 @@ const Community = () => {
 
         <br />
         <ul>
-            <li>Be kept informed about research projects, studies and calls for participants.</li>
-            <li>Shape teaching, conferences and culture days centred on cultural humility.</li>
-            <li>Co-develop resources, case studies and practice tools used in the Learn and Community spaces.</li>
-            <li>Partner on implementation projects in healthcare, education or community settings.</li>
-            <li>If you are interested in joining or hearing more, share a few details below. This is not a commitment – it simply helps us understand who 
+            <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Be kept informed about research projects, studies and calls for participants.</li>
+            <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Shape teaching, conferences and culture days centred on cultural humility.</li>
+            <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Co-develop resources, case studies and practice tools used in the Learn and Community spaces.</li>
+            <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Partner on implementation projects in healthcare, education or community settings.</li>
+            <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> If you are interested in joining or hearing more, share a few details below. This is not a commitment – it simply helps us understand who 
                 is interested and how we might work together:</li>
         </ul>
 <br />

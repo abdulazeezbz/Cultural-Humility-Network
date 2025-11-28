@@ -155,9 +155,9 @@ export default function TrainingsLanding() {
               <div className="mini-card">
                 <h4>Quick facts</h4>
                 <ul>
-                  <li><strong>Formats:</strong> Online, in-person or hybrid</li>
-                  <li><strong>Durations:</strong> 1.5h — multi-session programmes</li>
-                  <li><strong>Audience:</strong> Practitioners, leaders, students & community groups</li>
+                  <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Formats:</strong> Online, in-person or hybrid</li>
+                  <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Durations:</strong> 1.5h — multi-session programmes</li>
+                  <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Audience:</strong> Practitioners, leaders, students & community groups</li>
                 </ul>
                 <a href="#training-registration-options" className="link-muted">How to register →</a>
               </div>
@@ -170,11 +170,11 @@ export default function TrainingsLanding() {
             <h2>Who are these trainings for?</h2>
             <p className="muted">Designed for people and organisations working with African, Black and other racially minoritised communities.</p>
             <ul className="audience-list">
-              <li>Health, social care, education and community practitioners</li>
-              <li>Leaders and managers seeking to embed equity in services</li>
-              <li>Students, researchers and academics</li>
-              <li>Community organisations and faith groups</li>
-              <li>Teams and services wanting to co-create change with communities</li>
+              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Health, social care, education and community practitioners</li>
+              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Leaders and managers seeking to embed equity in services</li>
+              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Students, researchers and academics</li>
+              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Community organisations and faith groups</li>
+              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Teams and services wanting to co-create change with communities</li>
             </ul>
           </div>
         </section>
@@ -203,9 +203,9 @@ export default function TrainingsLanding() {
 
                       <h5>You will learn</h5>
                       <ul>
-                        <li>Practical frameworks you can use immediately</li>
-                        <li>Real-world examples and reflective exercises</li>
-                        <li>Steps your team can take to embed change</li>
+                        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Practical frameworks you can use immediately</li>
+                        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Real-world examples and reflective exercises</li>
+                        <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Steps your team can take to embed change</li>
                       </ul>
 
                       <h5>Format</h5>
