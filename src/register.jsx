@@ -2,9 +2,10 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from "react-router-dom";
 
-import AppLogo from './assets/logo.png'
+import AppLogo from './assets/new logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
 import Login from './login'
+import TopNav from './topnava';
 
 function Register() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,9 @@ function Register() {
 
   return (
     <>
+
+      <TopNav />
+<br />
 
     <div className="AuthPage">
         <div className="cont b her">

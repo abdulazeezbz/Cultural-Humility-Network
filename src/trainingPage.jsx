@@ -81,11 +81,11 @@ export default function TrainingsLanding() {
       id: 'cultural-humility',
       title: 'Cultural Humility in Practice',
       tagline: 'Foundations of cultural humility centred on African and Black communities.',
-      highlights: ['2-hour online or half-day in person', 'Ideal for all staff and students', 'Perfect starting point for this work'],
+      highlights: ['3-hour online or half-day in person', 'Ideal for all staff and students', 'Perfect starting point for this work'],
       details: `A practical introduction to cultural humility as a lifelong, relational practice, with a focus on African-descent and other racially minoritised communities.`,
       actions: [
         { text: 'Register as an individual', variant: 'primary' },
-        { text: 'Register a team / group', variant: 'secondary' },
+        { text: 'Register a team / group', variant: 'outline' },
         { text: 'Book for an organisation', variant: 'outline' }
       ]
     },
@@ -93,48 +93,162 @@ export default function TrainingsLanding() {
       id: 'african-communities',
       title: 'Working With People of African Descent',
       tagline: 'Strengths-based approaches informed by African and diaspora worldviews.',
-      highlights: ['3-hour or full-day format', 'For frontline practitioners & community workers', 'Focus on trust, safety & partnership'],
+      highlights: ['3-hour online or half-day in person', 'For frontline practitioners & community workers', 'Focus on trust, safety & partnership'],
       details: `Deepen your understanding of African and African-diaspora communities, and learn how to build trust, safety and partnership in your specific context.`,
       actions: [
         { text: 'Register as an individual', variant: 'primary' },
-        { text: 'Register a team / group', variant: 'secondary' },
+        { text: 'Register a team / group', variant: 'outline' },
         { text: 'Book for an organisation', variant: 'outline' }
       ]
     },
+
     {
       id: 'anti-racist',
       title: 'Anti-Racist Practice / Challenging Anti-Blackness',
       tagline: 'Moving beyond awareness into everyday anti-racist action.',
-      highlights: ['Full-day or two-part series', 'For teams & organisations ready for deeper work', 'Focus on structural and interpersonal racism'],
+      highlights: ['3-hour online or half-day in person', 'For teams & organisations ready for deeper work', 'Focus on structural and interpersonal racism'],
       details: `A deeper, more challenging training focused on anti-Blackness, structural racism and what it means to practise anti-racism in your role and organisation.`,
       actions: [
-        { text: 'Register a team / group', variant: 'secondary' },
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
         { text: 'Book organisational programme', variant: 'outline' }
       ]
     },
-    // You can append other trainings here or map from a CMS
+   {
+      id: 'african-communit',
+      title: 'Trauma-Informed Practice/Culturally Safe Practice',
+      tagline: 'Understanding trauma through a racial, cultural and systemic lens.',
+      highlights: ['3-hour online or half-day in person', 
+        'For frontline practitioners & community workers',
+         'Focus on trust, safety & partnership'],
+      details: `Learn how trauma, racism and marginalisation intersect, and how to create culturally safe, non-retraumatising encounters with African, Black and other minoritised communities.`,
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+
+     {
+      id: '5',
+      title: 'Decolonising Practice in Healthcare/Decolonising Practice in Education',
+      tagline: 'Moving beyond diversity: decolonial perspectives in everyday work.',
+      highlights: ['3-hour online or half-day in person', 
+        'For health, care, education & youth services',
+         'Focus on racialised & migration trauma'],
+      details: `A reflective and provocative session on what decolonisation means in your specific context, and how to begin making shifts.`,
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+
+
+     {
+      id: '6',
+      title: 'Community-Based Participatory Research (CBPR)',
+      tagline: 'Doing research with, not on, African and minoritised communities.',
+      highlights: 
+      ['3-hour online or half-day in person', 
+        'For educators, clinicians, managers & students',
+         'Focus on systems, power & knowledge'],
+
+      details: `A practice-based introduction to CBPR, drawing on community-engaged and decolonial approaches to research with African-descent and other minoritised populations.`,
+
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+    // 
+
+     {
+      id: '7',
+      title: 'Faith, Culture & Wellbeing in African Communities',
+      tagline: 'Working alongside faith, spirituality and community leadership.',
+      highlights: 
+      ['3-hour online or half-day in person', 
+        'For frontline practitioners & community workers',
+         'Focus on trust, safety & partnership'],
+
+      details: `Explore how faith and spirituality shape wellbeing, decision-making and help-seeking in African and diaspora communities.`,
+      
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+
+
+     {
+      id: '8',
+      title: 'Intercultural Communication & Decolonial Listening',
+      tagline: 'Listening and speaking in ways that honour different worlds.',
+      highlights: 
+      ['3-hour online or half-day in person', 
+        'For frontline practitioners & community workers',
+         'Focus on trust, safety & partnership'],
+
+      details: `A skills-based workshop on communication across difference, centring humility, non-defensiveness and decolonial listening.`,
+      
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+
+
+     {
+      id: '9',
+      title: 'Bespoke Organisational Training & Consultancy',
+      tagline: 'Co-designing a pathway to equity with your organisation.',
+      highlights: 
+      ['3-hour online or half-day in person', 
+        'For frontline practitioners & community workers',
+         'Focus on trust, safety & partnership'],
+
+      details: `Tailored programmes that blend training, facilitation, policy review and coaching to support lasting organisational change.`,
+      
+      actions: [
+        { text: 'Register as an individual', variant: 'primary' },
+        { text: 'Register a team / group', variant: 'outline' },
+        { text: 'Book for an organisation', variant: 'outline' }
+      ]
+    },
+
+    //  {
+    //   id: '10',
+    //   title: '',
+    //   tagline: '',
+    //   highlights: 
+    //   ['3-hour online or half-day in person', 
+    //     'For frontline practitioners & community workers',
+    //      'Focus on trust, safety & partnership'],
+
+    //   details: ``,
+      
+    //   actions: [
+    //     { text: 'Register as an individual', variant: 'primary' },
+    //     { text: 'Register a team / group', variant: 'outline' },
+    //     { text: 'Book for an organisation', variant: 'outline' }
+    //   ]
+    // },
   ];
 
   return (
+<>
+        <TopNav/>
+
     <div className="trainings-root">
       
-      <header className="site-header">
-        {/* <div className="container header-inner">
-          <a className="brand" href="#">Cultural Humility Network</a>
-          <nav className="nav">
-            <a href="#training-catalogue">Trainings</a>
-            <a href="#training-registration-options"  className="cta mini" style={{color:'white'}}>Register</a>
-          </nav>
-        </div> */}
-
-        <TopNav/>
-      </header>
-
-      <main id="trainings-page">
-        <section className="training-hero">
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <br /><br /><br /><br /><br />
+    
+      <main id="trainings-page" >
+       <div className="container card hero-grid" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div className="hero-copy" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
               <h1>Trainings for Equity, Justice & cultural humility</h1>
               <p className="lead">
                 Our trainings centre African, Black and other minoritised communities, grounded in
@@ -150,41 +264,38 @@ export default function TrainingsLanding() {
               <p className="micro">Need a bespoke programme? <a href="#training-enquiry">Tell us about your organisation</a>.</p>
             </div>
 
-            <div className="hero-card">
-              <br /><br /><br /><br /><br />
+            <div className="hero-card card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
               <div className="mini-card">
                 <h4>Quick facts</h4>
                 <ul>
                   <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Formats:</strong> Online, in-person or hybrid</li>
-                  <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Durations:</strong> 1.5h — multi-session programmes</li>
                   <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> <strong>Audience:</strong> Practitioners, leaders, students & community groups</li>
                 </ul>
                 <a href="#training-registration-options" className="link-muted">How to register →</a>
               </div>
             </div>
           </div>
-        </section>
 
         <section className="training-audience">
-          <div className="container">
+          <div className="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h2>Who are these trainings for?</h2>
             <p className="muted">Designed for people and organisations working with African, Black and other racially minoritised communities.</p>
             <ul className="audience-list">
-              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Health, social care, education and community practitioners</li>
-              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Leaders and managers seeking to embed equity in services</li>
-              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Students, researchers and academics</li>
-              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Community organisations and faith groups</li>
-              <li> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Teams and services wanting to co-create change with communities</li>
+              <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Health, social care, education and community practitioners</li>
+              <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Leaders and managers seeking to embed equity in services</li>
+              <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Students, researchers and academics</li>
+              <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Community organisations and faith groups</li>
+              <li data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000"> <ion-icon name="checkmark-done-circle-outline"></ion-icon> Teams and services wanting to co-create change with communities</li>
             </ul>
           </div>
         </section>
 
         <section id="training-catalogue" className="training-catalogue">
-          <div className="container">
+          <div className="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h2>Our Trainings</h2>
             <p className="section-intro">Explore our core trainings. Click a card to open details and next steps.</p>
 
-            <div className="training-grid">
+            <div className="training-grid" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
               {trainings.map((t) => (
                 <article className="training-card" key={t.id} id={`training-${t.id}`}>
                   <header className="training-card-header">
@@ -226,24 +337,24 @@ export default function TrainingsLanding() {
         </section>
 
         <section id="training-registration-options" className="training-registration-options">
-          <div className="container">
+          <div className="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h2>How to register</h2>
             <p className="muted">Join as an individual, book a team session, or commission a tailored programme.</p>
 
             <div className="registration-grid">
-              <div className="registration-card">
+              <div className="registration-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Individuals</h3>
                 <p>Open online sessions — ideal for practitioners, students, and leaders.</p>
                 <a href="#training-enquiry" className="btn btn-primary">View individual options</a>
               </div>
 
-              <div className="registration-card">
+              <div className="registration-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Teams / Groups</h3>
                 <p>Tailored sessions for your team, cohort or department.</p>
                 <a href="#training-enquiry" className="btn btn-primary">Request team booking</a>
               </div>
 
-              <div className="registration-card">
+              <div className="registration-card" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Organisations</h3>
                 <p>Multi-session programmes and consultancy for lasting change.</p>
                 <a href="#training-enquiry" className="btn btn-primary">Speak to us about a programme</a>
@@ -253,7 +364,7 @@ export default function TrainingsLanding() {
         </section>
 
         <section id="training-enquiry" className="training-enquiry">
-          <div className="container">
+          <div className="container" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
             <h2>Training enquiry form</h2>
             <p className="muted">Share a few details and we’ll get back to you with options, dates and pricing.</p>
 
@@ -377,6 +488,8 @@ export default function TrainingsLanding() {
       <a className="skip-link" href="#trainings-page">Skip to content</a>
 
     </div>
+
+    </>
   );
 }
 
