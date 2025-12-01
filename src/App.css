@@ -1488,7 +1488,93 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
 .trainings-root{
   margin-top: 150px;
 }
+
+
+.dashb{
+
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+ margin-top: 130px;
+}
+
+.dashb table{
+  width: 100%;
+  text-align: center;
+}
+
+.dashb .child{
+
+    display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.dashb .child .c{
+width: 50%;
+  gap: 20px;
+}
+
+.dashb .child .c.one{
+  width: 80%;
+}
+
+.slideee{
+  width: 100%;
+  overflow: auto;
+}
+
+.flll{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.flll .cta{
+  width: 40%;
+}
+
 @media screen and (max-width:800px) {
+
+
+  .dashb{
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+margin-top: 230px;
+ 
+}
+
+.dashb .child{
+
+  flex-direction: column-reverse;
+}
+
+.dashb .inputGroup{
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+
+}
+
+
+.dashb .child .c{
+width: 100%;
+  gap: 20px;
+}
+
+.dashb .child button{
+  width: 70%;
+  margin-left: 20px;
+}
+
+
+.dashb .child .c.one{
+width: 100%;
+}
+
 
   .trainings-root{
   margin-top: 250px;
@@ -1581,3 +1667,14 @@ ul li, li{
 
 
 
+
+
+#toggle{
+  cursor: pointer;
+  padding: 7px 10px;
+  font-size: 12px;
+  background: var(--accent);
+  width: fit-content;
+  border-radius: 20px;
+  color: white;
+}

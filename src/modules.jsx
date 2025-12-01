@@ -97,16 +97,7 @@ You can use the
           <p>Comprehensive, evidence-based training in cultural humility. Work at your pace with interactive scenarios, quizzes, and reflections. Complete a module at ≥80% to unlock its certificate; finish all five for the overall certificate.
           </p> */}
 
-          <div className="progress" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div className="to"><h2>Core pathway progress</h2> <p>0/5 completed</p></div>
-            <p>Modules 1–5 make up the core pathway. Advanced and specialist modules (6–15) can be taken in any order.</p>
-            
-            <div className="slid">
-                <div className="Scont"></div>
-            </div>
-
-            <p>Complete each core module to unlock certificates..</p>
-          </div>
+       
       </div>
 <hr /><br />
       <div className="content card molu" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">

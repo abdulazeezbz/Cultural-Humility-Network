@@ -16,6 +16,7 @@ import Modal from "./modal";
 import TrainingsLanding from './trainingPage';
 import LearningPage from './learning';
 import QuizPage from './quiz';
+import DashboardPage from './dashboard';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -34,6 +35,7 @@ function App() {
     <>
 
     <Routes>
+      
   <Route path="/" element={<Home />} />
   <Route path="/modules" element={<Modules />} />  
   <Route path="/login" element={<Login />} />  
@@ -43,6 +45,7 @@ function App() {
   <Route path="/support" element={<Support />} />  
   <Route path="/training" element={<TrainingsLanding />} />  
   <Route path="/learning" element={<LearningPage />} />  
+  <Route path="/Dashboard" element={<DashboardPage />} />  
   <Route path="/quiz" element={<QuizPage />} />  
   
   

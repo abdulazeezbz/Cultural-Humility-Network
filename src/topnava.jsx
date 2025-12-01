@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import './App.css'
 
+import { signOut } from "firebase/auth";
+import { auth } from "./firebase";
+import { useAuth } from "./AuthContext";
+
 import AppLogo from './assets/new logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
 
@@ -12,16 +16,34 @@ const TopNav = () => {
      const [menuOpen, setMenuOpen] = useState(false);
   //  const [activeTab, setActiveTab] = useState("home");
    
+  
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+    const { currentUser } = useAuth();
 
 
   const location = useLocation();
   const navigate = useNavigate();   // <-- HERE
 
   const activeTab = location.pathname;
+
+
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/login"); // redirect to login after logout
+    } catch (error) {
+      console.log("Logout error:", error);
+      alert("Failed to logout. Try again.");
+    }
+  };
+
+
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
 
 
   
@@ -65,10 +87,20 @@ const TopNav = () => {
     <a onClick={() => navigate("/training")}>Training</a>
   </li>
 
-  <li className={activeTab === "/login" ? "active" : ""}>
-    <a onClick={() => navigate("/login")}>Login</a>
-  </li>
-
+  {currentUser ? (
+        <>
+          <li className={activeTab === "/dashboard" ? "active" : ""}>
+            <a onClick={() => navigate("/dashboard")}>Dashboard</a>
+          </li>
+          <li>
+            <a onClick={handleLogout}>Logout</a>
+          </li>
+        </>
+      ) : (
+        <li className={activeTab === "/login" ? "active" : ""}>
+          <a onClick={() => navigate("/login")}>Login</a>
+        </li>
+      )}
 
 
   <li>

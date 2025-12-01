@@ -2,6 +2,15 @@ import { useState } from 'react'
 import './App.css'
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+import { auth, db } from "./firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+
+
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+
 import AppLogo from './assets/new logo.png'
 import FounderIcon from './assets/founder-placeholder.jpg'
 
@@ -9,6 +18,9 @@ import Register from './register'
 import TopNav from './topnava';
 
 function Login() {
+
+
+  
    const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -16,6 +28,152 @@ function Login() {
   };
 
   const navigate = useNavigate();   // <-- HERE
+
+
+  const [RLoading, setRLoading] = useState(false)
+  const [Loading, setLoading] = useState(false)
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+
+
+  const [RName, setRName] = useState("");
+  const [REmail, setREmail] = useState("");
+  const [RPassword, setRPassword] = useState("");
+
+  const [RShow, setRShow] = useState(false);
+  const [Show, setShow] = useState(false);
+
+
+
+
+
+const handleRegister = async () => {
+  setRLoading(true)
+  // 1️⃣ Validate password
+  const lengthOK = RPassword.length >= 8;
+  const upperOK = /[A-Z]/.test(RPassword);
+  const lowerOK = /[a-z]/.test(RPassword);
+  const digitOK = /\d/.test(RPassword);
+  const symbolOK = /[^A-Za-z0-9]/.test(RPassword);
+
+  if (!lengthOK || !upperOK || !lowerOK || !digitOK || !symbolOK) {
+    let msg = "Password must have:\n";
+    if (!lengthOK) msg += "- At least 8 characters\n";
+    if (!upperOK) msg += "- At least one uppercase letter\n";
+    if (!lowerOK) msg += "- At least one lowercase letter\n";
+    if (!digitOK) msg += "- At least one number\n";
+    if (!symbolOK) msg += "- At least one symbol (!@#$ etc.)\n";
+    alert(msg);
+    setRLoading(false)
+    return; // Stop the registration
+  }
+
+  // 2️⃣ Optional: validate other fields
+  if (!RName || !REmail) {
+    alert("Please fill all fields");
+    setRLoading(false)
+    return;
+  }
+
+  // 3️⃣ Proceed with registration
+  try {
+    const res = await createUserWithEmailAndPassword(auth, REmail, RPassword);
+    const user = res.user;
+
+    await setDoc(doc(db, "users", user.uid), {
+      name: RName,
+      email: REmail,
+      uid: user.uid,
+      createdAt: new Date()
+    });
+
+    setRLoading(false)
+
+    alert("Registration Successful! Login Now");
+    setREmail("")
+    setRName("")
+    setRPassword("")
+
+    setTimeout(() => {
+      location.href="#signin"
+    }, 500);
+  } catch (error) {
+    // Handle Firebase errors
+    if (error.code === "auth/email-already-in-use") {
+      alert("This email is already registered. Please login.");
+      
+    setRLoading(false)
+    setTimeout(() => {
+      location.href="#signin"
+    }, 500);
+
+     setEmail(REmail)
+    setRName("")
+    setPassword(RPassword)
+
+    } else if (error.code === "auth/invalid-email") {
+    setRLoading(false)
+      alert("Invalid email address");
+    } else if (error.code === "auth/weak-password") {
+      alert("Password is too weak.");
+    setRLoading(false)
+
+    } else {
+      alert(error.message);
+    setRLoading(false)
+
+    }
+    console.log("Firebase error:", error);
+  }
+};
+
+
+
+
+const handleLogin = async () => {
+  setLoading(true);
+
+  const email = Email.trim();
+  const password = Password.trim();
+
+  if (!email || !password) {
+    alert("Please fill both fields");
+    setLoading(false);
+    return;
+  }
+
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    alert(`Welcome back, ${user.email}!`);
+    setLoading(false);
+   navigate("/Dashboard");
+
+  } catch (error) {
+    setLoading(false);
+
+    // Handle common Firebase Auth errors
+    switch (error.code) {
+      case "auth/user-not-found":
+        alert("User not found. Please register first.");
+        break;
+      case "auth/wrong-password":
+        alert("Incorrect password. Try again.");
+        break;
+      case "auth/invalid-email":
+        alert("Invalid email address.");
+        break;
+      case "auth/invalid-credential":
+        alert("Invalid credentials. Please check your email and password.");
+        break;
+      default:
+        alert(error.message);
+    }
+
+    console.log("Login error:", error);
+  }
+};
 
   return (
     <>
@@ -67,15 +225,41 @@ function Login() {
         <p>Welcome Back Enter Your Details and Login To your Account</p>
 
 
-         <form action="">
+         <form>
               <div className="inputGroup">
-                <input type="text" placeholder='Enter your Email Address'/>
+                <input type="text"
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder='Enter your Email Address' required/>
               </div>
               <p style={{visibility:'hidden', height:0}}>This appears on your certificate—please use your preferred full name.</p>
 
                 <div className="inputGroup">
-                <input type="text" placeholder='Enter your Password'/>
+               <input 
+                
+                type={Show ? "text" : "password"}
+                id='lPassword' 
+                
+                value={Password}
+
+
+                autoComplete='false'
+                 placeholder='Enter your Password'
+                 onChange={(e) => setPassword(e.target.value)}
+
+                 required/>
               </div>
+
+              <p onClick={() => setShow(!Show)} id="toggle" style={{textAlign:'left', marginTop:-15, marginBottom:20,}}> 
+               {Show ? (
+                <>
+                 <ion-icon name="eye-off-outline"></ion-icon>{" "}Hide Password
+              </> ) : (
+                <><ion-icon name="eye-outline"></ion-icon>{" "}Show Password
+               </>)}
+               
+               </p>
+
 
 
               <div className="card">
@@ -83,7 +267,9 @@ function Login() {
 
               </div>
 
-              <button className="cta">Login</button>
+              <button className="cta" type='button' onClick={handleLogin}>
+                {Loading ? <div className="spinner" /> : "Login"}
+              </button>
 
               <br />
               <p id='create_account'>New here?  <a href="#create_account">Create an account </a></p>
@@ -101,20 +287,52 @@ function Login() {
         <p>Enter the Required Details To Create your Account</p>
 
 
-         <form action="">
+         <form>
               <div className="inputGroup">
-                <input type="text" placeholder='Enter your Full Name'/>
+
+                <input type="text"
+                value={RName}
+                onChange={(e) => setRName(e.target.value)}
+                placeholder='Enter your Full Name' required/>
               </div>
+
               <p style={{textAlign:'left', marginTop:-15, marginBottom:20,}}>This appears on your certificate—please use your preferred full name.</p>
 
                 <div className="inputGroup">
-                <input type="email" placeholder='Enter your email'/>
+                <input  type="email"
+                value={REmail}
+                onChange={(e) => setREmail(e.target.value)}
+                
+                placeholder='Enter your email' required/>
               </div>
 
 
                 <div className="inputGroup">
-                <input type="text" placeholder='Enter your Password'/>
+                <input 
+                
+                type={RShow ? "text" : "password"}
+                id='rPassword' 
+                value={RPassword}
+
+                autoComplete='false'
+                 pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$"
+                 placeholder='Enter your Password'
+                 onChange={(e) => setRPassword(e.target.value)}
+
+                 required/>
               </div>
+
+              <p onClick={() => setRShow(!RShow)} id="toggle" style={{textAlign:'left', marginTop:-15, marginBottom:20,}}> 
+               {RShow ? (
+                <>
+                 <ion-icon name="eye-off-outline"></ion-icon>{" "}Hide Password
+              </> ) : (
+                <><ion-icon name="eye-outline"></ion-icon>{" "}Show Password
+               </>)}
+               
+               </p>
+               <br />
+
 
                <div className="card" style={{textAlign:'left', marginTop:-15, marginBottom:20,}}>
                 <details>
@@ -139,7 +357,9 @@ function Login() {
 
               
 
-              <button className="cta">Register</button>
+              <button className="cta" type='button' onClick={handleRegister}>
+                 {RLoading ? <div className="spinner" /> : "Register"}
+                </button>
 
               <br />
               <p>Already have an account?  <a href="#signin">Login Here</a></p>

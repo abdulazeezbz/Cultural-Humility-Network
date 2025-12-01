@@ -1,4 +1,8 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+// Realtime DB
 import { getDatabase, ref, push } from "firebase/database";
 
 const firebaseConfig = {
@@ -10,9 +14,11 @@ const firebaseConfig = {
   messagingSenderId: "953964566330",
   appId: "1:953964566330:web:7b5b8a8e7d7205e18ca203",
   measurementId: "G-BB5SW9C7SV"
-
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getDatabase(app);
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const rtdb = getDatabase(app);
 export { ref, push };
