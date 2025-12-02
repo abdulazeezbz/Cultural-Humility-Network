@@ -146,9 +146,13 @@ const handleLogin = async () => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    alert(`Welcome back, ${user.email}!`);
+    alert(`Welcome back, ${user.email}! \n You'll Be Redirected To Dashboard Now.`);
     setLoading(false);
-   navigate("/Dashboard");
+    
+    setTimeout(() => {
+      navigate("/Dashboard");
+    }, 1000);
+
 
   } catch (error) {
     setLoading(false);

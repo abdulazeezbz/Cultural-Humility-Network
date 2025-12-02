@@ -1,17 +1,111 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import TopNav from './topnava'
 
+import { db } from "./firebase";
+import { collection, addDoc, onSnapshot, deleteDoc, doc   } from "firebase/firestore";
+
+
 import { useAuth } from "./AuthContext";
+
 import { useNavigate } from "react-router-dom";
 import Community from './community';
 
 const DashboardPage = () => {
 
+
+    const cancelCommitment = async (id) => {
+  await deleteDoc(doc(db, "users", currentUser.uid, "commitments", id));
+};
+
+
+
       const { currentUser } = useAuth();
   const navigate = useNavigate();
 
+  const [plans, setPlans] = useState([]);
 
-  if (!currentUser) return <p>Login To View this Page...</p>;
+  useEffect(() => {
+  if (!currentUser) return;
+
+  const unsub = onSnapshot(
+    collection(db, "users", currentUser.uid, "commitments"),
+    (snapshot) => {
+      const list = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setPlans(list);
+    }
+  );
+  return unsub;
+}, [currentUser]);
+
+
+
+
+
+  if (!currentUser) return (
+    <>
+  <h1>Login To View this Page </h1>
+  <button className='cta mini' onClick={()=> navigate('/login')}>Go To Login</button>
+  </>
+);
+
+
+
+
+
+
+
+
+const [commitment, setCommitment] = useState("");
+const [date, setDate] = useState("");
+
+const saveCommitment = async () => {
+  if (!commitment || !date) {
+    return alert("Please fill both fields");
+  }
+
+  if (!currentUser) {
+    return alert("You must be logged in");
+  }
+
+  try {
+    await addDoc(
+      collection(db, "users", currentUser.uid, "commitments"),
+      {
+        commitment,
+        date,
+        createdAt: new Date(),
+        status: 'upcoming',
+        done: false,
+      }
+    );
+
+    alert("Saved!");
+    setCommitment("");
+    setDate("");
+
+  } catch (err) {
+    console.log(err);
+    alert(err.message);
+  }
+};
+
+
+
+const getRemainingText = (dateString) => {
+  const today = new Date();
+  const target = new Date(dateString);
+
+  const diff = target - today;
+  const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+  if (days > 1) return `${days} days remaining`;
+  if (days === 1) return "1 day remaining";
+  if (days === 0) return "Today";
+  return "Passed";
+};
 
 
   return (
@@ -26,11 +120,23 @@ const DashboardPage = () => {
             <div className="card">
                 <h3>My Action Plan</h3>
                 <p>Create and track your SMART commitments from the modules. Check them off as you complete them.</p>
-
                 <div className="inputGroup">
-                    <input type="text" name="" placeholder='New commitment (e.g., Add interpreter step to booking form)' id="" />
-                    <input type="date" name="" id="" />
-                    <button className='cta mini' style={{marginTop:5}}>Add</button>
+                    <input
+      type="text"
+      placeholder="New commitment"
+      value={commitment}
+      onChange={(e) => setCommitment(e.target.value)}
+    />
+
+    <input
+      type="date"
+      value={date}
+      onChange={(e) => setDate(e.target.value)}
+    />
+
+    <button className="cta mini" onClick={saveCommitment}>
+      Add
+    </button>
                 </div>
 
 
@@ -50,24 +156,38 @@ const DashboardPage = () => {
                     </tr>
                     </thead>
                    
-                   <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Submit My task</td>
-                        <td>25/12/2025</td>
-                        <td>Upcoming</td>
-                        <td><button className='cta mini outlines' style={{width:'auto', marginTop:10}}>Cancel</button></td>
-                    </tr>
+                 <tbody>
+  {plans.length === 0 && (
+    <tr>
+      <td colSpan={5}>No plans yet</td>
+    </tr>
+  )}
 
+  {plans.map((item, index) => {
+    const statusText = getRemainingText(item.date);
 
-                      <tr>
-                        <td>2</td>
-                        <td>Start my Quiz</td>
-                        <td>10/12/2025</td>
-                        <td>Upcoming</td>
-                        <td><button className='cta mini outlines' style={{width:'auto', marginTop:10}}>Cancel</button></td>
-                    </tr>
-                    </tbody>
+    return (
+      <tr key={item.id}>
+        <td>{index + 1}</td>
+        <td>{item.commitment}</td>
+        <td>{item.date}</td>
+        <td>{statusText}</td>
+
+        <td>
+            <button
+              className='cta mini outlines'
+              style={{width:'auto', padding:"4px 26px"}}
+              onClick={() => cancelCommitment(item.id)}
+            >
+              Delete
+            </button>
+        
+        </td>
+
+      </tr>
+    );
+  })}
+</tbody>
                 </table>
 
 

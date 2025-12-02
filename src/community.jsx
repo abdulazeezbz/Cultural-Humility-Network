@@ -1,6 +1,13 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import './App.css'
+
+
+import { db } from "./firebase";
+import { collection, addDoc, onSnapshot, deleteDoc, doc   } from "firebase/firestore";
+
+
+import { useAuth } from "./AuthContext";
 
 
 
@@ -12,15 +19,69 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 import Login from './login';
 import TopNav from './topnava';
 import Footer from './footer';
+import NewPost from './NewPost';
+import PostsList from './postList';
 
 const Community = () => {
     const navigate = useNavigate();   // <-- HERE
     const [open, setOpen] = useState(false);
 
 
+    const { currentUser } = useAuth();
+
       const location = useLocation();
 
   const hideUI = location.pathname === "/dashboard"; // or any other route
+
+
+
+
+
+ const [role, setRole] = useState("");
+  const [interest, setInterest] = useState("");
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [contactOk, setContactOk] = useState(false);
+  const [anonymous, setAnonymous] = useState(!currentUser);
+  const [loading, setLoading] = useState(false);
+
+
+
+
+   const handleSubmit = async () => {
+    if (!role || !interest) {
+      alert("Please fill in at least Role and Areas of Interest");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await addDoc(collection(db, "interestForms"), {
+        role,
+        interest,
+        additionalInfo,
+        contactOk,
+        anonymous,
+        uid: currentUser ? currentUser.uid : null,
+        createdAt: new Date(),
+      });
+
+      alert("Form submitted successfully!");
+      // reset fields
+      setRole("");
+      setInterest("");
+      setAdditionalInfo("");
+      setContactOk(false);
+      setAnonymous(!currentUser);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Failed to submit form.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
   return (
     <>
     {!hideUI && <TopNav />}
@@ -131,32 +192,73 @@ const Community = () => {
         </ul>
 <br />
 
-<div className="inputGroup">
-    <div className="">
-        <label htmlFor="">Your role / background</label>
-        <input type="text" placeholder='e.g. student nurse, lecturer, mental health practitioner, community worker' />
-    </div>
+{currentUser && (
 
-     <div className="">
-        <label htmlFor="">Areas of interest</label>
-        <input type="text" placeholder='e.g. mental health, education, implementation, Black health, placements' />
-    </div>
-</div>
+<>
+ <div className="inputGroup">
+        <div>
+          <label>Your role / background</label>
+          <input
+            type="text"
+            placeholder="e.g. student nurse, lecturer, mental health practitioner"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          />
+        </div>
 
-<div className="inputGroup">
-   
-     <div className="">
-        <label htmlFor="">Anything you would like us to know</label>
-        <textarea rows={7} value={''} readOnly placeholder='Optional – share ideas, questions, or the kinds of projects you might want to be involved in.'> </textarea>
-    </div>
-</div>
-
-<p><input type="checkbox" /> I am happy for the team to contact me about research and related activities.</p>
-
-<button className='cta mini' style={{width:'auto', marginTop:10}}>Submit Your Intrest</button>
-<br /><br />
-      
+        <div>
+          <label>Areas of interest</label>
+          <input
+            type="text"
+            placeholder="e.g. mental health, education, implementation"
+            value={interest}
+            onChange={(e) => setInterest(e.target.value)}
+          />
+        </div>
       </div>
+
+      <div className="inputGroup">
+        <div>
+          <label>Anything you would like us to know</label>
+          <textarea
+            rows={7}
+            placeholder="Optional – share ideas, questions, or projects"
+            value={additionalInfo}
+            onChange={(e) => setAdditionalInfo(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <p>
+        <input
+          type="checkbox"
+          checked={contactOk}
+          onChange={(e) => setContactOk(e.target.checked)}
+        />{" "}
+        I am happy for the team to contact me about research and related activities.
+      </p>
+
+
+      <button
+        className="cta mini"
+        style={{ width: "auto", marginTop: 10 }}
+        onClick={handleSubmit}
+        disabled={loading}
+      >
+        {loading ? "Submitting..." : "Submit Your Interest"}
+      </button>
+<br /><br />
+
+   </>
+)}
+
+{!currentUser && (
+  <div className="login-prompt">
+    <p className='cta mini'>Please log in to Submit your Intrest.</p>
+  </div>
+)}
+      </div>
+
 
 )}
 <hr />
@@ -175,17 +277,36 @@ const Community = () => {
    
       <div className="glance-item">
         <div className="glance-label">Threads started</div>
-        <div className="glance-value">37</div>
+        {!currentUser && (
+  <div className="glance-value">0</div>
+)}
+
+      {currentUser && (
+  <div className="glance-value">10</div>
+)}
+
         <p className="glance-text">Once you post your first thread, this number begins to grow.</p>
       </div>
       <div className="glance-item">
         <div className="glance-label">Comments posted</div>
-        <div className="glance-value">34</div>
+        <div className="glance-value">        {!currentUser && (
+  <div className="glance-value">0</div>
+)}
+
+      {currentUser && (
+  <div className="glance-value">223</div>
+)}</div>
         <p className="glance-text">Thoughtful comments help build shared learning and support.</p>
       </div>
       <div className="glance-item">
         <div className="glance-label">Blog posts submitted</div>
-        <div className="glance-value">344</div>
+        <div className="glance-value">        {!currentUser && (
+  <div className="glance-value">0</div>
+)}
+
+      {currentUser && (
+  <div className="glance-value">32</div>
+)}</div>
         <p className="glance-text">Longer reflections can be shared as blog posts once you feel ready.</p>
       </div>
     </div>
@@ -233,118 +354,20 @@ const Community = () => {
         {/* Left Start */}
         <div className="left">
 
-            {/* Start Discution */}
-            <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                <h2>Start a Discussion</h2><br />
-                <input type="checkbox" /> Post anonymously
-                <br /><br />
-                    Post Title
-                <div className="inputGroup">
-                <input type="text" />
-                </div>
-
-                     Post Content
-                <div className="inputGroup" id='newpost'>
-                    <textarea name="" rows={8} id=""></textarea>
-                </div>
-
-                <button className='cta mini'>Publish</button>
-
-
-            </div>
-            {/* ENDStart Discution */}
-
-
-             {/* Start Discution */}
-            <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
-                <h2>Start a Blog Post</h2><br />
-                <input type="checkbox" /> Post anonymously
-                <br /><br />
-                    Post Title
-                <div className="inputGroup">
-                <input type="text" />
-                </div>
-
-                     Post Content
-                <div className="inputGroup">
-                    <textarea name="" rows={8} id=""></textarea>
-                </div>
-
-                <button className='cta mini'>Publish</button>
-
-
-            </div>
-            {/* ENDStart Discution */}
-
-
-
+  <NewPost type='discussion' />
+  <NewPost type='blog' />
 
             {/* Start Posts */}
 
             <div className="card">
                 <div className="" style={{display:'flex', justifyContent:'space-between', alignItems:"center"}}>
                     <h3>Forum Threads</h3>
-                    <button className='cta outlines mini' onClick={()=>location.href='#newthread'}>Start Thread</button>
+                    <button className='cta outlines mini' onClick={()=> location.href='#newthread'}>Start Thread</button>
                 </div>
 
 
-{/* POST START */}
-<div className="postCard">
-    <div className="card">
-        <div className="poster">
-            <img src={userIcon} alt="" />
-            <div className="">
-                <h4>AbdulAzeez ABZ</h4>
-                <p>10/11/2025</p>
-            </div>
-        </div>
 
-        <div className="post">
-            <h3>Sample Post: Education Scenario</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam corrupti consequuntur explicabo, vitae hic, libero doloribus vel pariatur qui tenetur iure quod? Obcaecati, velit! Laboriosam ratione debitis quas distinctio?</p>
-        </div>
-
-        <div className="controls">
-            <button className='cta outlines mini'>Like&nbsp;(0)</button>
-            <button className='cta outlines mini'>DisLike</button>
-            <button className='cta outlines mini'>Recommend&nbsp;(13)</button>
-        </div>
-        <div className="controls">
-            <button className='cta mini'>Reply in a new thread</button>
-        </div>
-    </div>
-</div>
-{/* END POST */}
-
-
-{/* POST START */}
-<div className="postCard">
-    <div className="card">
-        <div className="poster">
-            <img src={userIcon2} alt="" />
-            <div className="">
-                <h4>Anonymous User</h4>
-                <p>10/11/2025</p>
-            </div>
-        </div>
-
-        <div className="post">
-            <h3>Sample Post: Education Scenario</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam corrupti consequuntur explicabo, vitae hic, libero doloribus vel pariatur qui tenetur iure quod? Obcaecati, velit! Laboriosam ratione debitis quas distinctio?</p>
-        </div>
-
-        <div className="controls">
-            <button className='cta outlines mini'>Like&nbsp;(0)</button>
-            <button className='cta outlines mini'>DisLike</button>
-            <button className='cta outlines mini'>Recommend&nbsp;(13)</button>
-        </div>
-
-        <div className="controls">
-            <button className='cta mini'>Reply in a new thread</button>
-        </div>
-    </div>
-</div>
-{/* END POST */}
+<PostsList type="discussion" />
 
                 
             </div>
@@ -362,63 +385,7 @@ const Community = () => {
                 </div>
 
 
-{/* POST START */}
-<div className="postCard">
-    <div className="card">
-        <div className="poster">
-            <img src={userIcon} alt="" />
-            <div className="">
-                <h4>AbdulAzeez ABZ</h4>
-                <p>10/11/2025</p>
-            </div>
-        </div>
-
-        <div className="post">
-            <h3>Sample Post: Education Scenario</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam corrupti consequuntur explicabo, vitae hic, libero doloribus vel pariatur qui tenetur iure quod? Obcaecati, velit! Laboriosam ratione debitis quas distinctio?</p>
-        </div>
-
-        <div className="controls">
-            <button className='cta outlines mini'>Like&nbsp;(0)</button>
-            <button className='cta outlines mini'>DisLike</button>
-            <button className='cta outlines mini'>Recommend&nbsp;(13)</button>
-        </div>
-        <div className="controls">
-            <button className='cta mini'>Reply in a new thread</button>
-        </div>
-    </div>
-</div>
-{/* END POST */}
-
-
-{/* POST START */}
-<div className="postCard">
-    <div className="card">
-        <div className="poster">
-            <img src={userIcon2} alt="" />
-            <div className="">
-                <h4>Anonymous User</h4>
-                <p>10/11/2025</p>
-            </div>
-        </div>
-
-        <div className="post">
-            <h3>Sample Post: Education Scenario</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ullam corrupti consequuntur explicabo, vitae hic, libero doloribus vel pariatur qui tenetur iure quod? Obcaecati, velit! Laboriosam ratione debitis quas distinctio?</p>
-        </div>
-
-        <div className="controls">
-            <button className='cta outlines mini'>Like&nbsp;(0)</button>
-            <button className='cta outlines mini'>DisLike</button>
-            <button className='cta outlines mini'>Recommend&nbsp;(13)</button>
-        </div>
-
-        <div className="controls">
-            <button className='cta mini'>Reply in a new thread</button>
-        </div>
-    </div>
-</div>
-{/* END POST */}
+                    <PostsList type="blog" />
 
                 
             </div>
