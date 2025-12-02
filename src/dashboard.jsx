@@ -3,6 +3,7 @@ import TopNav from './topnava'
 
 import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
+import Community from './community';
 
 const DashboardPage = () => {
 
@@ -39,6 +40,7 @@ const DashboardPage = () => {
 
 
                 <table>
+                    <thead>
                     <tr>
                     <th>SN</th>
                     <th style={{minWidth:150}}>Plan</th>
@@ -46,7 +48,9 @@ const DashboardPage = () => {
                     <th>Status</th>
                     <th>Action</th>
                     </tr>
+                    </thead>
                    
+                   <tbody>
                     <tr>
                         <td>1</td>
                         <td>Submit My task</td>
@@ -63,6 +67,7 @@ const DashboardPage = () => {
                         <td>Upcoming</td>
                         <td><button className='cta mini outlines' style={{width:'auto', marginTop:10}}>Cancel</button></td>
                     </tr>
+                    </tbody>
                 </table>
 
 
@@ -152,6 +157,9 @@ const DashboardPage = () => {
         </div>
         </div>
     </div>
+
+    <Community/>
+
     </>
   )
 }

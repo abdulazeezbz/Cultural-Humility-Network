@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import './App.css'
+
+
 
 import AppLogo from './assets/logo.png'
 import userIcon from './assets/user.webp'
@@ -14,11 +16,18 @@ import Footer from './footer';
 const Community = () => {
     const navigate = useNavigate();   // <-- HERE
     const [open, setOpen] = useState(false);
+
+
+      const location = useLocation();
+
+  const hideUI = location.pathname === "/dashboard"; // or any other route
   return (
     <>
-      <TopNav/>
+    {!hideUI && <TopNav />}
 
             
+         {!hideUI && (
+
         <div className="content modules about"  data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
           <h2>Join Our Global Community</h2>
           <p>Connect with practitioners, students, educators and community 
@@ -37,6 +46,10 @@ const Community = () => {
 
 </div>
 
+
+    )}
+
+     {!hideUI && (
 
       <div className="card comm">
         <h2>
@@ -91,8 +104,10 @@ const Community = () => {
 
 
       </div>
+  )}
 
 
+ {!hideUI && (
 
        <div className="card comm">
         <h2>
@@ -128,12 +143,11 @@ const Community = () => {
     </div>
 </div>
 
-
 <div className="inputGroup">
    
      <div className="">
         <label htmlFor="">Anything you would like us to know</label>
-        <textarea rows={7} placeholder='Optional – share ideas, questions, or the kinds of projects you might want to be involved in.'> </textarea>
+        <textarea rows={7} value={''} readOnly placeholder='Optional – share ideas, questions, or the kinds of projects you might want to be involved in.'> </textarea>
     </div>
 </div>
 
@@ -144,34 +158,35 @@ const Community = () => {
       
       </div>
 
-
+)}
 <hr />
 <br />
 
+ 
 
-<section class="section glanc">
+<section className="section glanc">
   <div className="">
   <h2>
     Your community snapshot
   </h2>
   <p>This is a light-touch way of noticing how you might engage with the community. In a live version, these numbers can update based on your activity</p>
 <center>
-<div class="glance new" aria-label="Cultural Humility Hub at a glance">
+<div className="glance new" aria-label="Cultural Humility Hub at a glance">
    
-      <div class="glance-item">
-        <div class="glance-label">Threads started</div>
-        <div class="glance-value">37</div>
-        <p class="glance-text">Once you post your first thread, this number begins to grow.</p>
+      <div className="glance-item">
+        <div className="glance-label">Threads started</div>
+        <div className="glance-value">37</div>
+        <p className="glance-text">Once you post your first thread, this number begins to grow.</p>
       </div>
-      <div class="glance-item">
-        <div class="glance-label">Comments posted</div>
-        <div class="glance-value">34</div>
-        <p class="glance-text">Thoughtful comments help build shared learning and support.</p>
+      <div className="glance-item">
+        <div className="glance-label">Comments posted</div>
+        <div className="glance-value">34</div>
+        <p className="glance-text">Thoughtful comments help build shared learning and support.</p>
       </div>
-      <div class="glance-item">
-        <div class="glance-label">Blog posts submitted</div>
-        <div class="glance-value">344</div>
-        <p class="glance-text">Longer reflections can be shared as blog posts once you feel ready.</p>
+      <div className="glance-item">
+        <div className="glance-label">Blog posts submitted</div>
+        <div className="glance-value">344</div>
+        <p className="glance-text">Longer reflections can be shared as blog posts once you feel ready.</p>
       </div>
     </div>
 </center>
