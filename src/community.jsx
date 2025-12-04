@@ -4,7 +4,9 @@ import './App.css'
 
 
 import { db } from "./firebase";
-import { collection, addDoc, onSnapshot, deleteDoc, doc   } from "firebase/firestore";
+import { collection, addDoc, limit, startAfter ,
+    onSnapshot, deleteDoc, doc , query, where, getDocs
+} from "firebase/firestore";
 
 
 import { useAuth } from "./AuthContext";
@@ -23,6 +25,17 @@ import NewPost from './NewPost';
 import PostsList from './postList';
 
 const Community = () => {
+
+    const [stats, setStats] = useState({
+  threads: 0,
+  comments: 0,
+  blogs: 0,
+});
+
+
+
+
+
     const navigate = useNavigate();   // <-- HERE
     const [open, setOpen] = useState(false);
 
@@ -81,6 +94,51 @@ const Community = () => {
   };
 
 
+
+
+
+
+
+useEffect(() => {
+  if (!currentUser) return;
+
+  const loadStats = async () => {
+    const userId = currentUser.uid;
+
+    // THREADS (posts where parentId = null)
+    const threadsQ = query(
+      collection(db, "posts"),
+      where("uid", "==", userId),
+      where("type", "==", "discussion"),
+      where("parentId", "==", null)
+    );
+    const threadsSnap = await getDocs(threadsQ);
+
+    // COMMENTS / REPLIES (posts where parentId != null)
+    const commentsQ = query(
+      collection(db, "posts"),
+      where("uid", "==", userId),
+      where("parentId", "!=", null)
+    );
+    const commentsSnap = await getDocs(commentsQ);
+
+    // BLOG POSTS
+    const blogsQ = query(
+      collection(db, "posts"),
+      where("uid", "==", userId),
+      where("type", "==", "blog")
+    );
+    const blogsSnap = await getDocs(blogsQ);
+
+    setStats({
+      threads: threadsSnap.size,
+      comments: commentsSnap.size,
+      blogs: blogsSnap.size,
+    });
+  };
+
+  loadStats();
+}, [currentUser]);
 
   return (
     <>
@@ -282,7 +340,7 @@ const Community = () => {
 )}
 
       {currentUser && (
-  <div className="glance-value">10</div>
+  <div className="glance-value">{currentUser ? stats.threads : 0}</div>
 )}
 
         <p className="glance-text">Once you post your first thread, this number begins to grow.</p>
@@ -294,7 +352,7 @@ const Community = () => {
 )}
 
       {currentUser && (
-  <div className="glance-value">223</div>
+  <div className="glance-value">{currentUser ? stats.comments : 0}</div>
 )}</div>
         <p className="glance-text">Thoughtful comments help build shared learning and support.</p>
       </div>
@@ -305,7 +363,7 @@ const Community = () => {
 )}
 
       {currentUser && (
-  <div className="glance-value">32</div>
+  <div className="glance-value">{currentUser ? stats.blogs : 0}</div>
 )}</div>
         <p className="glance-text">Longer reflections can be shared as blog posts once you feel ready.</p>
       </div>
@@ -318,6 +376,8 @@ const Community = () => {
 
 
   </section>
+
+
         <div className="content modules community"  id='newthread'  data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
             
 

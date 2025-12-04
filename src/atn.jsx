@@ -11,7 +11,7 @@ import FounderIcon from './assets/founder-placeholder.jpg'
 
 import Login from './login';
 
-const TopNav = () => {
+const ATopNav = () => {
 
      const [menuOpen, setMenuOpen] = useState(false);
   //  const [activeTab, setActiveTab] = useState("home");
@@ -31,7 +31,7 @@ const TopNav = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      navigate("/login"); // redirect to login after logout
+      navigate("/Adminlogin"); // redirect to login after logout
     } catch (error) {
       console.log("Logout error:", error);
       alert("Failed to logout. Try again.");
@@ -54,7 +54,8 @@ const TopNav = () => {
         <img src={AppLogo} alt="" />
         <div className="">
           <h3 style={{fontSize:25}}>Cultural Humility Network</h3>
-          <p>Fostering Inclusive, Reflective, and Culturally Aware Practice</p>
+          <p style={{padding:"5px 10px", background:"var(--accent)", width:'fit-content', color:'white', 
+            borderRadius:"50% 10% 50% 10% / 10% 50% 10% 50%"}}>(Admin Pannel)</p>
         </div></div>
 
         <div className="mobile" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
@@ -67,50 +68,29 @@ const TopNav = () => {
       </div>
      <div className={`bb ${menuOpen ? "block" : "hidden"} md:flex`}>
  <ul>
-  <li className={activeTab === "/" ? "active" : ""}>
-    <a onClick={() => navigate("/")}>Home</a>
+
+ <li className={activeTab === "/adminModules" ? "active" : ""}>
+    <a onClick={() => navigate("/adminModules")}>Modules</a>
+  </li>
+ 
+ 
+  <li className={activeTab === "/adminPosts" ? "active" : ""}>
+    <a onClick={() => navigate("/adminPosts")}>Posts&nbsp;&&nbsp;Blogs</a>
   </li>
 
-  <li className={activeTab === "/about" ? "active" : ""}>
-    <a onClick={() => navigate("/about")}>About</a>
-  </li>
 
-  <li className={activeTab === "/modules" ? "active" : ""}>
-    <a onClick={() => navigate("/modules")}>Learn</a>
-  </li>
-
-  <li className={activeTab === "/community" ? "active" : ""}>
-    <a onClick={() => navigate("/community")}>Community</a>
-  </li>
-
-  <li className={activeTab === "/training" ? "active" : ""}>
-    <a onClick={() => navigate("/training")}>Training</a>
-  </li>
-
-  {currentUser ? (
         <>
-          <li className={activeTab === "/dashboard" ? "active" : ""}>
-            <a onClick={() => navigate("/dashboard")}>Dashboard</a>
+          <li className={activeTab === "/AdminDashboard" ? "active" : ""}>
+            <a onClick={() => navigate("/AdminDashboard")}>Dashboard</a>
           </li>
           <li>
             <a onClick={handleLogout}>Logout</a>
           </li>
         </>
-      ) : (
-        <li className={activeTab === "/login" ? "active" : ""}>
-          <a onClick={() => navigate("/login")}>Login</a>
-        </li>
-      )}
+   
 
 
-  <li>
-    <button
-      className="cta outlines create"
-      onClick={() => navigate("/login#create_account")}
-    >
-      Create Account
-    </button>
-  </li>
+
 </ul>
 </div>   
       
@@ -118,4 +98,4 @@ const TopNav = () => {
   )
 }
 
-export default TopNav
+export default ATopNav

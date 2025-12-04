@@ -1503,6 +1503,28 @@ body { font-family: inherit; background: var(--back); color: var(--ink); }
   text-align: center;
 }
 
+.slideee table{
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.slideee table tr th {
+  background-color: var(--bg); /* ash/grey */
+  padding: 10px;
+}
+.slideee table tr:nth-child(odd) {
+  background-color: #f2f2f2; /* ash/grey */
+}
+
+.slideee table tr td{
+  padding: 10px;
+}
+
+.slideee table tr:nth-child(even) {
+  background-color: #ffffff; /* white */
+}
 .dashb .child{
 
     display: flex;
@@ -1677,4 +1699,90 @@ ul li, li{
   width: fit-content;
   border-radius: 20px;
   color: white;
+}
+
+
+
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 128, 67, 0.158);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.modalBox {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+.modalBox textarea{
+  width: 100%;
+  margin-top: 20px;
+}
+.modalActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.tiptap-editor {
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.toolbar {
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toolbar button {
+  padding: 6px 12px;
+  background: var(--accent);
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+
+.tiptap-content {
+  min-height: 300px;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Make lists look clean */
+.tiptap-ol {
+  padding-left: 25px;
+  list-style-type: decimal;
+}
+
+.tiptap-ul {
+  padding-left: 25px;
+  list-style-type: disc;
 }

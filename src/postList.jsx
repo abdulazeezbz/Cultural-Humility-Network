@@ -1,35 +1,76 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "./AuthContext";
 import { db } from "./firebase";
-import { collection, query, where, orderBy, onSnapshot, doc, updateDoc } from "firebase/firestore";
+import { collection, limit, startAfter, query, where, getDoc, orderBy, onSnapshot, doc, updateDoc } from "firebase/firestore";
 
 
 
 import userIcon from './assets/user.webp'
 import userIcon2 from './assets/user2.png'
+import ReplyModal from "./ReplyModal";
 
 
 const PostsList = ({ type }) => { // type: "discussion" or "blog"
   const { currentUser } = useAuth();
   const [posts, setPosts] = useState([]);
+  const [userCache, setUserCache] = useState({});
 
-  useEffect(() => {
-    if (!type) return;
+  const [lastDoc, setLastDoc] = useState(null);
 
-    const q = query(
-      collection(db, "posts"),
-      where("status", "==", "approved"),
-      where("type", "==", type), // filter by type
-      orderBy("createdAt", "desc")
-    );
+useEffect(() => {
+  if (!type) return;
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const fetchedPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setPosts(fetchedPosts);
-    });
+  const q = query(
+    collection(db, "posts"),
+    where("status", "==", "approved"),
+    where("type", "==", type),
+    orderBy("createdAt", "desc"),
+  );
 
-    return () => unsubscribe();
-  }, [type]);
+  const unsubscribe = onSnapshot(q, async (snapshot) => {
+    const fetchedPosts = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setPosts(fetchedPosts);
+     setLastDoc(snapshot.docs[snapshot.docs.length - 1]); // <- required
+
+    // Fetch user names for all posts
+    for (const post of fetchedPosts) {
+      if (post.uid && !userCache[post.uid]) {
+        const userDoc = await getDoc(doc(db, "users", post.uid));
+        setUserCache((prev) => ({
+          ...prev,
+          [post.uid]: userDoc.exists() ? userDoc.data().name : "Unknown User",
+        }));
+      }
+    }
+  });
+
+  return () => unsubscribe();
+}, [type]);
+
+
+  const loadMore = () => {
+  const next = query(
+    collection(db, "posts"),
+    where("status", "==", "approved"),
+    where("type", "==", type),
+    orderBy("createdAt", "desc"),
+    startAfter(lastDoc),
+    limit(10)
+  );
+
+  onSnapshot(next, (snapshot) => {
+    const more = snapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+    setPosts(prev => [...prev, ...more]);
+    setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
+  });
+};
+
+
+
 
 const handleReaction = async (postId, reactionType) => {
   if (!currentUser) return alert("Please login to react.");
@@ -63,10 +104,17 @@ const handleReaction = async (postId, reactionType) => {
   await updateDoc(postRef, { reactions });
 };
 
+
+const mainPosts = posts.filter(p => !p.parentId);
+const replies = posts.filter(p => p.parentId);
+
+
+
+
+const [replyingTo, setReplyingTo] = useState(null);
   return (
     <div>
       {posts.length === 0 && <p>No {type === "blog" ? "blog posts" : "discussions"} yet.</p>}
-
       {posts.map((post) => (
         <div className="postCard" key={post.id}>
           <div className="card">
@@ -76,18 +124,23 @@ const handleReaction = async (postId, reactionType) => {
                 alt=""
               />
               <div>
-                <h4>{post.anonymous ? "Anonymous User" : currentUser?.name || "User"}</h4>
+                <h4> {post.anonymous
+    ? "Anonymous User"
+    : userCache[post.uid] || "Loading..."}</h4>
                 <p>{post.createdAt?.toDate?.().toLocaleDateString() || "Unknown date"}</p>
               </div>
             </div>
+
 
             <div className="post">
               <h3>{post.title}</h3>
               <p>{post.content}</p>
             </div>
 
+
             {currentUser ? (
               <>
+              <React.Fragment key={post.id + "_controls"}>
                 <div className="controls">
                   <button
                     className="cta outlines mini"
@@ -110,15 +163,63 @@ const handleReaction = async (postId, reactionType) => {
                 </div>
 
                 <div className="controls">
-                  <button className="cta mini">Reply in a new thread</button>
+                  {currentUser && (
+  <button
+    className="cta mini"
+    onClick={() => setReplyingTo(post.id)}
+  >
+    Reply to {post.type}
+  </button>
+
+
+
+)}
+
+
+
+
+{replyingTo && (
+  <ReplyModal
+    postId={replyingTo}
+    type={post.type}
+    onClose={() => setReplyingTo(null)}
+  />
+)}
+
+
+
+
                 </div>
+
+                </React.Fragment>
               </>
             ) : (
               <p style={{ marginTop: "10px" }}>Sign in to react or reply</p>
             )}
+
+             <br />
+                                {/* replies */}
+    {replies
+      .filter(r => r.parentId === post.id)
+      .map(reply => (
+        <React.Fragment key={reply.id + "_control"}>
+        
+       
+        <p style={{width:"100%"}} disabled> <b>Replay:</b> </p>
+        <div key={reply.id} className="card">
+          <p>{reply.content}</p>
+        </div>
+        
+        </React.Fragment>
+      ))
+    }
           </div>
+
+          
         </div>
       ))}
+
+      {/* <button onClick={loadMore}>Load more</button> */}
     </div>
   );
 };

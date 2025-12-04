@@ -35,7 +35,7 @@ const About = () => {
       </div>
 
 
-<section class="section glanc">
+<section className="section glanc">
   <div className="">
   <h2>
     CHN at a Glance
@@ -43,26 +43,26 @@ const About = () => {
 
   <p>The hub sits at the intersection of cultural humility, implementation science and community partnership.</p>  
 
-<div class="glance" aria-label="Cultural Humility Hub at a glance">
-      <div class="glance-item">
-        <div class="glance-label">Focus</div>
-        <div class="glance-value">Health &amp; education</div>
-        <p class="glance-text">Working across clinical, social care, community and university settings.</p>
+<div className="glance" aria-label="Cultural Humility Hub at a glance">
+      <div className="glance-item">
+        <div className="glance-label">Focus</div>
+        <div className="glance-value">Health &amp; education</div>
+        <p className="glance-text">Working across clinical, social care, community and university settings.</p>
       </div>
-      <div class="glance-item">
-        <div class="glance-label">Approach</div>
-        <div class="glance-value">Implementation science</div>
-        <p class="glance-text">Turning evidence and lived experience into everyday practice.</p>
+      <div className="glance-item">
+        <div className="glance-label">Approach</div>
+        <div className="glance-value">Implementation science</div>
+        <p className="glance-text">Turning evidence and lived experience into everyday practice.</p>
       </div>
-      <div class="glance-item">
-        <div class="glance-label">Core idea</div>
-        <div class="glance-value">Cultural humility</div>
-        <p class="glance-text">Lifelong self-reflection, power awareness and partnership, not one-off training.</p>
+      <div className="glance-item">
+        <div className="glance-label">Core idea</div>
+        <div className="glance-value">Cultural humility</div>
+        <p className="glance-text">Lifelong self-reflection, power awareness and partnership, not one-off training.</p>
       </div>
-      <div class="glance-item">
-        <div class="glance-label">Ways to engage</div>
-        <div class="glance-value">Learn · Train · Connect</div>
-        <p class="glance-text">Self-paced modules, live training and a moderated global community.</p>
+      <div className="glance-item">
+        <div className="glance-label">Ways to engage</div>
+        <div className="glance-value">Learn · Train · Connect</div>
+        <p className="glance-text">Self-paced modules, live training and a moderated global community.</p>
       </div>
     </div>
 
@@ -144,7 +144,7 @@ const About = () => {
 
 
 <hr />
-<section class="section glanc aa">
+<section className="section glanc aa">
   <div className="">
   <h2>
     Who is this for?
@@ -163,34 +163,34 @@ const About = () => {
 </section>
 
 <hr /><br />
-<section class="section glanc">
+<section className="section glanc">
   <div className="">
   <h2>
     What we offer
   </h2>
 
-<div class="glance" aria-label="Cultural Humility Hub at a glance">
-      <div class="glance-item">
-        <div class="glance-value">Learn</div>
-        <div class="glance-text">Self-paced online modules on cultural humility, with interactive activities, reflections and certificates.</div>
+<div className="glance" aria-label="Cultural Humility Hub at a glance">
+      <div className="glance-item">
+        <div className="glance-value">Learn</div>
+        <div className="glance-text">Self-paced online modules on cultural humility, with interactive activities, reflections and certificates.</div>
         <button className='cta mini' onClick={()=> navigate('/modules') }>Explore Learn</button>
       </div>
 
-      <div class="glance-item">
-        <div class="glance-value">Training</div>
-        <div class="glance-text">In-person and online workshops tailored to your team, drawing on evidence, lived experience and local context.</div>
+      <div className="glance-item">
+        <div className="glance-value">Training</div>
+        <div className="glance-text">In-person and online workshops tailored to your team, drawing on evidence, lived experience and local context.</div>
         <button className='cta mini' onClick={()=> navigate('/modules') }>Explore Training</button>
       </div>
 
-      <div class="glance-item">
-        <div class="glance-value">Community</div>
-        <div class="glance-text">A moderated forum and blog space to share scenarios, learning and practice tools with others globally.</div>
+      <div className="glance-item">
+        <div className="glance-value">Community</div>
+        <div className="glance-text">A moderated forum and blog space to share scenarios, learning and practice tools with others globally.</div>
         <button className='cta mini' onClick={()=> navigate('/modules') }>Join Our Community</button>
       </div>
 
-      <div class="glance-item">
-        <div class="glance-value">Collaboration</div>
-        <div class="glance-text">Opportunities to co-design projects, evaluation and research related to cultural humility and equity.</div>
+      <div className="glance-item">
+        <div className="glance-value">Collaboration</div>
+        <div className="glance-text">Opportunities to co-design projects, evaluation and research related to cultural humility and equity.</div>
         <button className='cta mini' onClick={()=> location.href='#contact' }>Discuss Collaboration</button>
       </div>
 
@@ -300,7 +300,7 @@ const About = () => {
                       </div>
 
                       <div className="inputGroup sel">
-                         <select id="enquiry_type" name="enquiry_type" class="select">
+                         <select id="enquiry_type" name="enquiry_type" className="select">
           <option value="">What is your message mainly about? (optional)</option>
           <option value="modules">Question about Learn / modules</option>
           <option value="training">Training or workshop enquiry</option>

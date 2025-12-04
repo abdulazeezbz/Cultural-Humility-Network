@@ -10,7 +10,7 @@ const firebaseConfig = {
   authDomain: "cultural-humility.firebaseapp.com",
   databaseURL: "https://cultural-humility-default-rtdb.firebaseio.com/",
   projectId: "cultural-humility",
-  storageBucket: "cultural-humility.firebasestorage.app",
+ storageBucket: "cultural-humility.appspot.com",
   messagingSenderId: "953964566330",
   appId: "1:953964566330:web:7b5b8a8e7d7205e18ca203",
   measurementId: "G-BB5SW9C7SV"

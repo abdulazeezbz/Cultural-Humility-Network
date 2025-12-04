@@ -17,6 +17,11 @@ import TrainingsLanding from './trainingPage';
 import LearningPage from './learning';
 import QuizPage from './quiz';
 import DashboardPage from './dashboard';
+import AdminLogin from './adminLogin';
+import AdminDashboard from './adminDashboard';
+import AdminPosts from './adminPosts';
+import AdminModules from './adminModules';
+import AdminLessons from './addLesson';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -44,9 +49,16 @@ function App() {
   <Route path="/community" element={<Community />} />  
   <Route path="/support" element={<Support />} />  
   <Route path="/training" element={<TrainingsLanding />} />  
-  <Route path="/learning" element={<LearningPage />} />  
   <Route path="/Dashboard" element={<DashboardPage />} />  
-  <Route path="/quiz" element={<QuizPage />} />  
+  <Route path="/AdminLogin" element={<AdminLogin />} />  
+  <Route path="/AdminDashboard" element={<AdminDashboard/>} />  
+  <Route path="/AdminPosts" element={<AdminPosts/>} />  
+  <Route path="/adminModules" element={<AdminModules/>} />  
+  <Route path="/admin/module/:moduleId/lessons" element={<AdminLessons />} />
+  <Route path="/learning/:moduleId" element={<LearningPage />} />
+  <Route path="/quiz/:moduleId" element={<QuizPage />} />  
+
+ 
   
   
 </Routes>

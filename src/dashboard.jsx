@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import TopNav from './topnava'
 
 import { db } from "./firebase";
-import { collection, addDoc, onSnapshot, deleteDoc, doc   } from "firebase/firestore";
+import { collection, addDoc, getDoc , onSnapshot, deleteDoc, doc, getDocs    } from "firebase/firestore";
 
 
 import { useAuth } from "./AuthContext";
@@ -19,12 +19,13 @@ const DashboardPage = () => {
 
 
 
+
+
       const { currentUser } = useAuth();
   const navigate = useNavigate();
 
   const [plans, setPlans] = useState([]);
-
-  useEffect(() => {
+useEffect(() => {
   if (!currentUser) return;
 
   const unsub = onSnapshot(
@@ -34,9 +35,34 @@ const DashboardPage = () => {
         id: doc.id,
         ...doc.data(),
       }));
+
       setPlans(list);
+
+      // Compute counts based on dates
+      const now = new Date();
+      let openCount = 0;
+      let completedCount = 0;
+
+      list.forEach((item) => {
+        const commitDate =
+          item.date instanceof Date
+            ? item.date
+            : item.date?.toDate
+            ? item.date.toDate()
+            : new Date(item.date);
+
+        if (commitDate < now) {
+          completedCount++;
+        } else {
+          openCount++;
+        }
+      });
+
+      setOpen(openCount);
+      setCompleted(completedCount);
     }
   );
+
   return unsub;
 }, [currentUser]);
 
@@ -61,6 +87,51 @@ const DashboardPage = () => {
 const [commitment, setCommitment] = useState("");
 const [date, setDate] = useState("");
 
+const [open, setOpen] = useState(0);
+const [completed, setCompleted] = useState(0);
+
+useEffect(() => {
+  const load = async () => {
+    const { open, completed } = await getCommitmentCounts(currentUser.uid);
+    setOpen(open);
+    setCompleted(completed);
+  };
+
+  load();
+}, [currentUser]);
+
+const getCommitmentCounts = async (userId) => {
+  const commitmentRef = collection(db, "users", userId, "commitments");
+  const snapshot = await getDocs(commitmentRef);
+
+  let open = 0;
+  let completed = 0;
+
+    
+  const now = new Date();
+
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+
+    // Extract date (handle Firestore Timestamp or string)
+    const commitDate =
+      data.date instanceof Date
+        ? data.date
+        : data.date?.toDate
+        ? data.date.toDate()
+        : new Date(data.date);
+
+    if (commitDate < now) {
+      completed++;
+    } else {
+      open++;
+    }
+  });
+
+  return { open, completed };
+};
+
+
 const saveCommitment = async () => {
   if (!commitment || !date) {
     return alert("Please fill both fields");
@@ -77,12 +148,18 @@ const saveCommitment = async () => {
         commitment,
         date,
         createdAt: new Date(),
-        status: 'upcoming',
+        status: "upcoming",
         done: false,
       }
     );
 
     alert("Saved!");
+
+    // FIX: update counts after saving
+    const counts = await getCommitmentCounts(currentUser.uid);
+    setOpen(counts.open);
+    setCompleted(counts.completed);
+
     setCommitment("");
     setDate("");
 
@@ -91,6 +168,19 @@ const saveCommitment = async () => {
     alert(err.message);
   }
 };
+
+
+
+
+useEffect(() => {
+  if (!currentUser) return;
+
+  getCommitmentCounts(currentUser.uid).then((counts) => {
+    setOpen(counts.open);
+    setCompleted(counts.completed);
+  });
+}, [currentUser]);
+
 
 
 
@@ -107,6 +197,57 @@ const getRemainingText = (dateString) => {
   return "Passed";
 };
 
+
+
+
+
+
+
+
+const [modules, setModules] = useState([]);
+  const [userProgress, setUserProgress] = useState({});
+  const [overallPercent, setOverallPercent] = useState(0);
+
+  
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (!currentUser) return;
+
+      // Fetch all modules
+      const modulesSnap = await getDocs(collection(db, "modules"));
+      const modulesList = modulesSnap.docs.map((doc) => ({
+        id: doc.id,
+        lessonCount: doc.data().lessonCount || 0, // store total lessons in module
+        title: doc.data().title,
+        description: doc.data().description,
+      }));
+      setModules(modulesList);
+
+      // Fetch user progress
+      const userRef = doc(db, "users", currentUser.uid);
+      const userSnap = await getDoc(userRef);
+      const progressData = userSnap.exists() ? userSnap.data().progress || {} : {};
+      setUserProgress(progressData);
+
+      // Calculate overall percent across all modules
+      let totalLessons = 0;
+      let totalCompleted = 0;
+
+      modulesList.forEach((mod) => {
+        const completed = progressData[mod.id]?.completedLessons || [];
+        totalLessons += mod.lessonCount;
+        totalCompleted += completed.length;
+      });
+
+      const percent = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 0;
+      setOverallPercent(percent);
+    };
+
+    fetchData();
+  }, [currentUser]);
+
+  
 
   return (
     <>
@@ -176,7 +317,7 @@ const getRemainingText = (dateString) => {
         <td>
             <button
               className='cta mini outlines'
-              style={{width:'auto', padding:"4px 26px"}}
+              style={{width:'auto', margin:5, padding:"0px 10px"}}
               onClick={() => cancelCommitment(item.id)}
             >
               Delete
@@ -197,7 +338,7 @@ const getRemainingText = (dateString) => {
                  <div className="card">
 
                     <h3>Certificates</h3>
-                    <p>Generate a certificate for each completed module. Complete all five to unlock the full programme certificate.</p>
+                    <p>Generate a certificate for each completed module. Complete all to unlock the full programme certificate.</p>
 
 
 
@@ -242,8 +383,8 @@ const getRemainingText = (dateString) => {
         <div className="c">
             <div className="card">
                 <h3>My progress</h3>
-                <button className="cta mini outlines" style={{width:'auto', marginTop:10}} disabled>0 open Action</button>
-                <button className="cta mini outlines" style={{width:'auto', marginTop:10}} disabled>0 Completed</button>
+                <button className="cta mini outlines" style={{width:'auto', marginTop:10}} disabled> {open} open Action</button>
+                <button className="cta mini outlines" style={{width:'auto', marginTop:10}} disabled> {completed} Completed</button>
 
                 <br /><br />
 
@@ -251,24 +392,17 @@ const getRemainingText = (dateString) => {
                    <div className="progress" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <h3>Modules Completed</h3>
             
-            <div className="slid">
-                <div className="Scont" style={{width:"10%"}}></div>
-            </div>
+              <div className="slid">
+        <div className="Scont" style={{ width: `${overallPercent}%` }}></div>
+      </div>
 
-            <p>Complete each core module to unlock certificates..</p>
+      <p>{overallPercent}% completed across all modules</p>
+      <p>Complete each core module to unlock certificates.</p>
 
 <div className="flll">
- <button className="cta mini" style={{marginTop:10}} disabled>M1 Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M2 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M3 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M4 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M5 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M6 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M7 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M8 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M9 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M10 Not Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M11 Not Started</button>
+ <button className="cta mini" style={{marginTop:10}} disabled>M1 Get Started</button>
+ <button className="cta mini outlines" style={{marginTop:10}} disabled>M1 Get Started</button>
+
 </div>
 
           </div>
