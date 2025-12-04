@@ -60,7 +60,7 @@ export default function CertificatePage() {
   // -------------------
   useEffect(() => {
     const loadQR = async () => {
-      const response = await fetch(`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://culturalhumilitynetwork.vercel.app/certificate/${recordId}`);
+      const response = await fetch(`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://culturalhumanity.vercel.app/certificate/${recordId}`);
       const blob = await response.blob();
       const reader = new FileReader();
       reader.onloadend = () => setQrDataUrl(reader.result);
