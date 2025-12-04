@@ -4,7 +4,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { auth, db } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc  } from "firebase/firestore";
 
 
 
@@ -128,8 +128,6 @@ const handleRegister = async () => {
 };
 
 
-
-
 const handleLogin = async () => {
   setLoading(true);
 
@@ -143,16 +141,39 @@ const handleLogin = async () => {
   }
 
   try {
+    // 1️⃣ Sign in with Firebase Auth
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    alert(`Welcome back, ${user.name}! \n You'll Be Redirected To Dashboard Now.`);
+    // 2️⃣ Fetch Firestore user document
+    const userDocRef = doc(db, "users", user.uid);
+    const userDocSnap = await getDoc(userDocRef);
+
+    if (!userDocSnap.exists()) {
+      await auth.signOut(); // Sign out just in case
+      alert("User data not found. Contact admin.");
+      setLoading(false);
+      return;
+    }
+
+    const userData = userDocSnap.data();
+
+    // 3️⃣ Check if user is blocked
+    if (userData.isBlocked) {
+      await auth.signOut();
+      alert("Your account has been blocked. Contact admin for support.");
+      setLoading(false);
+      return;
+    }
+
+    // 4️⃣ Login successful
+    alert(`Welcome back, ${userData.name || user.email}! \nYou'll be redirected to the Dashboard.`);
+
     setLoading(false);
-    
+
     setTimeout(() => {
       navigate("/Dashboard");
     }, 1000);
-
 
   } catch (error) {
     setLoading(false);

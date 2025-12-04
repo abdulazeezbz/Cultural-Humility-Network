@@ -208,7 +208,7 @@ const [modules, setModules] = useState([]);
   const [userProgress, setUserProgress] = useState({});
   const [overallPercent, setOverallPercent] = useState(0);
 
-  
+  const [completedModules, setCompletedModules] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -248,6 +248,50 @@ const [modules, setModules] = useState([]);
   }, [currentUser]);
 
   
+
+
+
+
+
+
+
+
+  useEffect(() => {
+  if (!currentUser) return;
+
+  const fetchCompleted = async () => {
+    const q = collection(db, "completedLearning");
+
+    const snap = await getDocs(q);
+
+    // Filter by current user and only those with 100%
+    const list = snap.docs
+      .map(doc => ({ id: doc.id, ...doc.data() }))
+      .filter(item => item.userId === currentUser.uid && item.percentage === 100);
+
+    setCompletedModules(list);
+  };
+
+  fetchCompleted();
+}, [currentUser]);
+
+
+const [moduleMap, setModuleMap] = useState({});
+
+useEffect(() => {
+  const loadModules = async () => {
+    const ms = await getDocs(collection(db, "modules"));
+    let temp = {};
+    ms.forEach(d => {
+      temp[d.id] = { title: d.data().title, description: d.data().description };
+    });
+    setModuleMap(temp);
+  };
+  loadModules();
+}, []);
+
+
+
 
   return (
     <>
@@ -342,40 +386,49 @@ const [modules, setModules] = useState([]);
 
 
 
-                                 <br />           {/* Lecture Start */}
-           <div className="card module"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div className="courseD">
-                <div className="">
-                  <h4>Module 1: Sustaining Humility & Advocacy</h4>
-                  <p>Status: Completed</p>  
-                </div>
-                <div className="">
-                 <button className='cta mini' style={{width:'auto'}}>Generate Certificate</button>
-                </div>
-                </div>
-            
-           </div>
+                                 <br /> 
+                                 
+                                 
+                                           {/* Lecture Start */}
+        
+        {completedModules.length === 0 && (
+  <p>No completed modules yet.</p>
+)}
+
+{completedModules.map((item) => {
+  const mod = moduleMap[item.moduleId] || {};
+
+  return (
+    <div className="card module" key={item.id} data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+      <div className="courseD">
+        
+        <div>
+          <h4>{mod.title || "Module Title"}</h4>
+          <p>Status: Completed</p>
+          <p>Score: {item.score}</p>
+          <p>Completed At: {item.completedAt?.toDate().toLocaleString()}</p>
+        </div>
+
+        <div>
+          <button
+            className="cta mini"
+            style={{ width: "auto" }}
+           onClick={() => navigate(`/certificate/${item.id}`)} 
+            >
+            Generate Certificate
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
+})}
 
                 {/* Lecture End */}
 
 
                 
-                                            {/* Lecture Start */}
-           <div className="card module"  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-            <div className="courseD">
-                <div className="">
-                  <h4>Module 2: Sustaining Humility & Advocacy</h4>
-                  <p>Status: started</p>  
-                </div>
-                <div className="">
-                 <button className='cta mini outlines' style={{width:'auto'}}>Generate Certificate</button>
-                </div>
-                </div>
-            
-           </div>
-
-                {/* Lecture End */}
-
+                                       
 
                  </div>
 
@@ -401,7 +454,8 @@ const [modules, setModules] = useState([]);
 
 <div className="flll">
  <button className="cta mini" style={{marginTop:10}} disabled>M1 Get Started</button>
- <button className="cta mini outlines" style={{marginTop:10}} disabled>M1 Get Started</button>
+ <button className="cta mini outlines"
+  style={{marginTop:10}} disabled>M1 Get Started</button>
 
 </div>
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth, db } from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 
 // 1. Create Context
@@ -21,8 +21,20 @@ export const AuthProvider = ({ children }) => {
         // Fetch profile from Firestore
         const docRef = doc(db, "users", user.uid);
         const docSnap = await getDoc(docRef);
+
         if (docSnap.exists()) {
-          setCurrentUser(docSnap.data());
+          const userData = docSnap.data();
+
+          // Check if user is blocked
+          if (userData.isBlocked) {
+            alert("Your account has been blocked. Contact admin for support.");
+            await signOut(auth); // Log the user out
+            setCurrentUser(null);
+            setLoading(false);
+            return;
+          }
+
+          setCurrentUser(userData);
         } else {
           // fallback to basic auth info
           setCurrentUser({
@@ -33,6 +45,7 @@ export const AuthProvider = ({ children }) => {
       } else {
         setCurrentUser(null);
       }
+
       setLoading(false);
     });
 

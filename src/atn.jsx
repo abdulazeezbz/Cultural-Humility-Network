@@ -69,7 +69,12 @@ const ATopNav = () => {
      <div className={`bb ${menuOpen ? "block" : "hidden"} md:flex`}>
  <ul>
 
- <li className={activeTab === "/adminModules" ? "active" : ""}>
+ <li className={activeTab === "/adminLearners" ? "active" : ""}>
+    <a onClick={() => navigate("/adminLearners")}>Learners</a>
+  </li>
+ 
+
+  <li className={activeTab === "/adminModules" ? "active" : ""}>
     <a onClick={() => navigate("/adminModules")}>Modules</a>
   </li>
  

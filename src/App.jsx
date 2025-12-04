@@ -22,6 +22,8 @@ import AdminDashboard from './adminDashboard';
 import AdminPosts from './adminPosts';
 import AdminModules from './adminModules';
 import AdminLessons from './addLesson';
+import CertificatePage from './certificatePage';
+import AdminLearners from './adminLearners';
 
 function App() {
    const [menuOpen, setMenuOpen] = useState(false);
@@ -54,9 +56,12 @@ function App() {
   <Route path="/AdminDashboard" element={<AdminDashboard/>} />  
   <Route path="/AdminPosts" element={<AdminPosts/>} />  
   <Route path="/adminModules" element={<AdminModules/>} />  
+  <Route path="/adminLearners" element={<AdminLearners/>} />  
   <Route path="/admin/module/:moduleId/lessons" element={<AdminLessons />} />
   <Route path="/learning/:moduleId" element={<LearningPage />} />
   <Route path="/quiz/:moduleId" element={<QuizPage />} />  
+  <Route path="/certificate/:recordId" element={<CertificatePage />} />  
+
 
  
   
