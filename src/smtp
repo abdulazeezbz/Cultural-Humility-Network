@@ -1,0 +1,39 @@
+Incoming Server
+
+Incoming port (SSL must be activated)
+
+Outgoing server (SMTP)
+
+Outgoing port (TLS must be activated)
+
+Outgoing server requires authentication
+
+IMAP (recommended) 
+
+imap.ionos.co.uk
+
+993
+
+smtp.ionos.co.uk
+
+587
+
+Yes
+
+POP3 
+
+pop.ionos.co.uk
+
+995
+
+smtp.ionos.co.uk
+
+587
+
+Yes
+
+
+admin@culturalhumilitynetwork.org
+support@culturalhumilitynetwork.org
+
+Abuja2025%
