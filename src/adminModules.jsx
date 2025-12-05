@@ -128,7 +128,7 @@ const DeleteModule = async (moduleId) => {
                   {`Module ${idx + 1}: ${module.title}`}
                 </h3>
                 <p style={{ textAlign: "left" }}>
-                  Est. {module.duration || "N/A"} hours · Quiz included
+                  Est Time {module.Estimated || "N/A"} · Quiz included
                 </p>
               </div>
               <div>

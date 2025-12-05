@@ -168,7 +168,7 @@ const handleStartLearning = async (module) => {
         <summary className='courseD'>
           <div>
             <h3>{module.title}</h3>
-            <p>Est. {module.duration || "1.5"} hours · Quiz included</p>
+            <p>  Est Time {module.Estimated || "N/A"} · Quiz included</p>
           </div>
           <div>
             <p>{isUnlocked ? "Not started" : "Locked"} {isPaid && !isUnlocked && <ion-icon name="lock-closed-outline"></ion-icon>}</p>

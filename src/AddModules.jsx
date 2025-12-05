@@ -10,6 +10,8 @@ const AddModuleModal = ({ onClose }) => {
   const [isFree, setIsFree] = useState(true);
   const [loading, setLoading] = useState(false);
 
+  const [Estimated, setEstimated] = useState()
+
   const handleAddModule = async () => {
     if (!title.trim()) return alert("Module Name is required.");
 
@@ -18,6 +20,7 @@ const AddModuleModal = ({ onClose }) => {
       await addDoc(collection(db, "modules"), {
         title,
         description,
+        Estimated,
         details: [detail1, detail2],
         free: isFree,
         createdAt: serverTimestamp(),
@@ -53,6 +56,15 @@ const AddModuleModal = ({ onClose }) => {
           placeholder="Description" 
           value={description} 
           onChange={(e) => setDescription(e.target.value)} 
+        />
+        </div>
+
+               <div className="inputGroup">
+        <input 
+          type="text" 
+          placeholder="Estimated Time" 
+          value={Estimated} 
+          onChange={(e) => setEstimated(e.target.value)} 
         />
         </div>
     

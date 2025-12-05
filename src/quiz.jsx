@@ -170,7 +170,7 @@ const QuizPage = () => {
               <p>🎉 Congratulations! You passed. Your completion is recorded and ready for certificate.</p>
               <p>You can Generate Your Certificate From Your Dashboard</p></>
             ) : (
-              <p>⚠️ You scored less than 80%. Please Learn agaiin and Come back.</p>
+              <p>⚠️ You scored less than 80%. Please Learn again and Come back.</p>
             )}
             <button className="cta mini" onClick={() => navigate('/dashboard')}>
               Dashboard

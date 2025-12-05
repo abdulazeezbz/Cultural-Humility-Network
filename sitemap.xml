@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+  <!-- Sample pages — replace these with your real pages -->
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org/about</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org/modules</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org/community</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org/training</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.culturalhumilitynetwork.org/login</loc>
+    <lastmod>2025-12-05</lastmod>
+  </url>
+
+</urlset>
