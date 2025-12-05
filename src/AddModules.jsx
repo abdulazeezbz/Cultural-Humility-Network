@@ -9,31 +9,58 @@ const AddModuleModal = ({ onClose }) => {
   const [detail2, setDetail2] = useState("");
   const [isFree, setIsFree] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(null);
 
-  const [Estimated, setEstimated] = useState()
+  const [Estimated, setEstimated] = useState("")
 
-  const handleAddModule = async () => {
-    if (!title.trim()) return alert("Module Name is required.");
 
-    setLoading(true);
-    try {
-      await addDoc(collection(db, "modules"), {
-        title,
-        description,
-        Estimated,
-        details: [detail1, detail2],
-        free: isFree,
-        createdAt: serverTimestamp(),
-      });
-      alert("Module added successfully!");
-      onClose();
-    } catch (err) {
-      console.error(err);
-      alert("Error adding module");
-    } finally {
-      setLoading(false);
+  const uploadImageToPHP = async () => {
+  const formData = new FormData();
+  formData.append("image", image);
+
+  const res = await fetch("https://uiedataconnect.com.ng/upload.php", {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await res.json();
+  if (!data.success) throw new Error("Image upload failed");
+
+  return data.url; // return the image URL
+};
+
+const handleAddModule = async () => {
+  if (!title.trim()) return alert("Module Name is required.");
+
+  setLoading(true);
+
+  try {
+    // 1. Upload the image to your PHP server
+    let imageUrl = "";
+    if (image) {
+      imageUrl = await uploadImageToPHP();
     }
-  };
+
+    // 2. Save module to Firestore
+    await addDoc(collection(db, "modules"), {
+      title,
+      description,
+      Estimated,
+      details: [detail1, detail2],
+      free: isFree,
+      banner: imageUrl,   // ⭐ Save uploaded image URL
+      createdAt: serverTimestamp(),
+    });
+
+    alert("Module added successfully!");
+    onClose();
+  } catch (err) {
+    console.error(err);
+    alert("Error adding module");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="modalOverlay">
@@ -87,6 +114,16 @@ const AddModuleModal = ({ onClose }) => {
           placeholder="Detail 2" 
           value={detail2} 
           onChange={(e) => setDetail2(e.target.value)} 
+        />
+
+        </div>
+
+<p>Module Banner</p>
+            <div className="inputGroup">
+        <input 
+          type="file" 
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])} 
         />
 
         </div>

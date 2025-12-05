@@ -182,6 +182,18 @@ const handleStartLearning = async (module) => {
             <li key={i}><ion-icon name="checkmark-done-circle-outline"></ion-icon> {detail}</li>
           ))}
 
+          <br />
+          
+          
+          {module.banner && (
+  <img 
+    src={module.banner} 
+    className="ModuleBanner" 
+    alt="Module Banner" 
+  />
+)}
+
+
           {isPaid && !isUnlocked && (
             <b style={{fontSize:14}}>
               This module is offered on a contribution basis. A minimum of £5 is requested, and any additional amount you are able to give helps to support hosting and development. This site is not run as a business and is not a registered charity or NGO; contributions simply help to keep the project going.
@@ -193,7 +205,7 @@ const handleStartLearning = async (module) => {
   {userData?.learningStarted?.includes(module.id) ? "Continue Learning" : "Start Learning"}
 </button>
           {/* <button className='cta mini outlines' >View Outline</button> */}
-          <button className='cta mini outlines'>Generate certificate</button>
+          {/* <button className='cta mini outlines'>Generate certificate</button> */}
         </div>
       </details>
     </div>

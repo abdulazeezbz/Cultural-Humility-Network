@@ -1558,7 +1558,16 @@ width: 50%;
   width: 40%;
 }
 
+
+.ModuleBanner{
+  width: 150px;
+}
+
 @media screen and (max-width:800px) {
+
+  .ModuleBanner{
+  width: 100%;
+}
 
 
   .dashb{

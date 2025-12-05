@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { db } from "./firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import NotificationModal from "./notificationModal";
 
 const QuizModal = ({ moduleId, onClose }) => {
   const [question, setQuestion] = useState("");
@@ -10,6 +11,14 @@ const QuizModal = ({ moduleId, onClose }) => {
   const [optionD, setOptionD] = useState("");
   const [correct, setCorrect] = useState("A");
   const [loading, setLoading] = useState(false);
+
+  
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertTitle, setalertTitle] = useState("");
+  const [alertMessage, setalertMessage] = useState("");
+  const [type, settype] = useState("");
+  
+  
 
   const handleAddQuiz = async () => {
     if (!question.trim() || !optionA.trim() || !optionB.trim()) {
@@ -27,11 +36,27 @@ const QuizModal = ({ moduleId, onClose }) => {
     });
 
     setLoading(false);
-    alert("Quiz added!");
-    onClose();
+
+
+ setShowAlert(true);
+setalertTitle("Success");
+setalertMessage("Quiz Added Successfully");
+settype("success");
+
+// close Quiz modal after 1 second
+setTimeout(() => {
+  onClose();
+}, 2500);
+
+
   };
 
+
+
+
+
   return (
+       <>
     <div className="modalOverlay">
       <div className="modalBox">
         <h3>Add Quiz Question</h3>
@@ -97,7 +122,19 @@ const QuizModal = ({ moduleId, onClose }) => {
           <button className="cta outlines mini" onClick={onClose}>Close</button>
         </div>
       </div>
+
+
+
     </div>
+        {showAlert && (
+  <NotificationModal
+    onClose={() => setShowAlert(false)}
+    title={alertTitle}
+    message={alertMessage}
+    type={type}
+  />
+)}
+ </>
   );
 };
 

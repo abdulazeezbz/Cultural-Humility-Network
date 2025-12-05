@@ -228,6 +228,9 @@ const markCompleted = async (lessonId) => {
         ))}
     </ul>
 
+
+       
+
     <br />
     <p>Progress</p>
     <div className="slid">
@@ -240,7 +243,18 @@ const markCompleted = async (lessonId) => {
       ></div>
     </div>
     <p>{lessons.length > 0 ? Math.round((progress.length / lessons.length) * 100) : 0}% completed</p>
+
+       <br />
+          {moduleData.banner && (
+  <img 
+    src={moduleData.banner} 
+    className="ModuleBanner" 
+    alt="Module Banner" 
+  />
+)}
   </div>
+
+  
 )}
           </>
         ) : (

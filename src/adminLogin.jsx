@@ -76,6 +76,8 @@ function AdminLogin() {
 
     // Successful admin login
     alert(`Welcome back, ${userData.name}! \n You'll be redirected to Dashboard now.`);
+
+    
     setLoading(false);
 
     setTimeout(() => {

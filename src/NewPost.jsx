@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "./AuthContext";
 import { db } from "./firebase";
 import { collection, addDoc, serverTimestamp  } from "firebase/firestore";
+import NotificationModal from "./notificationModal";
 
 const NewPost = ({ type }) => {
   const { currentUser } = useAuth();
@@ -10,6 +11,15 @@ const NewPost = ({ type }) => {
   const [content, setContent] = useState("");
   const [anonymous, setAnonymous] = useState(!currentUser);
   const [loading, setLoading] = useState(false);
+
+
+  const [showAlert, setShowAlert] = useState(false);
+
+  
+  const [alertTitle, setalertTitle] = useState("");
+  const [alertMessage, setalertMessage] = useState("");
+  const [Ntype, setNtype] = useState("");
+
 
   const handlePublish = async () => {
     if (!title || !content) {
@@ -31,7 +41,13 @@ const NewPost = ({ type }) => {
         parentId: null
       });
 
-      alert(`${type === "blog" ? "Blog Post" : "Discussion"} published successfully! \n and the post is under Review By Admin`);
+
+      setShowAlert(true);
+    setalertTitle("Success");
+    setalertMessage(`${type === "blog" ? "Blog Post" : "Discussion"} published successfully! \n and the post is under Review By Admin`);
+    setNtype("success")
+
+      
       setTitle("");
       setContent("");
       setAnonymous(!currentUser);
@@ -44,6 +60,7 @@ const NewPost = ({ type }) => {
   };
 
   return (
+    <>
     <div className="card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">
       <h2>{type === "blog" ? "Start a Blog Post" : "Start a Discussion"}</h2>
       <br />
@@ -84,6 +101,16 @@ const NewPost = ({ type }) => {
         {loading ? "Publishing..." : "Publish"}
       </button>
     </div>
+    
+    {showAlert && (
+      <NotificationModal
+        onClose={() => setShowAlert(false)}
+        title={alertTitle}
+        message={alertMessage}
+        type={type}
+      />
+    )}
+    </>
   );
 };
 

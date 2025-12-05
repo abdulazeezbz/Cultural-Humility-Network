@@ -21,6 +21,7 @@ import Placeholder from "@tiptap/extension-placeholder";
 import StarterKit from "@tiptap/starter-kit";
 import ATopNav from "./atn";
 import QuizModal from "./AdminQuiz";
+import NotificationModal from "./notificationModal";
 
 const AdminLessons = () => {
   const { moduleId } = useParams();
@@ -56,6 +57,12 @@ useEffect(() => {
 
 
 
+const [showAlert, setShowAlert] = useState(false);
+const [LessonAlers, setLessonAlers] = useState(false)
+const [alertTitle, setalertTitle] = useState("");
+const [alertMessage, setalertMessage] = useState("");
+const [type, settype] = useState("");
+
 
 
 
@@ -67,10 +74,17 @@ const handleDeletePost = async (quizId) => {
 
   try {
     await deleteDoc(doc(db, "modules", moduleId, "quizzes", quizId));
-    alert("Quiz deleted!");
+    setShowAlert(true);
+    setalertTitle("Success");
+    setalertMessage("Quiz Deleted Successfully");
+    settype("success")
+
   } catch (error) {
     console.error(error);
-    alert("Failed to delete quiz.");
+    setShowAlert(true);
+    setalertTitle("Oops!");
+    setalertMessage("Failed To Delete Quiz");
+    settype("error")
   }
 };
 
@@ -157,7 +171,7 @@ const editor = useEditor({
         setModuleData({ id: snapshot.id, ...snapshot.data() });
       } else {
         alert("Module not found");
-        navigate("/admin");
+        navigate("/");
       }
     };
 
@@ -201,7 +215,12 @@ const editor = useEditor({
       setDuration("");
       editor.commands.setContent("");
 
-      alert("Lesson added successfully!");
+
+      setLessonAlers(true);
+    setalertTitle("Success");
+    setalertMessage("Lesson added successfully!");
+    settype("success")
+
 
       // reload lessons
       const snapshot = await getDocs(query(lessonsRef, orderBy("createdAt", "asc")));
@@ -342,6 +361,25 @@ const editor = useEditor({
   <QuizModal
     moduleId={moduleId} 
     onClose={() => setShowQuizModal(false)}
+  />
+)}
+
+
+{showAlert && (
+  <NotificationModal
+    onClose={() => setShowAlert(false)}
+    title={alertTitle}
+    message={alertMessage}
+    type={type}
+  />
+)}
+
+{LessonAlers && (
+  <NotificationModal
+    onClose={() => setLessonAlers(false)}
+    title={alertTitle}
+    message={alertMessage}
+    type={type}
   />
 )}
 
