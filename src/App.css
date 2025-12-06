@@ -1815,3 +1815,47 @@ ul li, li{
   list-style-type: disc;
 }
 
+
+.learningTab table {
+  border: 1px solid;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.learningTab .table-wrapper {
+  overflow-x: auto;
+}
+
+
+ table{
+  width: 100%;
+  text-align: left;
+}
+
+.learningTab table{
+  margin-top: 25px;
+}
+
+
+
+ table tr:nth-child(odd) {
+  background-color: #f2f2f2; /* ash/grey */
+}
+
+
+table tr:nth-child(even) {
+  background-color: #ffffff; /* white */
+}
+
+.learningTab td, .learningTab th {
+  border: 1px solid #1b6f72;
+  padding: 8px;
+    background-color: var(--bg); /* ash/grey */
+  padding: 10px;
+}
+
+.learningTab .card{
+  margin-top: 20px;
+  margin-right: 10px;
+  border-left: 2px var(--accent) solid;
+}

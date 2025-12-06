@@ -20,8 +20,19 @@ function convertYoutubeLinksToIframe(html) {
 export function fixLectureHTML(html) {
   if (!html) return "";
 
+
+
   // 1. Decode escaped HTML
   let decoded = he.decode(html);
+
+    decoded = decoded.replace(
+  /<table([\s\S]*?)<\/table>/gi,
+  (match) => `<div class="table-wrapper">${match}</div>`
+);
+
+
+
+
 
   // 2. Fix broken <img src="<a href=...>">
   decoded = decoded.replace(
@@ -29,12 +40,18 @@ export function fixLectureHTML(html) {
     '<img src="$1" />'
   );
 
-  // 3. ✅ Convert YouTube links → iframe
+  // 3. Convert YouTube links → iframe
   decoded = convertYoutubeLinksToIframe(decoded);
 
-  // 4. Sanitize (allow iframe)
+  // 4. Wrap content between //CardStart and //CardEnd in a div.card
+  decoded = decoded.replace(
+    /\/\/CardStart([\s\S]*?)\/\/CardEnd/gi,
+    (_, content) => `<div class="card">${content.trim()}</div>`
+  );
+
+  // 5. Sanitize (allow iframe, video, source)
   return DOMPurify.sanitize(decoded, {
-    ADD_TAGS: ["iframe", "video", "source"],
+    ADD_TAGS: ["iframe", "video", "source", "div"],
     ADD_ATTR: [
       "src",
       "width",
@@ -44,6 +61,7 @@ export function fixLectureHTML(html) {
       "allowfullscreen",
       "controls",
       "type",
+      "class",
     ],
   });
 }

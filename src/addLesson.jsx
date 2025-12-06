@@ -324,7 +324,7 @@ const editor = useEditor({
     <p>Duration: {lesson.duration}</p>
 
     <div
-      className="lecture-content"
+      className="lecture-content learningTab"
       dangerouslySetInnerHTML={{
         __html: fixLectureHTML(lesson.content),
       }}

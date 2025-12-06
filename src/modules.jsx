@@ -45,25 +45,31 @@ function Modules() {
   }, [currentUser]);
 
   // Fetch modules with real-time listener
-  useEffect(() => {
-    const modulesRef = collection(db, "modules");
-    const q = query(modulesRef, orderBy("createdAt", "desc"));
+useEffect(() => {
+  const modulesRef = collection(db, "modules");
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      let mods = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  // Query modules ordered by createdAt ascending (oldest first)
+  const q = query(modulesRef, orderBy("createdAt", "asc"));
 
-      // Free modules first
-      mods.sort((a, b) => {
-        if (a.free === b.free) return 0;
-        return a.free ? -1 : 1;
-      });
+  const unsubscribe = onSnapshot(q, (snapshot) => {
+    let mods = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-      setModules(mods);
-      setLoading(false);
+    // Optional: free modules first while keeping chronological order
+    mods.sort((a, b) => {
+      if (a.free === b.free) {
+        // keep oldest to newest
+        return a.createdAt?.toMillis() - b.createdAt?.toMillis();
+      }
+      return a.free ? -1 : 1; // free modules first
     });
 
-    return () => unsubscribe();
-  }, []);
+    setModules(mods);
+    setLoading(false);
+  });
+
+  return () => unsubscribe();
+}, []);
+
 
 if (loading) return <p>Loading modules...</p>;
 const handleStartLearning = async (module) => {

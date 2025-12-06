@@ -49,26 +49,29 @@ const [showUnlockModal, setShowUnlockModal] = useState(false);
   const [loadingM, setLoadingM] = useState(true);
 
  useEffect(() => {
-    const modulesRef = collection(db, "modules");
-    const q = query(modulesRef, orderBy("createdAt", "desc"));
+  const modulesRef = collection(db, "modules");
 
-    // Real-time listener
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      let mods = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  // Query modules ordered by createdAt ascending (oldest first)
+  const q = query(modulesRef, orderBy("createdAt", "asc"));
 
-      // Sort free modules first
-      mods.sort((a, b) => {
-        if (a.free === b.free) return 0;
-        return a.free ? -1 : 1; // free first
-      });
+  const unsubscribe = onSnapshot(q, (snapshot) => {
+    let mods = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-      setModules(mods);
-      setLoadingM(false);
+    // Optional: put free modules first while keeping createdAt ascending within each group
+    mods.sort((a, b) => {
+      if (a.free === b.free) {
+        // Keep createdAt ascending
+        return a.createdAt?.toMillis() - b.createdAt?.toMillis();
+      }
+      return a.free ? -1 : 1; // free first
     });
 
-    // Cleanup listener on unmount
-    return () => unsubscribe();
-  }, []);
+    setModules(mods);
+    setLoadingM(false);
+  });
+
+  return () => unsubscribe();
+}, []);
 
   if (loadingM) return <p>Loading modules...</p>;
 
@@ -125,7 +128,7 @@ const DeleteModule = async (moduleId) => {
             <summary className='courseD'>
               <div>
                 <h3 style={{ textAlign: "left" }}>
-                  {`Module ${idx + 1}: ${module.title}`}
+                  {`${module.title}`}
                 </h3>
                 <p style={{ textAlign: "left" }}>
                   Est Time {module.Estimated || "N/A"} · Quiz included
