@@ -27,7 +27,7 @@ html{
   width: 100%;
   margin: auto;
   margin-top: 30px;
-  position: fixed;
+  position: absolute;
   will-change: top;
   top: 0; /* important for sticky to work */
   padding: 0;
@@ -40,6 +40,8 @@ html{
 .topNav p{
   font-size: 13px;
 }
+
+
 
 
 
@@ -78,7 +80,8 @@ html{
   margin-top: 10px;
 }
 
-.topNav .mobile{
+.mobile.menu{
+  position: fixed;
   display: none;
   padding: 10px;
 }
@@ -1119,8 +1122,16 @@ margin-left: 20px;
   margin-left: -10px;
 }
 
-.topNav .mobile{
+.mobile.menu{
   display: block;
+  position: fixed;
+  right: 20px;
+  top: 50px;
+  z-index: 1000;
+  color: white;
+  background: var(--accent);
+  padding-bottom: 3px;
+  border-radius: 10px;
 }
 
 
@@ -1563,7 +1574,15 @@ width: 50%;
   width: 150px;
 }
 
+.lecture-content img{
+  width: 300px;
+}
+
 @media screen and (max-width:800px) {
+
+  .lecture-content img{
+  width: 100%;
+}
 
   .ModuleBanner{
   width: 100%;
@@ -1795,3 +1814,4 @@ ul li, li{
   padding-left: 25px;
   list-style-type: disc;
 }
+

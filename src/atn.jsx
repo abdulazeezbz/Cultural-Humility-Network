@@ -48,23 +48,18 @@ const ATopNav = () => {
 
   
   return (
+     <>
         <div className="topNav" data-aos="fade-down" data-aos-duration="1000">
       <div className="aa">
         <div className="anoth" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
         <img src={AppLogo} alt="" />
         <div className="">
-          <h3 style={{fontSize:25}}>Cultural Humility Network</h3>
+          <h3>Cultural Humility Network</h3>
           <p style={{padding:"5px 10px", background:"var(--accent)", width:'fit-content', color:'white', 
             borderRadius:"50% 10% 50% 10% / 10% 50% 10% 50%"}}>(Admin Pannel)</p>
         </div></div>
 
-        <div className="mobile" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
-          {menuOpen ? (
-    <ion-icon style={{ fontSize: 28 }} name="close-outline"></ion-icon>
-  ) : (
-    <ion-icon style={{ fontSize: 28 }} name="menu-outline"></ion-icon>
-  )}
-        </div>
+       
       </div>
      <div className={`bb ${menuOpen ? "block" : "hidden"} md:flex`}>
  <ul>
@@ -100,6 +95,16 @@ const ATopNav = () => {
 </div>   
       
      </div>
+
+      <div className="mobile menu" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
+          {menuOpen ? (
+    <ion-icon style={{ fontSize: 28 }} name="close-outline"></ion-icon>
+  ) : (
+    <ion-icon style={{ fontSize: 28 }} name="menu-outline"></ion-icon>
+  )}
+        </div>
+
+       </>
   )
 }
 

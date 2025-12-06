@@ -171,7 +171,9 @@ const handleStartLearning = async (module) => {
             <p>  Est Time {module.Estimated || "N/A"} · Quiz included</p>
           </div>
           <div>
-            <p>{isUnlocked ? "Not started" : "Locked"} {isPaid && !isUnlocked && <ion-icon name="lock-closed-outline"></ion-icon>}</p>
+
+            {userData?.learningStarted?.includes(module.id) ? "Started" : "Not Started"}
+            <p>{isUnlocked ? "" : "Locked"} {isPaid && !isUnlocked && <ion-icon name="lock-closed-outline"></ion-icon>}</p>
             <p>Access: {module.free ? "Free" : isUnlocked ? "Unlocked" : "Contribution (min £5)"}</p>
           </div>
         </summary>

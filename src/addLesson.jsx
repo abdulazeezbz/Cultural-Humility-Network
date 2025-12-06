@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { db } from "./firebase";
+import { fixLectureHTML } from "./fixLectureHTML";
+import DOMPurify from "dompurify";
+import he from "he";
 
 import { collection, doc, 
   addDoc, getDoc, onSnapshot , getDocs, deleteDoc,
@@ -24,6 +27,21 @@ import QuizModal from "./AdminQuiz";
 import NotificationModal from "./notificationModal";
 
 const AdminLessons = () => {
+
+
+  function fixBrokenHTML(html) {
+  let decoded = he.decode(html);
+
+  // Remove anchor tags accidentally placed inside img src
+  decoded = decoded.replace(
+    /<img[^>]+src="[^"]*<a[^>]*href="([^"]+)"[^>]*>[^<]*<\/a>[^"]*"[^>]*>/gi,
+    '<img src="$1" />'
+  );
+
+  return decoded;
+}
+
+
   const { moduleId } = useParams();
   const navigate = useNavigate();
 
@@ -300,13 +318,19 @@ const editor = useEditor({
       
       {lessons.length === 0 && <p>No lessons added yet.</p>}
 
-      {lessons.map((lesson, idx) => (
-        <div key={lesson.id} className="card module" style={{ marginBottom: "10px" }}>
-          <h4>{idx + 1}. {lesson.title}</h4>
-          <p>Duration: {lesson.duration}</p>
-          <div dangerouslySetInnerHTML={{ __html: lesson.content }} />
-        </div>
-      ))}
+    {lessons.map((lesson, idx) => (
+  <div key={lesson.id} className="card module" style={{ marginBottom: "10px" }}>
+    <h4>{idx + 1}. {lesson.title}</h4>
+    <p>Duration: {lesson.duration}</p>
+
+    <div
+      className="lecture-content"
+      dangerouslySetInnerHTML={{
+        __html: fixLectureHTML(lesson.content),
+      }}
+    />
+  </div>
+))}
     </div>
 <br />
 

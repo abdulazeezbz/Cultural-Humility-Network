@@ -48,23 +48,20 @@ const TopNav = () => {
 
   
   return (
+       <>
         <div className="topNav" data-aos="fade-down" data-aos-duration="1000">
       <div className="aa">
         <div className="anoth" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
         <img src={AppLogo} alt="" />
         <div className="">
-          <h3 style={{fontSize:25}}>Cultural Humility Network</h3>
+          <h3>Cultural Humility Network</h3>
           <p>Fostering Inclusive, Reflective, and Culturally Aware Practice</p>
         </div></div>
 
-        <div className="mobile" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
-          {menuOpen ? (
-    <ion-icon style={{ fontSize: 28 }} name="close-outline"></ion-icon>
-  ) : (
-    <ion-icon style={{ fontSize: 28 }} name="menu-outline"></ion-icon>
-  )}
-        </div>
+      
       </div>
+
+      
      <div className={`bb ${menuOpen ? "block" : "hidden"} md:flex`}>
  <ul>
   <li className={activeTab === "/" ? "active" : ""}>
@@ -114,7 +111,19 @@ const TopNav = () => {
 </ul>
 </div>   
       
+
+      
      </div>
+
+  
+     
+       <div className="mobile menu" onClick={toggleMenu} data-aos="fade-left" data-aos-delay="1000" data-aos-duration="1000">
+          {menuOpen ? (
+    <ion-icon style={{ fontSize: 28 }} name="close-outline"></ion-icon>
+  ) : (
+    <ion-icon style={{ fontSize: 28 }} name="menu-outline"></ion-icon>
+  )}
+        </div></>
   )
 }
 

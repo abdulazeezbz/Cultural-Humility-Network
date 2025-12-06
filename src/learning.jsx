@@ -7,6 +7,12 @@ import {
   updateDoc,
   getDoc,
 } from "firebase/firestore";
+
+import DOMPurify from "dompurify";
+import he from "he";
+
+import { fixLectureHTML } from "./fixLectureHTML";
+
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "./AuthContext"; // assuming you have auth
 
@@ -39,22 +45,25 @@ const LearningPage = () => {
     fetchModule();
   }, [moduleId]);
 
-  // Fetch lessons live
-  useEffect(() => {
-    const lessonRef = collection(db, "modules", moduleId, "lessons");
+// Fetch lessons live
+useEffect(() => {
+  const lessonRef = collection(db, "modules", moduleId, "lessons");
 
-    const unsub = onSnapshot(lessonRef, (snap) => {
-      const list = snap.docs
-        .map((d) => ({ id: d.id, ...d.data() }))
-        .sort((a, b) => a.order - b.order);
+  const unsub = onSnapshot(lessonRef, (snap) => {
+    const list = snap.docs
+      .map((d) => ({ id: d.id, ...d.data() }))
+      .sort((a, b) => {
+        // Ensure createdAt exists
+        if (!a.createdAt || !b.createdAt) return 0;
+        return a.createdAt.toMillis() - b.createdAt.toMillis(); // earliest first
+      });
 
-      setLessons(list);
-      if (!activeLesson && list.length > 0) setActiveLesson(list[0]); // first lesson
-    });
+    setLessons(list);
+    if (!activeLesson && list.length > 0) setActiveLesson(list[0]); // first lesson
+  });
 
-    return () => unsub();
-  }, [moduleId]);
-
+  return () => unsub();
+}, [moduleId]);
   // Fetch progress live
   useEffect(() => {
     if (!currentUser) return;
@@ -186,21 +195,28 @@ const markCompleted = async (lessonId) => {
       </div>
 
       {/* Lesson Body */}
-      <div className="body">
-        {activeLesson ? (
-          <>
-            <div className="learningTab">
-              <h3>{activeLesson.title}</h3>
-              <div dangerouslySetInnerHTML={{ __html: activeLesson.content }} />
+      <div className="body lesson">
+{activeLesson ? (
+  <>
+    <div className="learningTab">
+      <h3>{activeLesson.title}</h3>
 
-              <br />
-              <button
-                className="cta mini"
-                style={{ width: 200 }}
-                onClick={() => markCompleted(activeLesson.id)}
-              >
-                Mark As Completed
-              </button>
+      <div
+        className="lecture-content"
+        dangerouslySetInnerHTML={{
+          __html: fixLectureHTML(activeLesson.content),
+        }}
+      />
+
+      <br />
+
+      <button
+        className="cta mini"
+        style={{ width: 200 }}
+        onClick={() => markCompleted(activeLesson.id)}
+      >
+        Mark As Completed
+      </button>
 
               {showQuizButton && (
   <button

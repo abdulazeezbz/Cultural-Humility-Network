@@ -32,7 +32,8 @@ function Home() {
      <div className="hero" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
       <div className="main">
         <div className="content">
-          <h2>Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
+          <br /><br />
+          <h2 style={{lineHeight:1}}>Welcome to <br />Cultural Humility Network <span>(CHN)</span></h2>
           <p>We believe cultural humility is the cornerstone of equitable practice in health and education. Explore immersive learning, evidence-based modules, and a supportive community that centres respect, reflection, and inclusion.</p>
 
         <div id="about" className="" style={{display:'flex'}}>
